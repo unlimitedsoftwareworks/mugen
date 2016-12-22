@@ -1,9 +1,11 @@
 Mugen
 ===
 
+## Notice
 > WIP
 
-About
+## About
+
 Mugen is a multi-paradigm high level programming language designed to build robust and scalable applications. The language makes it easier for developers to write safe and maintable code while still maintaining a very good performance. Mugen is not only a language but a complete toolchain that provides dependencies manager, lua based makefiles, post-compilation processing (running unit tests, report generation, etc).
 
 - Object Oriented
