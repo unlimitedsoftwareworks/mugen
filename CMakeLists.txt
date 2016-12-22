@@ -6,7 +6,7 @@ set (PROJECT_INCLUDE_DIR
     ${PROJECT_SOURCE_DIR}/vendor
 )
 
-include_directories("${PROJECT_INCLUDE_DIR}")
+include_directories(${PROJECT_INCLUDE_DIR})
 
 add_executable(mugen source/main.c source/mugen.c source/engine.c source/parser.c source/utilities.c vendor/containers/vec.c vendor/containers/map.c vendor/memory/memory.c vendor/tar/microtar.c vendor/thread/thread.c)
 if (UNIX)
