@@ -1,15 +1,13 @@
 language: c
 
 os:
-  - linux
+  - linux32
+  - linux64
   - osx
-  - windows
 
 compiler:
   - clang
   - gcc
-  - mingw
-  - vc
 
 script: 
   - mkdir build
