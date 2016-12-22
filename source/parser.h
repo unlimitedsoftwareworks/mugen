@@ -27,6 +27,11 @@ typedef struct ImportExpr{
     vec_t(wchar_t*) path;
 }ImportExpr;
 
+typedef struct TypeDecl{
+    wchar_t* name;
+    struct TypeExpr* type;
+}TypeDecl;
+
 //void parseAst(struct TokenStruct *Token, struct ContextStruct *context);
 
 #endif
