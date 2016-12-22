@@ -12,10 +12,10 @@ add_executable(mugen source/main.c source/mugen.c source/engine.c source/parser.
 
 if (UNIX)
     target_link_libraries(mugen m pthread)
-endif (UNIX)
+endif ()
 
-if (LINUX)
+if (UNIX AND NOT APPLE)
     target_link_libraries(mugen rt)
-endif (LINUX)
+endif ()
 
 install(TARGETS mugen RUNTIME DESTINATION bin)
