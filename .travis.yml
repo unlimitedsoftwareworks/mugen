@@ -8,6 +8,8 @@ os:
 compiler:
   - clang
   - gcc
+  - mingw
+  - vc
 
 script: 
   - mkdir build
