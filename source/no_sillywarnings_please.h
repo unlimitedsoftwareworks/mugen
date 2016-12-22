@@ -4,10 +4,7 @@
  
 #ifndef PROGROCK_CPPX_COMPILERSPECIFIC_MSVC_NOSILLYWARNINGSPLEASE_H
 #define PROGROCK_CPPX_COMPILERSPECIFIC_MSVC_NOSILLYWARNINGSPLEASE_H
- 
-#ifndef _MSC_VER
-#   error This file is specific to the MSVC (Microsoft Visual C++) compiler.
-#endif
+#ifdef _MSC_VER
  
 #ifndef CPPX_ALLOW_WP64
 #   // The /Wp64 option generates spurious warnings when a __w64 type argument selects
@@ -57,4 +54,5 @@
 #pragma warning( disable: 4917 )    // a GUID can only be associated with a class, interface or namespace
 #pragma warning( disable: 4996 )    // MSVC 9: a C std library function has been "deprecated" (says MS)
  
+#endif
 #endif
