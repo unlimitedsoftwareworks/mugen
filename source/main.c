@@ -2,7 +2,7 @@
 #include "no_sillywarnings_please.h"
 
 #include <stdlib.h>
-#include "memory.h"
+#include "memory/memory.h"
 #include "mugen.h"
 
 int main(int argc, char *argv[]) {
