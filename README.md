@@ -1,6 +1,6 @@
 Mugen
 ===
-
+[![Build Status](https://travis-ci.org/unlimitedsoftwareworks/mugen.svg?branch=master)](https://travis-ci.org/unlimitedsoftwareworks/mugen)
 ## Notice
 > WIP
 
