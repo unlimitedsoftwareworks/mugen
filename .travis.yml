@@ -1,8 +1,7 @@
 language: c
 
 os:
-  - linux32
-  - linux64
+  - linux
   - osx
 
 compiler:
@@ -12,4 +11,5 @@ compiler:
 script: 
   - mkdir build
   - cd build
-  - cmake .. && make
+  - cmake .. 
+  - make
