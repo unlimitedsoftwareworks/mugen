@@ -14,4 +14,4 @@ script:
   - cmake .. 
   - make
   - cd ..
-  - mugen
+  - build/mugen
