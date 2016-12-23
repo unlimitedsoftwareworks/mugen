@@ -20,13 +20,12 @@ int compile(char *fname)
 	if (InputBuf == NULL) exit(1);
 
 	int debugg = 0;
-	
+	int err = 0;
 	/* Run the Parser. */
 	Result = Parse(InputBuf, wcslen(InputBuf), 0, debugg, &Token);
 	/* Interpret the results. */
 	if (Result != PARSEACCEPT) {
 		ShowErrorMessage(Token, Result);
-
 		printf("\nSyntax Error\n");
 		return 255;
 	}

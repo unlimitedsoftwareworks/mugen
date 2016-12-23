@@ -7,6 +7,11 @@
 #include "mugen.h"
 #include "engine.h"
 
+typedef enum FunctionBodyType{
+    FBT_EXPR = 0,
+    FBT_BODY = 1
+}FunctionBodyType;
+
 struct ContextStruct {
 	wchar_t *ReturnValue;             /* In this template all rules return a string. */
 	int Indent;                       /* For printing debug messages. */
@@ -18,19 +23,52 @@ struct ContextStruct {
 typedef struct Program {
     vec_t(struct ImportExpr*) imports;
     
-    vec_t(struct TypeDecl*) typeDecls;
-    vec_t(struct VariableDecl*) varDecls;
-    vec_t(struct FunctionDecl*) funcDecls;
+    vec_t(struct GlobalTypeDecl*) typeDecls;
+    vec_t(struct GlobalVariableDecl*) varDecls;
+    vec_t(struct GlobalFunctionDecl*) funcDecls;
+    vec_t(struct GlobalEnumDecl*) enumDecls;
+    vec_t(struct InterfaceDecl*) interfaceDecls;
+    vec_t(struct ClassDecl*) classDecls;
 }Program;
 
 typedef struct ImportExpr{
     vec_t(wchar_t*) path;
 }ImportExpr;
 
-typedef struct TypeDecl{
+typedef struct GlobalTypeDecl{
     wchar_t* name;
     struct TypeExpr* type;
-}TypeDecl;
+}GlobalTypeDecl;
+
+typedef struct GlobalVariableDecl{
+    wchar_t* name;
+    struct TypeExpr* type;
+    int isLocal;
+    int isMutable;
+}GlobalVariableDecl;
+
+typedef struct GlobalFunctionDecl{
+    wchar_t* name;
+    vec_t(struct VariableDecl*) params;
+    
+    struct TypeExpr* returnType;
+    enum FunctionBodyType bodyType;
+}GlobalFunctionDecl;
+
+typedef struct InterfaceDecl{
+    struct InterfaceHeader* header;
+    
+    vec_t(struct InterfaceMethod*) methods;
+}InterfaceDecl;
+
+typedef struct ClassDecl{
+    struct ClassHeader* header;
+    
+    vec_t(struct ClassMethod*) methods;
+    vec_t(struct ClassAttributes*) attributes;
+}ClassDecl;
+
+
 
 //void parseAst(struct TokenStruct *Token, struct ContextStruct *context);
 

@@ -15,10 +15,10 @@ int main(int argc, char *argv[]) {
         parseCmdLine();
     }
     
-    compile("tests/sample01.mu");
+    int err = compile("tests/sample01.mu");
     
     printf("\n[NOTICE] Ending with memory of [%zu]Bytes\n", dmt_usage());
     printf("\n[NOTICE] Memory DUMP:\n");
     dmt_dump(stdout);
-    return 0;
+    return err;
 }
