@@ -49,7 +49,7 @@ typedef enum TypeBaseType{
     TBT_UINT_64,
     TBT_FLOAT,
     TBT_DOUBLE,
-}TypeBaseType
+}TypeBaseType;
 
 struct ContextStruct {
 	wchar_t *ReturnValue;             /* In this template all rules return a string. */
