@@ -29,26 +29,27 @@ typedef enum FunctionBodyType{
 typedef enum TypeExprType{
     ENUM(TypeBaseExpr),
     ENUM(TypeFnExpr),
-    ENUM(TypeTemplateExpr),
+    ENUM(TypePkgExpr),
+    ENUM(TypeTemplatePkgExpr),
     ENUM(TypeArrayExpr),
     ENUM(TypeTupleExpr),
     ENUM(TypeInterfaceExpr),
 }TypeExprType;
 
 typedef enum TypeBaseType{
-    TBT_BYTE,
-    TBT_CHAR,
-    TBT_BOOL,
-    TBT_INT_8,
-    TBT_UINT_8,
-    TBT_INT_16,
-    TBT_UINT_16,
-    TBT_INT_32,
-    TBT_UINT_32,
-    TBT_INT_64,
-    TBT_UINT_64,
-    TBT_FLOAT,
-    TBT_DOUBLE,
+    ENUM(ByteValue),
+    ENUM(CharValue),
+    ENUM(BoolValue),
+    ENUM(Int8Value),
+    ENUM(UInt8Value),
+    ENUM(Int16Value),
+    ENUM(UInt16Value),
+    ENUM(Int32Value),
+    ENUM(UInt32Value),
+    ENUM(Int64Value),
+    ENUM(UInt64Value),
+    ENUM(FloatValue),
+    ENUM(DoubleValue),
 }TypeBaseType;
 
 struct ContextStruct {
@@ -103,7 +104,7 @@ typedef struct InterfaceDecl{
 
 typedef struct ClassDecl{
     struct ClassHeader* header;
-    
+     
     int isImmutable;
     
     vec_t(struct ClassMethod*) methods;
@@ -113,12 +114,15 @@ typedef struct ClassDecl{
 
 
 typedef struct TypeExpr{
-    TypeExprType type;
+    TypeExprType typeField;
     union{
         struct TypeBaseExpr* base;
         struct TypeFnExpr* fn;
+        struct TypePkgExpr pkg;
+        struct TypePkgTemplateExpr pkgTemplate;
         struct TypeArrayExpr* array;
-        struct TypeTupleExpr* tuple
+        struct TypeTupleExpr* tuple;
+        struct TypeInterfaceExpr interfaceList;
     };
 }TypeExpr;
 
@@ -136,7 +140,7 @@ typedef struct TypeArrayExpr{
 }TypeArrayExpr;
 
 typedef struct TypeTupleExpr{
-    
+    vec_t(TypeExpr*) params;
 };
 
 //void parseAst(struct TokenStruct *Token, struct ContextStruct *context);
