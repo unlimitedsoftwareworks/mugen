@@ -1,0 +1,434 @@
+"Name"     = 'mugen'
+"Author"   = 'Soulaymen Chouri'
+"Version"  = '0.1.0'
+"About"    = 'A new general purpose multiparadigm programming language'
+
+"Start Symbol" = <Program>
+
+! -------------------------------------------------
+! Character Sets
+! -------------------------------------------------
+
+{Hex Digit}      = {Digit} + [abcdefABCDEF]
+{Oct Digit}      = [01234567]
+{Bin Digit}      = [01]
+                 
+{Id Head}        = {Letter} + [_]
+{Id Tail}        = {Id Head} + {Digit}
+
+{String Ch}      = {Printable} - ["]
+{Char Ch}        = {Printable} - ['']
+
+! -------------------------------------------------
+! Terminals
+! -------------------------------------------------
+
+DecLiteral       = [123456789]{digit}*
+BinLiteral       = 0b{Bin Digit}*
+OctLiteral       = 0{Oct Digit}*
+HexLiteral       = 0x{Hex Digit}+
+                 
+FloatLiteral     = {Digit}*'.'{Digit}+
+
+StringLiteral    = '"'( {String Ch} | '\'{Printable} )* '"'
+CharLiteral      = '' ( {Char Ch} | '\'{Printable} )''
+
+Identifier       = {Id Head}{Id Tail}*
+
+! -------------------------------------------------
+! Comments
+! -------------------------------------------------
+
+Comment Start = '/*'
+Comment End   = '*/'
+Comment Line  = '//'
+! -------------------------------------------------
+! Rules
+! -------------------------------------------------
+
+! The grammar starts below
+<Program> ::= <Import Section> <Declarations>           
+
+! -------------------------------------------------
+! Imports
+! -------------------------------------------------
+
+<Import Section> ::= 'import' '(' <Import Expr List> ')'
+                   | 'import' '('                    ')'
+                   |
+
+<Import Expr List> ::= <Import Path> ',' <Import Expr List>
+                     | <Import Path>
+                    
+<Import Path> ::= Identifier '.' <Import Path>
+                | Identifier
+
+! -------------------------------------------------
+! Declarations
+! -------------------------------------------------
+
+<Declarations> ::= <Decl> <Declarations>
+                 |
+                 
+<Decl> ::= <LType Decl>
+         | <LVar Decl>
+         | <LFunction Decl>
+         
+! -------------------------------------------------
+! Types
+! -------------------------------------------------
+
+<LType Decl> ::= 'local' <Type Decl>
+               |         <Type Decl>
+
+<Type Decl> ::= <Enum Decl>       ! enum
+              | <Interface Def>  ! interface
+              | <Class Def>      ! class
+              | <Type Def>        ! type definition
+              
+! =====
+! enums
+! =====
+
+<Enum Decl> ::= 'enum' Identifier '{' <Enum Values> '}'
+
+<Enum Values> ::= <Enum Value> ',' <Enum Values>
+                | <Enum Value>
+                            
+<Enum Value> ::= Identifier              
+
+! ==========
+! Interfaces
+! ==========
+
+<Interface Def> ::= 'interface' Identifier                   '{' <Interface Methods> '}'
+                   | 'interface' Identifier '<' <Id List> '>' '{' <Interface Methods> '}'
+
+<Interface Methods> ::= <Interface Method> <Interface Methods>
+                      | <Interface Method>
+
+
+<Interface Method> ::=                        'function' <Func Name> '(' <Params> ')' '->' <Types>
+                     |                        'function' <Func Name> '('          ')' '->' <Types>
+                     |                        'function' <Func Name> '(' <Params> ')'
+                     |                        'function' <Func Name> '('          ')'
+                     |                'local' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                     |                'local' 'function' <Func Name> '('          ')' '->' <Types>
+                     |                'local' 'function' <Func Name> '(' <Params> ')'
+                     |                'local' 'function' <Func Name> '('          ')'
+                     |         'synchronized' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                     |         'synchronized' 'function' <Func Name> '('          ')' '->' <Types>
+                     |         'synchronized' 'function' <Func Name> '(' <Params> ')'
+                     |         'synchronized' 'function' <Func Name> '('          ')'                     
+                     | 'local' 'synchronized' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                     | 'local' 'synchronized' 'function' <Func Name> '('          ')' '->' <Types>
+                     | 'local' 'synchronized' 'function' <Func Name> '(' <Params> ')'
+                     | 'local' 'synchronized' 'function' <Func Name> '('          ')'                     
+                     | 'synchronized' 'local' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                     | 'synchronized' 'local' 'function' <Func Name> '('          ')' '->' <Types>
+                     | 'synchronized' 'local' 'function' <Func Name> '(' <Params> ')'
+                     | 'synchronized' 'local' 'function' <Func Name> '('          ')'
+
+<Func Name> ::= Identifier
+              | <Overrideable Operator>
+
+! ==========
+! Class
+! ==========
+
+<Class Def> ::=             'class' Identifier                                  '{' <Class Decls> '}'
+              |             'class' Identifier 'implements' <Pkg Template List> '{' <Class Decls> '}'
+              | 'immutable' 'class' Identifier                                  '{' <Class Decls> '}'
+              | 'immutable' 'class' Identifier 'implements' <Pkg Template List> '{' <Class Decls> '}'
+
+<Class Decls> ::= <Class Decl> <Class Decls>
+                | <Class Decl>
+               
+<Class Decl> ::= <Class Method Decl>
+               | <Class Variable Decl>
+               
+<Class Method Decl> ::= <Interface Method> '=' <Expr>
+                      | <Interface Method> <Block> 
+
+<Class Variable Decl> ::= <LVar Decl>
+
+! ==========
+! Type Def
+! ==========
+
+<Type Def> ::= 'type' Identifier '=' <Type>
+
+! ==========
+! Operators
+! ==========
+
+<Overrideable Operator> ::= '+' | '-' | '*' | '/' | '%' | '^' | '&' | '|' | '~' | '!' | '=' | '<' | '>' | '+=' | '-=' 
+                          | '*=' | '/=' | '%=' | '^=' | '&=' | '|=' | '<<' | '>>' | '>>=' | '<<=' | '==' | '!=' | '<=' 
+                          | '>=' | '&&' | '||' | '++' | '--' | ',' | '(' ')' | '[' ']' | 'new' | 'free'
+
+! -------------------------------------------------
+! Functions
+! -------------------------------------------------
+
+<LFunction Decl> ::= <Interface Method> '=' <Expr>
+                   | <Interface Method> <Block>
+
+! -------------------------------------------------
+! Variables
+! -------------------------------------------------
+
+<LVar Decl> ::= 'let'               <Id List> ':' <Type> '=' <Expr List>
+              | 'let'               <Id List> ':' <Type> 
+              | 'let'               <Id List>            '=' <Expr List>
+              | 'let' 'mut'         <Id List> ':' <Type> '=' <Expr List>
+              | 'let' 'mut'         <Id List>            '=' <Expr List>
+              | 'let' 'local'       <Id List> ':' <Type> '=' <Expr List>
+              | 'let' 'local'       <Id List> ':' <Type> 
+              | 'let' 'local'       <Id List>            '=' <Expr List>
+              | 'let' 'mut' 'local' <Id List> ':' <Type> '=' <Expr List>
+              | 'let' 'mut' 'local' <Id List>            '=' <Expr List>
+              | 'let' 'local' 'mut' <Id List> ':' <Type> '=' <Expr List>
+              | 'let' 'local' 'mut' <Id List>            '=' <Expr List>
+
+! -------------------------------------------------
+! Statements
+! -------------------------------------------------
+
+<Statements> ::= <Stmt> <Statements>
+               | <Stmt>
+
+<Stmt> ::= <Block>
+         | <Var Decl Stmt>
+         | <Repeat Stmt>
+         | <While Stmt>
+         | <For Stmt>
+         | <Foreach Stmt>
+         | <Expr>
+         | <Return Stmt>
+         | <Break Stmt>
+         | <Continue Stmt>
+         | <If Stmt>
+         | <Match Stmt>
+
+<Block> ::=                '{' <Statements> '}'
+          | 'synchronized' '{' <Statements> '}'
+
+<Var Decl Stmt> ::= 'let'       <Id List> ':' <Type> '=' <Expr List>
+                  | 'let'       <Id List> ':' <Type> 
+                  | 'let'       <Id List>            '=' <Expr List>
+                  | 'let' 'mut' <Id List> ':' <Type> '=' <Expr List>
+                 !| 'let' 'mut' <Id List> ':' <Type> 
+                  | 'let' 'mut' <Id List>            '=' <Expr List>
+                  
+<Repeat Stmt> ::= 'repeat' <Block> 'while' <Expr>
+
+<While Stmt> ::= 'while' <Expr> <Block> 
+
+<For Stmt> ::= 'for' <Expr List> ';' <Expr> ';' <Expr List> <Block>
+
+<Foreach Stmt> ::= 'foreach' Identifier ':' <Type> 'in' <Expr> <Block>
+
+<Return Stmt> ::= 'return' <Expr List>
+                | 'return'
+
+<Continue Stmt> ::= 'continue'
+
+<Break Stmt> ::= 'break'
+
+<If Stmt> ::= 'if' <Expr> <Block> <Else If Stmt>
+
+<Else If Stmt> ::= 'else' <If Stmt> <Else If Stmt>
+                 | <Else Stmt>
+                 | 
+
+<Else Stmt> ::= 'else' <Block>
+             
+<Match Stmt> ::= 'match' <Expr List> '{' <Match List> <Else Element> '}'
+               | 'match' <Expr List> '{' <Match List>                '}'
+              
+<Match List> ::= <Match Element> <Match List>
+               | <Match Element>                 
+
+<Match Element> ::= <Expr List> <Block>
+
+<Else Element> ::= 'else' <Block>
+                
+! -------------------------------------------------
+! Types
+! -------------------------------------------------            
+
+<Types> ::= <Type> ',' <Types>
+          | <Type>
+
+<Type> ::= <Base>
+         | <Fn Type>
+         | <Pkg>
+         | <Pkg Template> 
+         | <Type> '[' ']'
+         | '(' <Types> ')'
+         | '[' <Pkg Template List> ']'
+
+<Base> ::= Byte
+         | Char
+         | Bool
+         | Int8
+         | UInt8
+         | Int16
+         | UInt16
+         | Int32
+         | UInt32
+         | Int64
+         | UInt64
+         | Double
+         | Float
+
+<Fn Type> ::= 'fn' '('         ')'
+            | 'fn' '('         ')' '->' <Types>
+            | 'fn' '(' <Types> ')'
+            | 'fn' '(' <Types> ')' '->' <Types>
+
+<Pkg Template List> ::= <Pkg Template> ',' <Pkg Template List>
+                      | <Pkg> ',' <Pkg Template List>
+                      | <Pkg Template>
+                      | <Pkg>
+
+<Pkg> ::= Identifier '.' <Pkg>
+        | Identifier
+        
+<Pkg Template> ::= <Pkg> '<' <Types> '>'
+
+! -------------------------------------------------
+! Misc
+! -------------------------------------------------
+
+<Id List> ::= Identifier ',' <Id List>
+            | Identifier
+
+<Params> ::= <Param> ',' <Params>
+           | <Param>
+           
+<Param> ::=       Identifier ':' <Type>
+          | 'mut' Identifier ':' <Type>
+         
+! -------------------------------------------------
+! Expressions
+! -------------------------------------------------
+
+<Expr List> ::= <Expr> ',' <Expr List>
+              | <Expr>
+
+
+<Expr>       ::= <Var Decl Stmt> 'in' <Expr>
+               | 'match' <Expr> '{' <Case Exprs> '}'
+               | <Op Assign>
+
+<Op Assign>  ::= <Op Or> '='   <Op Assign>
+               | <Op Or> '+='  <Op Assign>
+               | <Op Or> '-='  <Op Assign>
+               | <Op Or> '*='  <Op Assign>
+               | <Op Or> '/='  <Op Assign>
+               | <Op Or> '%='  <Op Assign>
+               | <Op Or> '^='  <Op Assign>
+               | <Op Or> '&='  <Op Assign>
+               | <Op Or> '|='  <Op Assign>
+               | <Op Or> '>>=' <Op Assign>
+               | <Op Or> '<<=' <Op Assign>
+               | <Op Or>
+
+<Op Or>      ::= <Op Or> '||' <Op And>
+               | <Op And>
+
+<Op And>     ::= <Op And> '&&' <Op BinOR>
+               | <Op BinOR>
+
+<Op BinOR>   ::= <Op BinOr> '|' <Op BinXOR>
+               | <Op BinXOR>
+
+<Op BinXOR>  ::= <Op BinXOR> '^' <Op BinAND>
+               | <Op BinAND>
+
+<Op BinAND>  ::= <Op BinAND> '&' <Op Equate>
+               | <Op Equate>
+
+<Op Equate>  ::= <Op Equate> '==' <Op Compare>
+               | <Op Equate> '!=' <Op Compare>
+               | <Op Compare>
+
+<Op Compare> ::= <Op Compare> '<'  <Op Shift>
+               | <Op Compare> '>'  <Op Shift>
+               | <Op Compare> '<=' <Op Shift>
+               | <Op Compare> '>=' <Op Shift>
+               | <Op Compare> 'is' <Type>
+               !| <Op Compare> in <Op Shift> confuses with let .. in
+               | <Op Shift>
+
+<Op Shift>   ::= <Op Shift> '<<' <Op Add>
+               | <Op Shift> '>>' <Op Add>
+               | <Op Add>
+
+<Op Add>     ::= <Op Add> '+' <Op Mult>
+               | <Op Add> '-' <Op Mult>
+               | <Op Mult>
+
+<Op Mult>    ::= <Op Mult> '*' <Op Unary>
+               | <Op Mult> '/' <Op Unary>
+               | <Op Mult> '%' <Op Unary>
+               | <Op Unary>
+
+<Op Unary>   ::= '!'    <Op Unary>
+               | '~'    <Op Unary>   
+               | '-'    <Op Unary>              
+               | '++'   <Op Unary>
+               | '--'   <Op Unary>
+               | <Op Pointer> '++'
+               | <Op Pointer> '--'
+               | <Op Unary> 'as' <Type>   !CAST
+               | <New Expr>
+               | 'delete' <Op Pointer>
+               | 'sizeof' '(' <Type> ')'
+               | <Op Pointer>
+
+<Op Pointer> ::= <Op Pointer> '.' <Value>
+               | <Op Pointer> '[' <Expr List> ']'
+               | <Op Pointer> '(' <Expr List> ')'
+               | <Op Pointer> '('             ')'    
+               | <Value>
+
+<Value>      ::= OctLiteral
+               | HexLiteral
+               | DecLiteral  
+               | BinLiteral
+               | StringLiteral
+               | CharLiteral
+               | FloatLiteral
+               | 'null'
+               | '_'
+               | 'true'
+               | 'false'
+               | <Pkg>
+               | <Lambda Expr>  
+               | '(' <Expr List> ')'
+               | '[' 'for' Identifier ':' <Type> 'in' <Expr> '=>' <Expr> ']'
+               | '[' 'for' Identifier            'in' <Expr> '=>' <Expr> ']'
+               | '[' 'for' Identifier ':' <Type> 'in' <Expr> 'if' <Expr> '=>' <Expr> ']'
+               | '[' 'for' Identifier            'in' <Expr> 'if' <Expr> '=>' <Expr> ']'                  
+               | '[' <Expr List> ']'              
+               
+<Lambda Expr> ::= 'lambda' '(' <Params> ')' <Block>
+                | 'lambda' '(' <Params> ')' '=' <Expr>
+                | 'lambda' '(' <Params> ')' '->' <Type> <Block>
+                | 'lambda' '(' <Params> ')' '->' <Type> '=' <Expr>
+
+<Case Exprs> ::= 'case' <Expr> 'when' <Expr> '=>' <Expr> <Case Exprs>
+               | 'case' <Expr>               '=>' <Expr> <Case Exprs>
+               | 'else'                      '=>' <Expr>        
+               
+<New Expr> ::= 'new' <Pkg Template> '('        ')'
+             | 'new' <Pkg Template> '(' <Expr List> ')'
+            !| 'new' <Pkg Template> '('        ')' '{' <CDecl> '}'!oh yeah, Java-style
+            !| 'new' <Pkg Template> '(' <Expr> ')' '{' <CDecl> '}' 
+             | 'new' <Pkg> '('        ')'
+             | 'new' <Pkg> '(' <Expr List> ')'
+             | 'new' <Type> 
+             | 'new' <Type> '[' <Expr> ']'
+

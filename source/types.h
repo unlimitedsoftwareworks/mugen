@@ -199,6 +199,8 @@ typedef struct OperatorMethod {
 typedef struct Attribute {
     wchar_t name;
     struct DataType* type;
+    int isLocal;
+    int isMutable;
 }Attribute;
 
 

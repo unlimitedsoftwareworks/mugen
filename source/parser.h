@@ -20,45 +20,6 @@ struct ContextStruct {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void ReadableString(wchar_t *Input, wchar_t *Output, long Width);
 
 #endif
