@@ -141,7 +141,7 @@
 int fileExists(char* name)
 {
     FILE *file;
-    if (file = fopen(name, "r"))
+    if ((file = fopen(name, "r")))
     {
         fclose(file);
         return 1;
