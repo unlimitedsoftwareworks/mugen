@@ -18,4 +18,8 @@ if (UNIX AND NOT APPLE)
     target_link_libraries(mugen rt)
 endif ()
 
+if (MSVC)
+    target_link_libraries(mugen kernel32 user32 gdi32 winspool shell32 ole32 oleaut32 uuid comdlg32 advapi32)
+endif (MSVC)
+
 install(TARGETS mugen RUNTIME DESTINATION bin)
