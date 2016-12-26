@@ -19,7 +19,7 @@ Mugen
 |VC 2015|[![Build status](https://ci.appveyor.com/api/projects/status/kbrinttp59oosuik?svg=true)](https://ci.appveyor.com/project/praisethemoon/mugen)|`N/A`|`N/A`|`N/A`|`N/A`|`N/A`|
 |VC 2013|[![Build status](https://ci.appveyor.com/api/projects/status/kbrinttp59oosuik?svg=true)](https://ci.appveyor.com/project/praisethemoon/mugen)|`N/A`|`N/A`|`N/A`|`N/A`|`N/A`|
 |VC 2012|[![Build status](https://ci.appveyor.com/api/projects/status/kbrinttp59oosuik?svg=true)](https://ci.appveyor.com/project/praisethemoon/mugen)|`N/A`|`N/A`|`N/A`|`N/A`|`N/A`|
-|MinGW|[![Build status](https://ci.appveyor.com/api/projects/status/kbrinttp59oosuik?svg=true)](https://ci.appveyor.com/project/praisethemoon/mugen)|`N/A`|`N/A`|`N/A`|`N/A`|`N/A`|
+|MinGW|[[![Build status](https://ci.appveyor.com/api/projects/status/vc88bxo5jfm4uial?svg=true)](https://ci.appveyor.com/project/praisethemoon/mugen-i8kut)|`N/A`|`N/A`|`N/A`|`N/A`|`N/A`|
 |GCC |`N/A`|[![Travis](https://img.shields.io/travis/unlimitedsoftwareworks/mugen.svg?style=flat)](https://travis-ci.org/unlimitedsoftwareworks/mugen)|[![Travis](https://img.shields.io/travis/unlimitedsoftwareworks/mugen.svg?style=flat)](https://travis-ci.org/unlimitedsoftwareworks/mugen)|`N/A`|`N/A`|`N/A`|
 |Clang|`N/A`|[![Travis](https://img.shields.io/travis/unlimitedsoftwareworks/mugen.svg?style=flat)](https://travis-ci.org/unlimitedsoftwareworks/mugen)|[![Travis](https://img.shields.io/travis/unlimitedsoftwareworks/mugen.svg?style=flat)](https://travis-ci.org/unlimitedsoftwareworks/mugen)|`N/A`|`N/A`|`N/A`|
 
