@@ -2,7 +2,6 @@
 #define MUGEN_PARSER_H
 
 #include <stdlib.h>
-#include "utf8.h"
 #include "containers/vec.h"
 #include "mugen.h"
 #include "engine.h"
