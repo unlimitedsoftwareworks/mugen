@@ -1,5 +1,5 @@
-#ifndef AI_COMPILER_H
-#define AI_COMPILER_H
+#ifndef MUGEN_COMPILER_H
+#define MUGEN_COMPILER_H
 
 #include <sys/stat.h>
 #include "parser.h"

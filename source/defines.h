@@ -1,4 +1,7 @@
-﻿#define PS_EOF 0 // (EOF)
+﻿#ifndef MUGEN_DEFINES_H
+#define MUGEN_DEFINES_H
+
+#define PS_EOF 0 // (EOF)
 #define PS_ERROR 1 // (Error)
 #define PS_COMMENT 2 // Comment
 #define PS_NEWLINE 3 // NewLine
@@ -180,3 +183,5 @@
 #define PS_VALUE 179 // <Value>
 #define PS_VARDECLSTMT 180 // <Var Decl Stmt>
 #define PS_WHILESTMT 181 // <While Stmt>
+
+#endif

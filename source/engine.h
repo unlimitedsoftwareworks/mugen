@@ -17,8 +17,8 @@ Version:     1.8
 
 */
 
-#ifndef AI_ENGINE_H
-#define AI_ENGINE_H
+#ifndef MUGEN_ENGINE_H
+#define MUGEN_ENGINE_H
 
 /* Return values of the Parse() function. */
 #define PARSEACCEPT             0   /* Input parsed, no errors. */
