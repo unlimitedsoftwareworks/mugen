@@ -38,7 +38,7 @@ freely, subject to the following restrictions:
 #endif
 
 #if defined(__MINGW32__)
-  #include<w32api/winbase.h>
+  #include<winbase.h>
 #endif
 
 /* Standard, good-to-have defines */
