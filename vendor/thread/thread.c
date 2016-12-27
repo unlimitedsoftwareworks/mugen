@@ -37,6 +37,10 @@ freely, subject to the following restrictions:
   #include <sys/timeb.h>
 #endif
 
+#if defined(__MINGW32__)
+  #include<w32api/winbase.h>
+#endif
+
 /* Standard, good-to-have defines */
 #ifndef NULL
   #define NULL (void*)0
