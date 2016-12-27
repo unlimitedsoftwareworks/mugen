@@ -11,6 +11,18 @@
 
 #include <stdint.h>
 
+
+#if defined(_MSC_VER)
+/*
+ * As stated Here: http://stackoverflow.com/questions/70013/how-to-detect-if-im-compiling-code-with-visual-studio-2008
+ * Visual Studio 2015 has better support for C99
+ * We need to use __inline for older version.
+ */
+#if _MSC_VER < 1900
+#define inline __inline
+#endif
+#endif // defined
+
 /**
  * @defgroup subsystem Simple PDF Generation
  * Allows for quick generation of simple PDF documents.

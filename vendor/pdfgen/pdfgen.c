@@ -205,11 +205,6 @@ static int bin_offset[] = {
     (1 << (MIN_SHIFT + 15)) - 1 - MIN_OFFSET,
 };
 
-#if defined(_MSC_VER)
-#if _MSC_VER < 1900
-#define inline
-#endif
-#endif // defined
 
 /*
  * workaround for localtime_r on Windows

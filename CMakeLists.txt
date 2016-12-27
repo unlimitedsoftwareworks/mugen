@@ -79,7 +79,7 @@ if (UNIX AND NOT APPLE)
 endif ()
 
 if (WIN32)
-    target_link_libraries(mugen kernel32 user32 gdi32 winspool shell32 ole32 oleaut32 uuid comdlg32 advapi32 kernel32 user32 gdi32 winspool shell32 ole32 oleaut32 uuid comdlg32 advapi32.lib)
+    target_link_libraries(mugen kernel32 user32 gdi32 winspool shell32 ole32 oleaut32 uuid comdlg32 advapi32 kernel32 user32 gdi32 winspool shell32 ole32 oleaut32 uuid comdlg32 advapi32)
 endif ()
 
 install(TARGETS mugen RUNTIME DESTINATION bin)
