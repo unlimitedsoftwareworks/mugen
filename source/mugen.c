@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <wchar.h>
 
-#include "memory/memory.h"
+#include "memory.h"
 #include "mugen.h"
 #include "utilities.h"
 #include "engine.h"

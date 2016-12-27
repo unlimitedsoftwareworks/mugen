@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <sys/stat.h>
 
-#include "memory/memory.h"
+#include "memory.h"
 #include "parser.h"
 #include "engine.h"
 #include "mugen.h"

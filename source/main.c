@@ -2,7 +2,8 @@
 #include "no_sillywarnings_please.h"
 
 #include <stdlib.h>
-#include "memory/memory.h"
+#include "utf8.h"
+#include "memory.h"
 #include "mugen.h"
 
 int main(int argc, char *argv[]) {

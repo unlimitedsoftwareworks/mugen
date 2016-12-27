@@ -51,6 +51,41 @@ function main(args: String[]) -> UInt32 {
 	return 0
 }
 ```
+## Building
+
+This repository is self contained. All you need is CMake as long as GCC, Clang or Visual Studio installed.
+:arrow_right: Make sure to check the status on the top of the README as well to see if the code works on your platform/compiler before you build.
+To build the project:
+##### Linux & OSX:
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
+##### Windows (VC):
+```
+mkdir build
+cd build
+cmake -G"Visual Studio 14 2015" ..
+make
+```
+
+##### Windows (Clang):
+```
+mkdir build
+cd build
+cmake -G"Visual Studio 14 2015" -T"LLVM-vs2014" ..
+make
+```
+
+## TODO
+- [x] Lexer
+- [x] Parser
+- [ ] AST
+- [ ] Semantic Analysis
+- [ ] Code Generation
 
 ## 3rd Party Tools
 
@@ -62,7 +97,6 @@ function main(args: String[]) -> UInt32 {
 |https://github.com/unlimitedsoftwareworks/smallprofiler|Profiling|
 |https://github.com/unlimitedsoftwareworks/utf8.h|UTF-8 Encoding|
 |https://github.com/unlimitedsoftwareworks/vec|Vector container|
-|https://github.com/unlimitedsoftwareworks/qrintf|sprintf fast alternative|
 |https://github.com/unlimitedsoftwareworks/map|Map Container|
 |https://github.com/unlimitedsoftwareworks/dmt|Dynamic Memory Tracker|
 |https://github.com/unlimitedsoftwareworks/lua|Creating build scripts/makefiles|

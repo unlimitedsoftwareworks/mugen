@@ -16,7 +16,7 @@ Version:     1.8
 #include <stdlib.h>                 /* malloc(), free() */
 #include <wchar.h>                  /* wchar_t */
 
-#include "memory/memory.h"
+#include "memory.h"
 #include "engine.h"                 /* Defines all the data structs. */
 
 
