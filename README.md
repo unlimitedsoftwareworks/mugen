@@ -2,15 +2,19 @@ Mugen
 ===
 
 ## Notice
-> WIP
+> :soon: WIP
 
 ## Status
+
+
+[![BADGINATOR](https://badginator.herokuapp.com/unlimitedsoftwareworks/mugen.svg)](https://github.com/unlimitedsoftwareworks/mugen)
+
 
 [![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?style=flat)](https://mugen.praisethemoon.org)
 [![Twitter Follow](https://img.shields.io/twitter/follow/alonnesora.svg?style=social&label=Follow&style=flat)](https://twitter.com/alonnesora)
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat)](LICENSE)
-[![GitHub commits](https://img.shields.io/github/commits-since/unlimitedsoftwareworks/mugen/)]()
+[![GitHub commits](https://github-basic-badges.herokuapp.com/commits/unlimitedsoftwareworks/mugen.svg)]()
 
 [![Code Climate](https://img.shields.io/codeclimate/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen)
 [![Code Climate](https://img.shields.io/codeclimate/coverage/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen/coverage)
