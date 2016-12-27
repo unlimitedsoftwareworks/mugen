@@ -67,7 +67,7 @@ add_executable(mugen
     ${PROJECT_SOURCE_DIR}/vendor/memory/memory.c 
     ${PROJECT_SOURCE_DIR}/vendor/tar/microtar.c 
     ${PROJECT_SOURCE_DIR}/vendor/thread/thread.c
-    #${PROJECT_SOURCE_DIR}/vendor/pdfgen/pdfgen.c
+    ${PROJECT_SOURCE_DIR}/vendor/pdfgen/pdfgen.c
 )
 
 if (UNIX)
