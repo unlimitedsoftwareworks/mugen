@@ -35,6 +35,7 @@ freely, subject to the following restrictions:
 #elif defined(_TTHREAD_WIN32_)
   #include <process.h>
   #include <sys/timeb.h>
+  #include <windows.h>
 #endif
 
 #if defined(__MINGW32__)
