@@ -5,7 +5,7 @@
 #include "vec.h"
 #include "mugen.h"
 #include "engine.h"
-#include "types.h"
+#include "datatypes.h"
 
 
 struct ContextStruct {

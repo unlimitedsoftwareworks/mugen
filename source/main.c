@@ -2,9 +2,13 @@
 #include "no_sillywarnings_please.h"
 
 #include <stdlib.h>
-#include "utf8.h"
 #include "memory.h"
 #include "mugen.h"
+
+/* 
+ * This should be included once
+ */
+#include "utf8.h"
 
 int main(int argc, char *argv[]) {
     if (argc < 2)

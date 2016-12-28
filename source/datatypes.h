@@ -154,7 +154,6 @@ typedef struct TYPE(Dummy) {
     wchar_t* name;
 }TYPE(Dummy);
 
-
 /*
  * ***********************************************************
  *    Method/Functions Attribute/Variables Representations
@@ -195,6 +194,9 @@ typedef struct OperatorMethod {
     };
 }OperatorMethod;
 
+/*
+ * Used for method attributes and global variables *
+ */
 typedef struct Attribute {
     wchar_t name;
     struct DataType* type;
@@ -202,7 +204,26 @@ typedef struct Attribute {
     int isMutable;
 }Attribute;
 
+/*
+ * Used inside functions
+ * where it does not have local visibility
+ */
+typedef struct VarDeclExpr{
+    wchar_t* name;
+    struct DataType* type;
+    int isMutable;
+}VarDeclExpr;
 
+/*
+ * ***********************************************************
+ *                      Program Tree
+ * ***********************************************************
+ */
 
+typedef struct Program{
+    vec_t(struct ImportPackage*) imports;
+    vec_t(struct Attribute*) variables;
+    
+}Program;
 
 #endif

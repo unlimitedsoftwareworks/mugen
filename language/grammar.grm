@@ -147,8 +147,18 @@ Comment Line  = '//'
 <Class Decl> ::= <Class Method Decl>
                | <Class Variable Decl>
                
-<Class Method Decl> ::= <Interface Method> '=' <Expr>
-                      | <Interface Method> <Block> 
+
+<Class Method> ::=                        'function' <Func Name> '(' <Params> ')' '->' <Types>
+                 |                        'function' <Func Name> '('          ')' '->' <Types>
+                 |                        'function' <Func Name> '(' <Params> ')'
+                 |                        'function' <Func Name> '('          ')'
+                 |                'local' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                 |                'local' 'function' <Func Name> '('          ')' '->' <Types>
+                 |                'local' 'function' <Func Name> '(' <Params> ')'
+                 |                'local' 'function' <Func Name> '('          ')'
+
+<Class Method Decl> ::= <Class Method> '=' <Expr>
+                      | <Class Method> <Block> 
 
 <Class Variable Decl> ::= <LVar Decl>
 
