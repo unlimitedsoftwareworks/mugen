@@ -116,18 +116,6 @@ Comment Line  = '//'
                      |                'local' 'function' <Func Name> '('          ')' '->' <Types>
                      |                'local' 'function' <Func Name> '(' <Params> ')'
                      |                'local' 'function' <Func Name> '('          ')'
-                     |         'synchronized' 'function' <Func Name> '(' <Params> ')' '->' <Types>
-                     |         'synchronized' 'function' <Func Name> '('          ')' '->' <Types>
-                     |         'synchronized' 'function' <Func Name> '(' <Params> ')'
-                     |         'synchronized' 'function' <Func Name> '('          ')'                     
-                     | 'local' 'synchronized' 'function' <Func Name> '(' <Params> ')' '->' <Types>
-                     | 'local' 'synchronized' 'function' <Func Name> '('          ')' '->' <Types>
-                     | 'local' 'synchronized' 'function' <Func Name> '(' <Params> ')'
-                     | 'local' 'synchronized' 'function' <Func Name> '('          ')'                     
-                     | 'synchronized' 'local' 'function' <Func Name> '(' <Params> ')' '->' <Types>
-                     | 'synchronized' 'local' 'function' <Func Name> '('          ')' '->' <Types>
-                     | 'synchronized' 'local' 'function' <Func Name> '(' <Params> ')'
-                     | 'synchronized' 'local' 'function' <Func Name> '('          ')'
 
 <Func Name> ::= Identifier
               | <Overrideable Operator>
@@ -156,6 +144,18 @@ Comment Line  = '//'
                  |                'local' 'function' <Func Name> '('          ')' '->' <Types>
                  |                'local' 'function' <Func Name> '(' <Params> ')'
                  |                'local' 'function' <Func Name> '('          ')'
+                 |         'synchronized' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                 |         'synchronized' 'function' <Func Name> '('          ')' '->' <Types>
+                 |         'synchronized' 'function' <Func Name> '(' <Params> ')'
+                 |         'synchronized' 'function' <Func Name> '('          ')'                     
+                 | 'local' 'synchronized' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                 | 'local' 'synchronized' 'function' <Func Name> '('          ')' '->' <Types>
+                 | 'local' 'synchronized' 'function' <Func Name> '(' <Params> ')'
+                 | 'local' 'synchronized' 'function' <Func Name> '('          ')'                     
+                 | 'synchronized' 'local' 'function' <Func Name> '(' <Params> ')' '->' <Types>
+                 | 'synchronized' 'local' 'function' <Func Name> '('          ')' '->' <Types>
+                 | 'synchronized' 'local' 'function' <Func Name> '(' <Params> ')'
+                 | 'synchronized' 'local' 'function' <Func Name> '('          ')'
 
 <Class Method Decl> ::= <Class Method> '=' <Expr>
                       | <Class Method> <Block> 
@@ -237,6 +237,7 @@ Comment Line  = '//'
 <For Stmt> ::= 'for' <Expr List> ';' <Expr> ';' <Expr List> <Block>
 
 <Foreach Stmt> ::= 'foreach' Identifier ':' <Type> 'in' <Expr> <Block>
+                 | 'foreach' 'mut' Identifier ':' <Type> 'in' <Expr> <Block>
 
 <Return Stmt> ::= 'return' <Expr List>
                 | 'return'

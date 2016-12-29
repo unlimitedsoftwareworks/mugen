@@ -183,6 +183,7 @@ typedef struct FunctionMethod {
         FIELD_(Expr);
         FIELD_(Block);
     };
+    int isSynchronized;
 }FunctionMethod;
 
 typedef struct OperatorMethod {
@@ -192,6 +193,7 @@ typedef struct OperatorMethod {
         FIELD_(Expr);
         FIELD_(Block);
     };
+    int isSynchronized;
 }OperatorMethod;
 
 /*
@@ -205,16 +207,6 @@ typedef struct Attribute {
 }Attribute;
 
 /*
- * Used inside functions
- * where it does not have local visibility
- */
-typedef struct VarDeclExpr{
-    wchar_t* name;
-    struct DataType* type;
-    int isMutable;
-}VarDeclExpr;
-
-/*
  * ***********************************************************
  *                      Program Tree
  * ***********************************************************
@@ -222,8 +214,133 @@ typedef struct VarDeclExpr{
 
 typedef struct Program{
     vec_t(struct ImportPackage*) imports;
+    vec_t(struct ExternMethod*) externMethods;
     vec_t(struct Attribute*) variables;
+    vec_t(struct DataType*) datatypes;
+    vec_t(struct Function*) functions;
     
 }Program;
+
+/* 
+ * Single Import Expression
+ */
+typedef struct ImportPackage{
+    vec_t(wchar_t*) pkg;
+}ImportPackage;
+
+/* 
+ * Global functions
+ */
+typedef struct Function{
+    struct FunctionMethodHeader* header;
+    EnumFunctionBodyType typeField;
+    union{
+        FIELD_(Expr);
+        FIELD_(Block);
+    };
+}Function;
+
+typedef struct ExternMethod{
+    struct FunctionMethodHeader* header;
+    int isPure;
+}ExternMethod;
+
+/*
+ * Used inside functions
+ * where it does not have local visibility
+ */
+typedef struct Variable{
+    wchar_t* name;
+    struct DataType* type;
+    int isMutable;
+}Variable;
+
+/* Statements */
+
+typedef enum EnumStatements{
+    ENUM(StmtBlock),
+    ENUM(Repeat),
+    ENUM(While),
+    ENUM(For),
+    ENUM(Foreach),
+    ENUM(Return),
+    ENUM(Break),
+    ENUM(Continue),
+    ENUM(If),
+    ENUM(Match),
+    ENUM(Expression),
+}EnumStatements;
+
+
+typedef struct Block {
+    vec_t(struct Statement*) statements;
+    vec_t(struct Variable*) variables;
+    int isSynchronized;
+}Block;
+
+typedef struct Repeat{
+    struct Block* block;
+    struct Expr* condition;
+}Repeat;
+
+typedef struct While{
+    struct Block* block;
+    struct Expr* condition;
+}While;
+
+typedef struct For{
+    vec_t(struct Expr*) initExprList;
+    struct Expr* condition;
+    vec_t(struct Expr*) incExprList;
+    struct Block* block;
+}For;
+
+typedef struct Foreach{
+    struct Variable* looper;
+    struct Expr* container;
+    struct Block* block;
+}Foreach;
+
+typedef struct Return{
+    vec_t(struct Expr*) returnedExprs;
+}Return;
+
+typedef struct If{
+    struct Expr* condition;
+    struct Block* block;
+    vec_t(struct If*) elseifs;
+    struct Else* else_;
+}If;
+
+typedef struct Else {
+    struct Block* block;
+}Else;
+
+typedef struct Match{
+    vec_t(struct Expr*) tomatch;
+    vec_t(struct MatchElement*) elements;
+    struct Block* else_;
+}Match;
+
+typedef struct MatchElement {
+    vec_t(struct Expr*) expr;
+    struct Block* block;
+}MatchElement;
+
+/*
+ * Expressions
+ */
+
+typedef enum EnumExpressions{
+    ENUM(VarDeclExpr),
+    ENUM(MatchExpr),
+    ENUM(BinaryExpr),
+    ENUM(UnaryExpr),
+    ENUM(ValueExpr),
+    ENUM(ListCompExpr),
+    ENUM(LabmdaExpr),
+    ENUM(NewExpr),
+
+}EnumExpressions;
 
 #endif
