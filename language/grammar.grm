@@ -102,7 +102,7 @@ Comment Line  = '//'
 ! ==========
 
 <Interface Def> ::= 'interface' Identifier                   '{' <Interface Methods> '}'
-                   | 'interface' Identifier '<' <Id List> '>' '{' <Interface Methods> '}'
+                  | 'interface' Identifier '<' <Id List> '>' '{' <Interface Methods> '}'
 
 <Interface Methods> ::= <Interface Method> <Interface Methods>
                       | <Interface Method>
@@ -413,7 +413,6 @@ Comment Line  = '//'
                | CharLiteral
                | FloatLiteral
                | 'null'
-               | '_'
                | 'true'
                | 'false'
                | <Pkg>

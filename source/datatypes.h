@@ -119,6 +119,7 @@ typedef struct TYPE(Interface) {
 
 typedef struct TYPE(Class) {
     wchar_t* name;
+    int isImmutable;
     
     vec_t(struct TYPE(Interface)*) implements;
     vec_t(struct FunctionMethod*) methods;
@@ -323,7 +324,7 @@ typedef struct Match{
 }Match;
 
 typedef struct MatchElement {
-    vec_t(struct Expr*) expr;
+    vec_t(struct Expr*) matches;
     struct Block* block;
 }MatchElement;
 
@@ -334,13 +335,113 @@ typedef struct MatchElement {
 typedef enum EnumExpressions{
     ENUM(VarDeclExpr),
     ENUM(MatchExpr),
-    ENUM(BinaryExpr),
-    ENUM(UnaryExpr),
+    ENUM(BinaryOperator),
+    ENUM(UnaryOperator),
     ENUM(ValueExpr),
     ENUM(ListCompExpr),
     ENUM(LabmdaExpr),
     ENUM(NewExpr),
-
 }EnumExpressions;
 
+typedef enum EnumValues{
+    ENUM(OctValue),
+    ENUM(HexValue),
+    ENUM(DecValue),
+    ENUM(BinValue),
+    ENUM(StringValue),
+    ENUM(StringCharValue),
+    ENUM(NullValue),
+    ENUM(BooleanValue),
+}EnumValues;
+
+typedef struct VarDeclExpr{
+    vec_t(struct Variable*) variables;
+};
+
+typedef struct MatchExpr{
+    vec_t(struct MatchExprElement*) elements;
+    struct Expr* else_;
+}MatchExpr;
+
+typedef struct MatchExprElement{
+    vec_t(struct Expr*) matches;
+    struct Expr* expr;
+}MatchExprElement;
+
+typedef struct BinaryOperator{
+    unsigned int operator;
+    struct Expr* left;
+    struct Expr* right;
+}BinaryOperator;
+
+typedef struct UnaryOperator{
+    unsigned int operator;
+    struct Expr* unary;
+}UnaryOperator;
+
+typedef struct Value{
+    wchar_t* value;
+}Value;
+
+typedef struct ListCompExpr{
+    struct Variable* variable;
+    struct Expr* in;
+    struct Expr* condition;
+    struct Expr* expr;
+}ListCompExpr;
+
+typedef struct LabmdaExpr{
+    struct FunctionMethodHeader* header;
+    EnumFunctionBodyType typeField;
+    union{
+        FIELD_(Expr);
+        FIELD_(Block);
+    };
+}LabmdaExpr;
+
+typedef enum EnumNew{
+    ENUM(NewPkgTemplate),
+    ENUM(NewPkg),
+    ENUM(NewArray)
+}EnumNew;
+
+typedef struct NewExpr{
+    EnumNew typeField;
+    union{
+        struct NewPkgTemplate* newPkgTemplate;
+        struct NewPkg* newPkg;
+        struct NewArray* newArray;
+    };
+}NewExpr;
+
+typedef struct NewPkgTemplate{
+    vec_t(wchar_t *) pkg;
+
+}NewPkgTemplate;
+
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
