@@ -416,7 +416,6 @@ typedef struct NewExpr{
 
 typedef struct NewPkgTemplate{
     vec_t(wchar_t *) pkg;
-
 }NewPkgTemplate;
 
 #endif
