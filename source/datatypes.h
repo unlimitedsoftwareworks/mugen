@@ -214,12 +214,13 @@ typedef struct Attribute {
  */
 
 typedef struct Program{
+    wchar_t* name;
+    
     vec_t(struct ImportPackage*) imports;
     vec_t(struct ExternMethod*) externMethods;
     vec_t(struct Attribute*) variables;
     vec_t(struct DataType*) datatypes;
-    vec_t(struct Function*) functions;
-    
+    vec_t(struct Function*) functions;    
 }Program;
 
 /* 

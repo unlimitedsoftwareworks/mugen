@@ -15,9 +15,9 @@
  * 
  */
 
-#define KODO_VERSION "0.1.a"
+#define MUGEN_VERSION "0.1.a"
 
-#define KODO_HELP "\
+#define MUGEN_HELP "\
    _   _   _   _   _  \n\
   / \\ / \\ / \\ / \\ / \\ \n\
  ( M | U | G | E | N ) v. %s\n\

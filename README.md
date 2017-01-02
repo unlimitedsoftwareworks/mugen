@@ -89,7 +89,7 @@ make
 ## TODO
 - [x] Lexer
 - [x] Parser
-- [ ] AST
+- [x] AST
 - [ ] Semantic Analysis
 - [ ] Code Generation
 

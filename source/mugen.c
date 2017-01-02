@@ -46,7 +46,7 @@ int compile(char *fname)
 
 void displayHelp()
 {
-    printf(KODO_HELP, KODO_VERSION);
+    printf(MUGEN_HELP, MUGEN_VERSION);
 }
 
 void parseCmdLine(int argc, char* argv[])
