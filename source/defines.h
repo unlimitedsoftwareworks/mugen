@@ -32,93 +32,93 @@
 #define PS_RBRACKET 28 // ']'
 #define PS_CARET 29 // '^'
 #define PS_CARETEQ 30 // '^='
-#define PS__ 31 // '_'
-#define PS_LBRACE 32 // '{'
-#define PS_PIPE 33 // '|'
-#define PS_PIPEPIPE 34 // '||'
-#define PS_PIPEEQ 35 // '|='
-#define PS_RBRACE 36 // '}'
-#define PS_TILDE 37 // '~'
-#define PS_PLUS 38 // '+'
-#define PS_PLUSPLUS 39 // '++'
-#define PS_PLUSEQ 40 // '+='
-#define PS_LT 41 // '<'
-#define PS_LTLT 42 // '<<'
-#define PS_LTLTEQ 43 // '<<='
-#define PS_LTEQ 44 // '<='
-#define PS_EQ 45 // '='
-#define PS_MINUSEQ 46 // '-='
-#define PS_EQEQ 47 // '=='
-#define PS_EQGT 48 // '=>'
-#define PS_GT 49 // '>'
-#define PS_MINUSGT 50 // '->'
-#define PS_GTEQ 51 // '>='
-#define PS_GTGT 52 // '>>'
-#define PS_GTGTEQ 53 // '>>='
-#define PS_AS 54 // as
-#define PS_BINLITERAL 55 // BinLiteral
-#define PS_BOOL 56 // Bool
-#define PS_BREAK 57 // break
-#define PS_BYTE 58 // Byte
-#define PS_CASE 59 // case
-#define PS_CHAR 60 // Char
-#define PS_CHARLITERAL 61 // CharLiteral
-#define PS_CLASS 62 // class
-#define PS_CONTINUE 63 // continue
-#define PS_DECLITERAL 64 // DecLiteral
-#define PS_DELETE 65 // delete
-#define PS_DOUBLE 66 // Double
-#define PS_ELSE 67 // else
-#define PS_ENUM 68 // enum
-#define PS_FALSE 69 // false
-#define PS_FLOAT 70 // Float
-#define PS_FLOATLITERAL 71 // FloatLiteral
-#define PS_FN 72 // fn
-#define PS_FOR 73 // for
-#define PS_FOREACH 74 // foreach
-#define PS_FREE 75 // free
-#define PS_FUNCTION 76 // function
-#define PS_HEXLITERAL 77 // HexLiteral
-#define PS_IDENTIFIER 78 // Identifier
-#define PS_IF 79 // if
-#define PS_IMMUTABLE 80 // immutable
-#define PS_IMPLEMENTS 81 // implements
-#define PS_IMPORT 82 // import
-#define PS_IN 83 // in
-#define PS_INT16 84 // 'Int16'
-#define PS_INT32 85 // 'Int32'
-#define PS_INT64 86 // 'Int64'
-#define PS_INT8 87 // 'Int8'
-#define PS_INTERFACE 88 // interface
-#define PS_IS 89 // is
-#define PS_LAMBDA 90 // lambda
-#define PS_LET 91 // let
-#define PS_LOCAL 92 // local
-#define PS_MATCH 93 // match
-#define PS_MUT 94 // mut
-#define PS_NEW 95 // new
-#define PS_NULL 96 // null
-#define PS_OCTLITERAL 97 // OctLiteral
-#define PS_REPEAT 98 // repeat
-#define PS_RETURN 99 // return
-#define PS_SIZEOF 100 // sizeof
-#define PS_STRINGLITERAL 101 // StringLiteral
-#define PS_SYNCHRONIZED 102 // synchronized
-#define PS_TRUE 103 // true
-#define PS_TYPE 104 // type
-#define PS_UINT16 105 // 'UInt16'
-#define PS_UINT32 106 // 'UInt32'
-#define PS_UINT64 107 // 'UInt64'
-#define PS_UINT8 108 // 'UInt8'
-#define PS_WHEN 109 // when
-#define PS_WHILE 110 // while
-#define PS_BASE 111 // <Base>
-#define PS_BLOCK 112 // <Block>
-#define PS_BREAKSTMT 113 // <Break Stmt>
-#define PS_CASEEXPRS 114 // <Case Exprs>
-#define PS_CLASSDECL 115 // <Class Decl>
-#define PS_CLASSDECLS 116 // <Class Decls>
-#define PS_CLASSDEF 117 // <Class Def>
+#define PS_LBRACE 31 // '{'
+#define PS_PIPE 32 // '|'
+#define PS_PIPEPIPE 33 // '||'
+#define PS_PIPEEQ 34 // '|='
+#define PS_RBRACE 35 // '}'
+#define PS_TILDE 36 // '~'
+#define PS_PLUS 37 // '+'
+#define PS_PLUSPLUS 38 // '++'
+#define PS_PLUSEQ 39 // '+='
+#define PS_LT 40 // '<'
+#define PS_LTLT 41 // '<<'
+#define PS_LTLTEQ 42 // '<<='
+#define PS_LTEQ 43 // '<='
+#define PS_EQ 44 // '='
+#define PS_MINUSEQ 45 // '-='
+#define PS_EQEQ 46 // '=='
+#define PS_EQGT 47 // '=>'
+#define PS_GT 48 // '>'
+#define PS_MINUSGT 49 // '->'
+#define PS_GTEQ 50 // '>='
+#define PS_GTGT 51 // '>>'
+#define PS_GTGTEQ 52 // '>>='
+#define PS_AS 53 // as
+#define PS_BINLITERAL 54 // BinLiteral
+#define PS_BOOL 55 // Bool
+#define PS_BREAK 56 // break
+#define PS_BYTE 57 // Byte
+#define PS_CASE 58 // case
+#define PS_CHAR 59 // Char
+#define PS_CHARLITERAL 60 // CharLiteral
+#define PS_CLASS 61 // class
+#define PS_CONTINUE 62 // continue
+#define PS_DECLITERAL 63 // DecLiteral
+#define PS_DELETE 64 // delete
+#define PS_DOUBLE 65 // Double
+#define PS_ELSE 66 // else
+#define PS_ENUM 67 // enum
+#define PS_FALSE 68 // false
+#define PS_FLOAT 69 // Float
+#define PS_FLOATLITERAL 70 // FloatLiteral
+#define PS_FN 71 // fn
+#define PS_FOR 72 // for
+#define PS_FOREACH 73 // foreach
+#define PS_FROM 74 // from
+#define PS_FUNCTION 75 // function
+#define PS_HEXLITERAL 76 // HexLiteral
+#define PS_IDENTIFIER 77 // Identifier
+#define PS_IF 78 // if
+#define PS_IMMUTABLE 79 // immutable
+#define PS_IMPLEMENTS 80 // implements
+#define PS_IMPORT 81 // import
+#define PS_IN 82 // in
+#define PS_INT16 83 // 'Int16'
+#define PS_INT32 84 // 'Int32'
+#define PS_INT64 85 // 'Int64'
+#define PS_INT8 86 // 'Int8'
+#define PS_INTERFACE 87 // interface
+#define PS_IS 88 // is
+#define PS_LAMBDA 89 // lambda
+#define PS_LET 90 // let
+#define PS_LOCAL 91 // local
+#define PS_MATCH 92 // match
+#define PS_MUT 93 // mut
+#define PS_NEW 94 // new
+#define PS_NULL 95 // null
+#define PS_OCTLITERAL 96 // OctLiteral
+#define PS_REPEAT 97 // repeat
+#define PS_RETURN 98 // return
+#define PS_SIZEOF 99 // sizeof
+#define PS_STRINGLITERAL 100 // StringLiteral
+#define PS_SYNCHRONIZED 101 // synchronized
+#define PS_TRUE 102 // true
+#define PS_TYPE 103 // type
+#define PS_UINT16 104 // 'UInt16'
+#define PS_UINT32 105 // 'UInt32'
+#define PS_UINT64 106 // 'UInt64'
+#define PS_UINT8 107 // 'UInt8'
+#define PS_WHEN 108 // when
+#define PS_WHILE 109 // while
+#define PS_BASE 110 // <Base>
+#define PS_BLOCK 111 // <Block>
+#define PS_BREAKSTMT 112 // <Break Stmt>
+#define PS_CASEEXPRS 113 // <Case Exprs>
+#define PS_CLASSDECL 114 // <Class Decl>
+#define PS_CLASSDECLS 115 // <Class Decls>
+#define PS_CLASSDEF 116 // <Class Def>
+#define PS_CLASSMETHOD 117 // <Class Method>
 #define PS_CLASSMETHODDECL 118 // <Class Method Decl>
 #define PS_CLASSVARIABLEDECL 119 // <Class Variable Decl>
 #define PS_CONTINUESTMT 120 // <Continue Stmt>
@@ -183,5 +183,6 @@
 #define PS_VALUE 179 // <Value>
 #define PS_VARDECLSTMT 180 // <Var Decl Stmt>
 #define PS_WHILESTMT 181 // <While Stmt>
+
 
 #endif

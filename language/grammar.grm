@@ -62,6 +62,8 @@ Comment Line  = '//'
                     
 <Import Path> ::= Identifier '.' <Import Path>
                 | Identifier
+                | Identifier 'from' StringLiteral
+                | Identifier 'from' CharLiteral
 
 ! -------------------------------------------------
 ! Declarations

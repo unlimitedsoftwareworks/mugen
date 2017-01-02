@@ -7,34 +7,34 @@
 <!--
 BODY
 {
-  background-color: #281E14;
-  color: #F9F5D9;
+  background-color: #FFFFFF;
+  color: #000000;
   font-family: Arial;
   font-size: 10pt;
 }
 H1
 {
-  color: #F9F5D9;
-  background-color: #664D2B;
-  border: 2px solid #908060;
+  color: #FFFFFF;
+  background-color: #3060C0;
+  border: 2px solid #102040;
   padding: 4px 8px 4px 8px;
   font-size: 16pt;
   margin-top: 32px;
 }
 H2
 {
-  color: #F9F5D9;
-  background-color: #701814;
-  border: 2px solid #903831;
+  color: #FFFFFF;
+  background-color: #2850A0;
+  border: 2px solid #102040;
   padding: 4px 8px 4px 8px;
   font-size: 12pt;
   margin-top: 32px;
 }
 H3
 {
-  color: #F9F5D9;
-  background-color: #664D2B;
-  border: 2px solid #908060;
+  color: #FFFFFF;
+  background-color: #204080;
+  border: 2px solid #102040;
   padding: 4px 8px 4px 8px;
   font-size: 10pt;
   margin-top: 32px;
@@ -61,30 +61,30 @@ H3
 .gTerminal
 {
   font-family: 'Courier New', Courier, Monospace;
-  color: #B7AA91;
+  color: #183060;
   font-weight: bold;
 }
 .gNonterminal
 {
   font-family: 'Courier New', Courier, Monospace;
-  color: #CF7972;
+  color: #2850A0;
   font-weight: bold;
 }
 .gNonterminal a:link,
 .gNonterminal a:visited
 {
-  color: #CF7972;
+  color: #2850A0;
   text-decoration: none;
 }
 .gNonterminal a:hover,
 .gNonterminal a:active
 {
-  color: #CF7972;
+  color: #2850A0;
   text-decoration: underline;
 }
 .gOperator
 {
-  color: #908060;
+  color: #404040;
   font-weight: bold;
 }
 -->
@@ -145,7 +145,7 @@ H3
 </tr>
 <tr>
   <td class="gLexicalCell"><span class="gTerminal">continue</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">free</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">from</span></td>
   <td class="gLexicalCell"><span class="gTerminal">Int8</span></td>
   <td class="gLexicalCell"><span class="gTerminal">repeat</span></td>
   <td class="gLexicalCell"><span class="gTerminal">when</span></td>
@@ -166,7 +166,7 @@ H3
 </tr>
 </table>
 <h2>Special Symbols</h2>
-<p>mugen has a total of 46 special symbols.</p>
+<p>mugen has a total of 45 special symbols.</p>
 <table class="gLexicalTable">
 <tr>
   <td class="gLexicalCell"><span class="gTerminal">-</span></td>
@@ -174,11 +174,10 @@ H3
   <td class="gLexicalCell"><span class="gTerminal">)</span></td>
   <td class="gLexicalCell"><span class="gTerminal">/</span></td>
   <td class="gLexicalCell"><span class="gTerminal">]</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">|</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">+</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&lt;&lt;=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">=&gt;</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&gt;&gt;=</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">||</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">++</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&lt;=</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&gt;</span></td>
 </tr>
 <tr>
   <td class="gLexicalCell"><span class="gTerminal">--</span></td>
@@ -186,11 +185,10 @@ H3
   <td class="gLexicalCell"><span class="gTerminal">*</span></td>
   <td class="gLexicalCell"><span class="gTerminal">/=</span></td>
   <td class="gLexicalCell"><span class="gTerminal">^</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">||</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">++</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&lt;=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&gt;</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&nbsp;</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">|=</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">+=</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">=</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">-&gt;</span></td>
 </tr>
 <tr>
   <td class="gLexicalCell"><span class="gTerminal">!</span></td>
@@ -198,35 +196,32 @@ H3
   <td class="gLexicalCell"><span class="gTerminal">*=</span></td>
   <td class="gLexicalCell"><span class="gTerminal">:</span></td>
   <td class="gLexicalCell"><span class="gTerminal">^=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">|=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">+=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">-&gt;</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&nbsp;</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">}</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&lt;</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">-=</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&gt;=</span></td>
 </tr>
 <tr>
   <td class="gLexicalCell"><span class="gTerminal">!=</span></td>
   <td class="gLexicalCell"><span class="gTerminal">&amp;=</span></td>
   <td class="gLexicalCell"><span class="gTerminal">,</span></td>
   <td class="gLexicalCell"><span class="gTerminal">;</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">_</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">}</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&lt;</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">-=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&gt;=</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&nbsp;</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">{</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">~</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&lt;&lt;</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">==</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&gt;&gt;</span></td>
 </tr>
 <tr>
   <td class="gLexicalCell"><span class="gTerminal">%</span></td>
   <td class="gLexicalCell"><span class="gTerminal">(</span></td>
   <td class="gLexicalCell"><span class="gTerminal">.</span></td>
   <td class="gLexicalCell"><span class="gTerminal">[</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">{</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">~</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&lt;&lt;</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">==</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&gt;&gt;</span></td>
-  <td class="gLexicalCell"><span class="gTerminal">&nbsp;</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">|</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">+</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&lt;&lt;=</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">=&gt;</span></td>
+  <td class="gLexicalCell"><span class="gTerminal">&gt;&gt;=</span></td>
 </tr>
 </table>
 <h2>Comment</h2>
@@ -318,6 +313,16 @@ The <span class="gTerminal">NewLine</span> is not considered part of the group.
 <tr>
   <td class="gSyntaxCell" width="32px">&nbsp;</td>
   <td class="gSyntaxCell"><span class="gTerminal">Identifier</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">Identifier</span> <span class="gTerminal">from</span> <span class="gTerminal">StringLiteral</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">Identifier</span> <span class="gTerminal">from</span> <span class="gTerminal">CharLiteral</span> </td>
 </td>
 </tr>
 </table><br>
@@ -514,66 +519,6 @@ The <span class="gTerminal">NewLine</span> is not considered part of the group.
   <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
 </td>
 </tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
-</td>
-</tr>
 </table><br>
 <a name="func_name"></a>
 <table class="gSyntaxTable">
@@ -649,6 +594,112 @@ The <span class="gTerminal">NewLine</span> is not considered part of the group.
 </td>
 </tr>
 </table><br>
+<a name="class_method"></a>
+<table class="gSyntaxTable">
+<tr>
+  <td class="gSyntaxCell" colspan="2"><span class="gNonterminal"><a href="#class_method"><i>Class-Method</i></a></span> <span class="gOperator">:</span></td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">local</span> <span class="gTerminal">synchronized</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> <span class="gTerminal">-&gt;</span> <span class="gNonterminal"><a href="#types"><i>Types</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gNonterminal"><a href="#params"><i>Params</i></a></span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">synchronized</span> <span class="gTerminal">local</span> <span class="gTerminal">function</span> <span class="gNonterminal"><a href="#func_name"><i>Func-Name</i></a></span> <span class="gTerminal">(</span> <span class="gTerminal">)</span> </td>
+</td>
+</tr>
+</table><br>
 <a name="class_method_decl"></a>
 <table class="gSyntaxTable">
 <tr>
@@ -656,12 +707,12 @@ The <span class="gTerminal">NewLine</span> is not considered part of the group.
 </tr>
 <tr>
   <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gNonterminal"><a href="#interface_method"><i>Interface-Method</i></a></span> <span class="gTerminal">=</span> <span class="gNonterminal"><a href="#expr"><i>Expr</i></a></span> </td>
+  <td class="gSyntaxCell"><span class="gNonterminal"><a href="#class_method"><i>Class-Method</i></a></span> <span class="gTerminal">=</span> <span class="gNonterminal"><a href="#expr"><i>Expr</i></a></span> </td>
 </td>
 </tr>
 <tr>
   <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gNonterminal"><a href="#interface_method"><i>Interface-Method</i></a></span> <span class="gNonterminal"><a href="#block"><i>Block</i></a></span> </td>
+  <td class="gSyntaxCell"><span class="gNonterminal"><a href="#class_method"><i>Class-Method</i></a></span> <span class="gNonterminal"><a href="#block"><i>Block</i></a></span> </td>
 </td>
 </tr>
 </table><br>
@@ -879,7 +930,7 @@ The <span class="gTerminal">NewLine</span> is not considered part of the group.
 </tr>
 <tr>
   <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">free</span> </td>
+  <td class="gSyntaxCell"><span class="gTerminal">delete</span> </td>
 </td>
 </tr>
 </table><br>
@@ -1135,6 +1186,11 @@ The <span class="gTerminal">NewLine</span> is not considered part of the group.
 <tr>
   <td class="gSyntaxCell" width="32px">&nbsp;</td>
   <td class="gSyntaxCell"><span class="gTerminal">foreach</span> <span class="gTerminal">Identifier</span> <span class="gTerminal">:</span> <span class="gNonterminal"><a href="#type"><i>Type</i></a></span> <span class="gTerminal">in</span> <span class="gNonterminal"><a href="#expr"><i>Expr</i></a></span> <span class="gNonterminal"><a href="#block"><i>Block</i></a></span> </td>
+</td>
+</tr>
+<tr>
+  <td class="gSyntaxCell" width="32px">&nbsp;</td>
+  <td class="gSyntaxCell"><span class="gTerminal">foreach</span> <span class="gTerminal">mut</span> <span class="gTerminal">Identifier</span> <span class="gTerminal">:</span> <span class="gNonterminal"><a href="#type"><i>Type</i></a></span> <span class="gTerminal">in</span> <span class="gNonterminal"><a href="#expr"><i>Expr</i></a></span> <span class="gNonterminal"><a href="#block"><i>Block</i></a></span> </td>
 </td>
 </tr>
 </table><br>
@@ -1975,11 +2031,6 @@ The <span class="gTerminal">NewLine</span> is not considered part of the group.
 <tr>
   <td class="gSyntaxCell" width="32px">&nbsp;</td>
   <td class="gSyntaxCell"><span class="gTerminal">null</span> </td>
-</td>
-</tr>
-<tr>
-  <td class="gSyntaxCell" width="32px">&nbsp;</td>
-  <td class="gSyntaxCell"><span class="gTerminal">_</span> </td>
 </td>
 </tr>
 <tr>

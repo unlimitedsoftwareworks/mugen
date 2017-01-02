@@ -245,6 +245,22 @@ void Rule_ImportPath_Identifier(struct TokenStruct *Token, struct ContextStruct 
 
 
 
+/* <Import Path> ::= Identifier from StringLiteral */
+void Rule_ImportPath_Identifier_from_StringLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Import Path> ::= Identifier from CharLiteral */
+void Rule_ImportPath_Identifier_from_CharLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
 /* <Declarations> ::= <Decl> <Declarations> */
 void Rule_Declarations(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
@@ -461,102 +477,6 @@ void Rule_InterfaceMethod_local_function_LParen_RParen2(struct TokenStruct *Toke
 
 
 
-/* <Interface Method> ::= synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_InterfaceMethod_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= synchronized function <Func Name> '(' ')' '->' <Types> */
-void Rule_InterfaceMethod_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= synchronized function <Func Name> '(' <Params> ')' */
-void Rule_InterfaceMethod_synchronized_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= synchronized function <Func Name> '(' ')' */
-void Rule_InterfaceMethod_synchronized_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= local synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_InterfaceMethod_local_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= local synchronized function <Func Name> '(' ')' '->' <Types> */
-void Rule_InterfaceMethod_local_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= local synchronized function <Func Name> '(' <Params> ')' */
-void Rule_InterfaceMethod_local_synchronized_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= local synchronized function <Func Name> '(' ')' */
-void Rule_InterfaceMethod_local_synchronized_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= synchronized local function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_InterfaceMethod_synchronized_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= synchronized local function <Func Name> '(' ')' '->' <Types> */
-void Rule_InterfaceMethod_synchronized_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= synchronized local function <Func Name> '(' <Params> ')' */
-void Rule_InterfaceMethod_synchronized_local_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Interface Method> ::= synchronized local function <Func Name> '(' ')' */
-void Rule_InterfaceMethod_synchronized_local_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
 /* <Func Name> ::= Identifier */
 void Rule_FuncName_Identifier(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
@@ -637,7 +557,167 @@ void Rule_ClassDecl2(struct TokenStruct *Token, struct ContextStruct *Context) {
 
 
 
-/* <Class Method Decl> ::= <Interface Method> '=' <Expr> */
+/* <Class Method> ::= function <Func Name> '(' <Params> ')' '->' <Types> */
+void Rule_ClassMethod_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= function <Func Name> '(' ')' '->' <Types> */
+void Rule_ClassMethod_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= function <Func Name> '(' <Params> ')' */
+void Rule_ClassMethod_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= function <Func Name> '(' ')' */
+void Rule_ClassMethod_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local function <Func Name> '(' <Params> ')' '->' <Types> */
+void Rule_ClassMethod_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local function <Func Name> '(' ')' '->' <Types> */
+void Rule_ClassMethod_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local function <Func Name> '(' <Params> ')' */
+void Rule_ClassMethod_local_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local function <Func Name> '(' ')' */
+void Rule_ClassMethod_local_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
+void Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized function <Func Name> '(' ')' '->' <Types> */
+void Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized function <Func Name> '(' <Params> ')' */
+void Rule_ClassMethod_synchronized_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized function <Func Name> '(' ')' */
+void Rule_ClassMethod_synchronized_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local synchronized function <Func Name> '(' ')' '->' <Types> */
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local synchronized function <Func Name> '(' <Params> ')' */
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= local synchronized function <Func Name> '(' ')' */
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized local function <Func Name> '(' <Params> ')' '->' <Types> */
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized local function <Func Name> '(' ')' '->' <Types> */
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized local function <Func Name> '(' <Params> ')' */
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method> ::= synchronized local function <Func Name> '(' ')' */
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Class Method Decl> ::= <Class Method> '=' <Expr> */
 void Rule_ClassMethodDecl_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
   };
@@ -645,7 +725,7 @@ void Rule_ClassMethodDecl_Eq(struct TokenStruct *Token, struct ContextStruct *Co
 
 
 
-/* <Class Method Decl> ::= <Interface Method> <Block> */
+/* <Class Method Decl> ::= <Class Method> <Block> */
 void Rule_ClassMethodDecl(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
   };
@@ -965,8 +1045,8 @@ void Rule_OverrideableOperator_new(struct TokenStruct *Token, struct ContextStru
 
 
 
-/* <Overrideable Operator> ::= free */
-void Rule_OverrideableOperator_free(struct TokenStruct *Token, struct ContextStruct *Context) {
+/* <Overrideable Operator> ::= delete */
+void Rule_OverrideableOperator_delete(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
   };
 
@@ -1285,6 +1365,14 @@ void Rule_ForeachStmt_foreach_Identifier_Colon_in(struct TokenStruct *Token, str
 
 
 
+/* <Foreach Stmt> ::= foreach mut Identifier ':' <Type> in <Expr> <Block> */
+void Rule_ForeachStmt_foreach_mut_Identifier_Colon_in(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
 /* <Return Stmt> ::= return <Expr List> */
 void Rule_ReturnStmt_return(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
@@ -1437,8 +1525,16 @@ void Rule_Type2(struct TokenStruct *Token, struct ContextStruct *Context) {
 
 
 
-/* <Type> ::= <Pkg Template> */
+/* <Type> ::= <Pkg> */
 void Rule_Type3(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Type> ::= <Pkg Template> */
+void Rule_Type4(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
   };
 
@@ -1605,22 +1701,6 @@ void Rule_FnType_fn_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct Con
 
 
 
-/* <Pkg Template> ::= <Pkg> */
-void Rule_PkgTemplate(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
-/* <Pkg Template> ::= <Pkg> '<' <Types> '>' */
-void Rule_PkgTemplate_Lt_Gt(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
 /* <Pkg Template List> ::= <Pkg Template> ',' <Pkg Template List> */
 void Rule_PkgTemplateList_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
@@ -1629,8 +1709,24 @@ void Rule_PkgTemplateList_Comma(struct TokenStruct *Token, struct ContextStruct 
 
 
 
+/* <Pkg Template List> ::= <Pkg> ',' <Pkg Template List> */
+void Rule_PkgTemplateList_Comma2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
 /* <Pkg Template List> ::= <Pkg Template> */
 void Rule_PkgTemplateList(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Pkg Template List> ::= <Pkg> */
+void Rule_PkgTemplateList2(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
   };
 
@@ -1647,6 +1743,14 @@ void Rule_Pkg_Identifier_Dot(struct TokenStruct *Token, struct ContextStruct *Co
 
 /* <Pkg> ::= Identifier */
 void Rule_Pkg_Identifier(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <Pkg Template> ::= <Pkg> '<' <Types> '>' */
+void Rule_PkgTemplate_Lt_Gt(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
   };
 
@@ -2269,14 +2373,6 @@ void Rule_Value_null(struct TokenStruct *Token, struct ContextStruct *Context) {
 
 
 
-/* <Value> ::= '_' */
-void Rule_Value__(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
-
-
-
-
 /* <Value> ::= true */
 void Rule_Value_true(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
@@ -2421,8 +2517,24 @@ void Rule_NewExpr_new_LParen_RParen(struct TokenStruct *Token, struct ContextStr
 
 
 
-/* <New Expr> ::= new <Pkg Template> '(' <Expr> ')' */
+/* <New Expr> ::= new <Pkg Template> '(' <Expr List> ')' */
 void Rule_NewExpr_new_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <New Expr> ::= new <Pkg> '(' ')' */
+void Rule_NewExpr_new_LParen_RParen3(struct TokenStruct *Token, struct ContextStruct *Context) {
+  RuleTemplate(Token,Context);
+  };
+
+
+
+
+/* <New Expr> ::= new <Pkg> '(' <Expr List> ')' */
+void Rule_NewExpr_new_LParen_RParen4(struct TokenStruct *Token, struct ContextStruct *Context) {
   RuleTemplate(Token,Context);
   };
 
@@ -2476,829 +2588,871 @@ void (*RuleJumpTable[])(struct TokenStruct *Token, struct ContextStruct *Context
   /* 7. <Import Path> ::= Identifier */
   Rule_ImportPath_Identifier,
 
-  /* 8. <Declarations> ::= <Decl> <Declarations> */
+  /* 8. <Import Path> ::= Identifier from StringLiteral */
+  Rule_ImportPath_Identifier_from_StringLiteral,
+
+  /* 9. <Import Path> ::= Identifier from CharLiteral */
+  Rule_ImportPath_Identifier_from_CharLiteral,
+
+  /* 10. <Declarations> ::= <Decl> <Declarations> */
   Rule_Declarations,
 
-  /* 9. <Declarations> ::=  */
+  /* 11. <Declarations> ::=  */
   Rule_Declarations2,
 
-  /* 10. <Decl> ::= <LType Decl> */
+  /* 12. <Decl> ::= <LType Decl> */
   Rule_Decl,
 
-  /* 11. <Decl> ::= <LVar Decl> */
+  /* 13. <Decl> ::= <LVar Decl> */
   Rule_Decl2,
 
-  /* 12. <Decl> ::= <LFunction Decl> */
+  /* 14. <Decl> ::= <LFunction Decl> */
   Rule_Decl3,
 
-  /* 13. <LType Decl> ::= local <Type Decl> */
+  /* 15. <LType Decl> ::= local <Type Decl> */
   Rule_LTypeDecl_local,
 
-  /* 14. <LType Decl> ::= <Type Decl> */
+  /* 16. <LType Decl> ::= <Type Decl> */
   Rule_LTypeDecl,
 
-  /* 15. <Type Decl> ::= <Enum Decl> */
+  /* 17. <Type Decl> ::= <Enum Decl> */
   Rule_TypeDecl,
 
-  /* 16. <Type Decl> ::= <Interface Def> */
+  /* 18. <Type Decl> ::= <Interface Def> */
   Rule_TypeDecl2,
 
-  /* 17. <Type Decl> ::= <Class Def> */
+  /* 19. <Type Decl> ::= <Class Def> */
   Rule_TypeDecl3,
 
-  /* 18. <Type Decl> ::= <Type Def> */
+  /* 20. <Type Decl> ::= <Type Def> */
   Rule_TypeDecl4,
 
-  /* 19. <Enum Decl> ::= enum Identifier '{' <Enum Values> '}' */
+  /* 21. <Enum Decl> ::= enum Identifier '{' <Enum Values> '}' */
   Rule_EnumDecl_enum_Identifier_LBrace_RBrace,
 
-  /* 20. <Enum Values> ::= <Enum Value> ',' <Enum Values> */
+  /* 22. <Enum Values> ::= <Enum Value> ',' <Enum Values> */
   Rule_EnumValues_Comma,
 
-  /* 21. <Enum Values> ::= <Enum Value> */
+  /* 23. <Enum Values> ::= <Enum Value> */
   Rule_EnumValues,
 
-  /* 22. <Enum Value> ::= Identifier */
+  /* 24. <Enum Value> ::= Identifier */
   Rule_EnumValue_Identifier,
 
-  /* 23. <Interface Def> ::= interface Identifier '{' <Interface Methods> '}' */
+  /* 25. <Interface Def> ::= interface Identifier '{' <Interface Methods> '}' */
   Rule_InterfaceDef_interface_Identifier_LBrace_RBrace,
 
-  /* 24. <Interface Def> ::= interface Identifier '<' <Id List> '>' '{' <Interface Methods> '}' */
+  /* 26. <Interface Def> ::= interface Identifier '<' <Id List> '>' '{' <Interface Methods> '}' */
   Rule_InterfaceDef_interface_Identifier_Lt_Gt_LBrace_RBrace,
 
-  /* 25. <Interface Methods> ::= <Interface Method> <Interface Methods> */
+  /* 27. <Interface Methods> ::= <Interface Method> <Interface Methods> */
   Rule_InterfaceMethods,
 
-  /* 26. <Interface Methods> ::= <Interface Method> */
+  /* 28. <Interface Methods> ::= <Interface Method> */
   Rule_InterfaceMethods2,
 
-  /* 27. <Interface Method> ::= function <Func Name> '(' <Params> ')' '->' <Types> */
+  /* 29. <Interface Method> ::= function <Func Name> '(' <Params> ')' '->' <Types> */
   Rule_InterfaceMethod_function_LParen_RParen_MinusGt,
 
-  /* 28. <Interface Method> ::= function <Func Name> '(' ')' '->' <Types> */
+  /* 30. <Interface Method> ::= function <Func Name> '(' ')' '->' <Types> */
   Rule_InterfaceMethod_function_LParen_RParen_MinusGt2,
 
-  /* 29. <Interface Method> ::= function <Func Name> '(' <Params> ')' */
+  /* 31. <Interface Method> ::= function <Func Name> '(' <Params> ')' */
   Rule_InterfaceMethod_function_LParen_RParen,
 
-  /* 30. <Interface Method> ::= function <Func Name> '(' ')' */
+  /* 32. <Interface Method> ::= function <Func Name> '(' ')' */
   Rule_InterfaceMethod_function_LParen_RParen2,
 
-  /* 31. <Interface Method> ::= local function <Func Name> '(' <Params> ')' '->' <Types> */
+  /* 33. <Interface Method> ::= local function <Func Name> '(' <Params> ')' '->' <Types> */
   Rule_InterfaceMethod_local_function_LParen_RParen_MinusGt,
 
-  /* 32. <Interface Method> ::= local function <Func Name> '(' ')' '->' <Types> */
+  /* 34. <Interface Method> ::= local function <Func Name> '(' ')' '->' <Types> */
   Rule_InterfaceMethod_local_function_LParen_RParen_MinusGt2,
 
-  /* 33. <Interface Method> ::= local function <Func Name> '(' <Params> ')' */
+  /* 35. <Interface Method> ::= local function <Func Name> '(' <Params> ')' */
   Rule_InterfaceMethod_local_function_LParen_RParen,
 
-  /* 34. <Interface Method> ::= local function <Func Name> '(' ')' */
+  /* 36. <Interface Method> ::= local function <Func Name> '(' ')' */
   Rule_InterfaceMethod_local_function_LParen_RParen2,
 
-  /* 35. <Interface Method> ::= synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
-  Rule_InterfaceMethod_synchronized_function_LParen_RParen_MinusGt,
-
-  /* 36. <Interface Method> ::= synchronized function <Func Name> '(' ')' '->' <Types> */
-  Rule_InterfaceMethod_synchronized_function_LParen_RParen_MinusGt2,
-
-  /* 37. <Interface Method> ::= synchronized function <Func Name> '(' <Params> ')' */
-  Rule_InterfaceMethod_synchronized_function_LParen_RParen,
-
-  /* 38. <Interface Method> ::= synchronized function <Func Name> '(' ')' */
-  Rule_InterfaceMethod_synchronized_function_LParen_RParen2,
-
-  /* 39. <Interface Method> ::= local synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
-  Rule_InterfaceMethod_local_synchronized_function_LParen_RParen_MinusGt,
-
-  /* 40. <Interface Method> ::= local synchronized function <Func Name> '(' ')' '->' <Types> */
-  Rule_InterfaceMethod_local_synchronized_function_LParen_RParen_MinusGt2,
-
-  /* 41. <Interface Method> ::= local synchronized function <Func Name> '(' <Params> ')' */
-  Rule_InterfaceMethod_local_synchronized_function_LParen_RParen,
-
-  /* 42. <Interface Method> ::= local synchronized function <Func Name> '(' ')' */
-  Rule_InterfaceMethod_local_synchronized_function_LParen_RParen2,
-
-  /* 43. <Interface Method> ::= synchronized local function <Func Name> '(' <Params> ')' '->' <Types> */
-  Rule_InterfaceMethod_synchronized_local_function_LParen_RParen_MinusGt,
-
-  /* 44. <Interface Method> ::= synchronized local function <Func Name> '(' ')' '->' <Types> */
-  Rule_InterfaceMethod_synchronized_local_function_LParen_RParen_MinusGt2,
-
-  /* 45. <Interface Method> ::= synchronized local function <Func Name> '(' <Params> ')' */
-  Rule_InterfaceMethod_synchronized_local_function_LParen_RParen,
-
-  /* 46. <Interface Method> ::= synchronized local function <Func Name> '(' ')' */
-  Rule_InterfaceMethod_synchronized_local_function_LParen_RParen2,
-
-  /* 47. <Func Name> ::= Identifier */
+  /* 37. <Func Name> ::= Identifier */
   Rule_FuncName_Identifier,
 
-  /* 48. <Func Name> ::= <Overrideable Operator> */
+  /* 38. <Func Name> ::= <Overrideable Operator> */
   Rule_FuncName,
 
-  /* 49. <Class Def> ::= class Identifier '{' <Class Decls> '}' */
+  /* 39. <Class Def> ::= class Identifier '{' <Class Decls> '}' */
   Rule_ClassDef_class_Identifier_LBrace_RBrace,
 
-  /* 50. <Class Def> ::= class Identifier implements <Pkg Template List> '{' <Class Decls> '}' */
+  /* 40. <Class Def> ::= class Identifier implements <Pkg Template List> '{' <Class Decls> '}' */
   Rule_ClassDef_class_Identifier_implements_LBrace_RBrace,
 
-  /* 51. <Class Def> ::= immutable class Identifier '{' <Class Decls> '}' */
+  /* 41. <Class Def> ::= immutable class Identifier '{' <Class Decls> '}' */
   Rule_ClassDef_immutable_class_Identifier_LBrace_RBrace,
 
-  /* 52. <Class Def> ::= immutable class Identifier implements <Pkg Template List> '{' <Class Decls> '}' */
+  /* 42. <Class Def> ::= immutable class Identifier implements <Pkg Template List> '{' <Class Decls> '}' */
   Rule_ClassDef_immutable_class_Identifier_implements_LBrace_RBrace,
 
-  /* 53. <Class Decls> ::= <Class Decl> <Class Decls> */
+  /* 43. <Class Decls> ::= <Class Decl> <Class Decls> */
   Rule_ClassDecls,
 
-  /* 54. <Class Decls> ::= <Class Decl> */
+  /* 44. <Class Decls> ::= <Class Decl> */
   Rule_ClassDecls2,
 
-  /* 55. <Class Decl> ::= <Class Method Decl> */
+  /* 45. <Class Decl> ::= <Class Method Decl> */
   Rule_ClassDecl,
 
-  /* 56. <Class Decl> ::= <Class Variable Decl> */
+  /* 46. <Class Decl> ::= <Class Variable Decl> */
   Rule_ClassDecl2,
 
-  /* 57. <Class Method Decl> ::= <Interface Method> '=' <Expr> */
+  /* 47. <Class Method> ::= function <Func Name> '(' <Params> ')' '->' <Types> */
+  Rule_ClassMethod_function_LParen_RParen_MinusGt,
+
+  /* 48. <Class Method> ::= function <Func Name> '(' ')' '->' <Types> */
+  Rule_ClassMethod_function_LParen_RParen_MinusGt2,
+
+  /* 49. <Class Method> ::= function <Func Name> '(' <Params> ')' */
+  Rule_ClassMethod_function_LParen_RParen,
+
+  /* 50. <Class Method> ::= function <Func Name> '(' ')' */
+  Rule_ClassMethod_function_LParen_RParen2,
+
+  /* 51. <Class Method> ::= local function <Func Name> '(' <Params> ')' '->' <Types> */
+  Rule_ClassMethod_local_function_LParen_RParen_MinusGt,
+
+  /* 52. <Class Method> ::= local function <Func Name> '(' ')' '->' <Types> */
+  Rule_ClassMethod_local_function_LParen_RParen_MinusGt2,
+
+  /* 53. <Class Method> ::= local function <Func Name> '(' <Params> ')' */
+  Rule_ClassMethod_local_function_LParen_RParen,
+
+  /* 54. <Class Method> ::= local function <Func Name> '(' ')' */
+  Rule_ClassMethod_local_function_LParen_RParen2,
+
+  /* 55. <Class Method> ::= synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
+  Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt,
+
+  /* 56. <Class Method> ::= synchronized function <Func Name> '(' ')' '->' <Types> */
+  Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt2,
+
+  /* 57. <Class Method> ::= synchronized function <Func Name> '(' <Params> ')' */
+  Rule_ClassMethod_synchronized_function_LParen_RParen,
+
+  /* 58. <Class Method> ::= synchronized function <Func Name> '(' ')' */
+  Rule_ClassMethod_synchronized_function_LParen_RParen2,
+
+  /* 59. <Class Method> ::= local synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
+  Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt,
+
+  /* 60. <Class Method> ::= local synchronized function <Func Name> '(' ')' '->' <Types> */
+  Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt2,
+
+  /* 61. <Class Method> ::= local synchronized function <Func Name> '(' <Params> ')' */
+  Rule_ClassMethod_local_synchronized_function_LParen_RParen,
+
+  /* 62. <Class Method> ::= local synchronized function <Func Name> '(' ')' */
+  Rule_ClassMethod_local_synchronized_function_LParen_RParen2,
+
+  /* 63. <Class Method> ::= synchronized local function <Func Name> '(' <Params> ')' '->' <Types> */
+  Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt,
+
+  /* 64. <Class Method> ::= synchronized local function <Func Name> '(' ')' '->' <Types> */
+  Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt2,
+
+  /* 65. <Class Method> ::= synchronized local function <Func Name> '(' <Params> ')' */
+  Rule_ClassMethod_synchronized_local_function_LParen_RParen,
+
+  /* 66. <Class Method> ::= synchronized local function <Func Name> '(' ')' */
+  Rule_ClassMethod_synchronized_local_function_LParen_RParen2,
+
+  /* 67. <Class Method Decl> ::= <Class Method> '=' <Expr> */
   Rule_ClassMethodDecl_Eq,
 
-  /* 58. <Class Method Decl> ::= <Interface Method> <Block> */
+  /* 68. <Class Method Decl> ::= <Class Method> <Block> */
   Rule_ClassMethodDecl,
 
-  /* 59. <Class Variable Decl> ::= <LVar Decl> */
+  /* 69. <Class Variable Decl> ::= <LVar Decl> */
   Rule_ClassVariableDecl,
 
-  /* 60. <Type Def> ::= type Identifier '=' <Type> */
+  /* 70. <Type Def> ::= type Identifier '=' <Type> */
   Rule_TypeDef_type_Identifier_Eq,
 
-  /* 61. <Overrideable Operator> ::= '+' */
+  /* 71. <Overrideable Operator> ::= '+' */
   Rule_OverrideableOperator_Plus,
 
-  /* 62. <Overrideable Operator> ::= '-' */
+  /* 72. <Overrideable Operator> ::= '-' */
   Rule_OverrideableOperator_Minus,
 
-  /* 63. <Overrideable Operator> ::= '*' */
+  /* 73. <Overrideable Operator> ::= '*' */
   Rule_OverrideableOperator_Times,
 
-  /* 64. <Overrideable Operator> ::= '/' */
+  /* 74. <Overrideable Operator> ::= '/' */
   Rule_OverrideableOperator_Div,
 
-  /* 65. <Overrideable Operator> ::= '%' */
+  /* 75. <Overrideable Operator> ::= '%' */
   Rule_OverrideableOperator_Percent,
 
-  /* 66. <Overrideable Operator> ::= '^' */
+  /* 76. <Overrideable Operator> ::= '^' */
   Rule_OverrideableOperator_Caret,
 
-  /* 67. <Overrideable Operator> ::= '&' */
+  /* 77. <Overrideable Operator> ::= '&' */
   Rule_OverrideableOperator_Amp,
 
-  /* 68. <Overrideable Operator> ::= '|' */
+  /* 78. <Overrideable Operator> ::= '|' */
   Rule_OverrideableOperator_Pipe,
 
-  /* 69. <Overrideable Operator> ::= '~' */
+  /* 79. <Overrideable Operator> ::= '~' */
   Rule_OverrideableOperator_Tilde,
 
-  /* 70. <Overrideable Operator> ::= '!' */
+  /* 80. <Overrideable Operator> ::= '!' */
   Rule_OverrideableOperator_Exclam,
 
-  /* 71. <Overrideable Operator> ::= '=' */
+  /* 81. <Overrideable Operator> ::= '=' */
   Rule_OverrideableOperator_Eq,
 
-  /* 72. <Overrideable Operator> ::= '<' */
+  /* 82. <Overrideable Operator> ::= '<' */
   Rule_OverrideableOperator_Lt,
 
-  /* 73. <Overrideable Operator> ::= '>' */
+  /* 83. <Overrideable Operator> ::= '>' */
   Rule_OverrideableOperator_Gt,
 
-  /* 74. <Overrideable Operator> ::= '+=' */
+  /* 84. <Overrideable Operator> ::= '+=' */
   Rule_OverrideableOperator_PlusEq,
 
-  /* 75. <Overrideable Operator> ::= '-=' */
+  /* 85. <Overrideable Operator> ::= '-=' */
   Rule_OverrideableOperator_MinusEq,
 
-  /* 76. <Overrideable Operator> ::= '*=' */
+  /* 86. <Overrideable Operator> ::= '*=' */
   Rule_OverrideableOperator_TimesEq,
 
-  /* 77. <Overrideable Operator> ::= '/=' */
+  /* 87. <Overrideable Operator> ::= '/=' */
   Rule_OverrideableOperator_DivEq,
 
-  /* 78. <Overrideable Operator> ::= '%=' */
+  /* 88. <Overrideable Operator> ::= '%=' */
   Rule_OverrideableOperator_PercentEq,
 
-  /* 79. <Overrideable Operator> ::= '^=' */
+  /* 89. <Overrideable Operator> ::= '^=' */
   Rule_OverrideableOperator_CaretEq,
 
-  /* 80. <Overrideable Operator> ::= '&=' */
+  /* 90. <Overrideable Operator> ::= '&=' */
   Rule_OverrideableOperator_AmpEq,
 
-  /* 81. <Overrideable Operator> ::= '|=' */
+  /* 91. <Overrideable Operator> ::= '|=' */
   Rule_OverrideableOperator_PipeEq,
 
-  /* 82. <Overrideable Operator> ::= '<<' */
+  /* 92. <Overrideable Operator> ::= '<<' */
   Rule_OverrideableOperator_LtLt,
 
-  /* 83. <Overrideable Operator> ::= '>>' */
+  /* 93. <Overrideable Operator> ::= '>>' */
   Rule_OverrideableOperator_GtGt,
 
-  /* 84. <Overrideable Operator> ::= '>>=' */
+  /* 94. <Overrideable Operator> ::= '>>=' */
   Rule_OverrideableOperator_GtGtEq,
 
-  /* 85. <Overrideable Operator> ::= '<<=' */
+  /* 95. <Overrideable Operator> ::= '<<=' */
   Rule_OverrideableOperator_LtLtEq,
 
-  /* 86. <Overrideable Operator> ::= '==' */
+  /* 96. <Overrideable Operator> ::= '==' */
   Rule_OverrideableOperator_EqEq,
 
-  /* 87. <Overrideable Operator> ::= '!=' */
+  /* 97. <Overrideable Operator> ::= '!=' */
   Rule_OverrideableOperator_ExclamEq,
 
-  /* 88. <Overrideable Operator> ::= '<=' */
+  /* 98. <Overrideable Operator> ::= '<=' */
   Rule_OverrideableOperator_LtEq,
 
-  /* 89. <Overrideable Operator> ::= '>=' */
+  /* 99. <Overrideable Operator> ::= '>=' */
   Rule_OverrideableOperator_GtEq,
 
-  /* 90. <Overrideable Operator> ::= '&&' */
+  /* 100. <Overrideable Operator> ::= '&&' */
   Rule_OverrideableOperator_AmpAmp,
 
-  /* 91. <Overrideable Operator> ::= '||' */
+  /* 101. <Overrideable Operator> ::= '||' */
   Rule_OverrideableOperator_PipePipe,
 
-  /* 92. <Overrideable Operator> ::= '++' */
+  /* 102. <Overrideable Operator> ::= '++' */
   Rule_OverrideableOperator_PlusPlus,
 
-  /* 93. <Overrideable Operator> ::= '--' */
+  /* 103. <Overrideable Operator> ::= '--' */
   Rule_OverrideableOperator_MinusMinus,
 
-  /* 94. <Overrideable Operator> ::= ',' */
+  /* 104. <Overrideable Operator> ::= ',' */
   Rule_OverrideableOperator_Comma,
 
-  /* 95. <Overrideable Operator> ::= '(' ')' */
+  /* 105. <Overrideable Operator> ::= '(' ')' */
   Rule_OverrideableOperator_LParen_RParen,
 
-  /* 96. <Overrideable Operator> ::= '[' ']' */
+  /* 106. <Overrideable Operator> ::= '[' ']' */
   Rule_OverrideableOperator_LBracket_RBracket,
 
-  /* 97. <Overrideable Operator> ::= new */
+  /* 107. <Overrideable Operator> ::= new */
   Rule_OverrideableOperator_new,
 
-  /* 98. <Overrideable Operator> ::= free */
-  Rule_OverrideableOperator_free,
+  /* 108. <Overrideable Operator> ::= delete */
+  Rule_OverrideableOperator_delete,
 
-  /* 99. <LFunction Decl> ::= <Interface Method> '=' <Expr> */
+  /* 109. <LFunction Decl> ::= <Interface Method> '=' <Expr> */
   Rule_LFunctionDecl_Eq,
 
-  /* 100. <LFunction Decl> ::= <Interface Method> <Block> */
+  /* 110. <LFunction Decl> ::= <Interface Method> <Block> */
   Rule_LFunctionDecl,
 
-  /* 101. <LVar Decl> ::= let <Id List> ':' <Type> '=' <Expr List> */
+  /* 111. <LVar Decl> ::= let <Id List> ':' <Type> '=' <Expr List> */
   Rule_LVarDecl_let_Colon_Eq,
 
-  /* 102. <LVar Decl> ::= let <Id List> ':' <Type> */
+  /* 112. <LVar Decl> ::= let <Id List> ':' <Type> */
   Rule_LVarDecl_let_Colon,
 
-  /* 103. <LVar Decl> ::= let <Id List> '=' <Expr List> */
+  /* 113. <LVar Decl> ::= let <Id List> '=' <Expr List> */
   Rule_LVarDecl_let_Eq,
 
-  /* 104. <LVar Decl> ::= let mut <Id List> ':' <Type> '=' <Expr List> */
+  /* 114. <LVar Decl> ::= let mut <Id List> ':' <Type> '=' <Expr List> */
   Rule_LVarDecl_let_mut_Colon_Eq,
 
-  /* 105. <LVar Decl> ::= let mut <Id List> '=' <Expr List> */
+  /* 115. <LVar Decl> ::= let mut <Id List> '=' <Expr List> */
   Rule_LVarDecl_let_mut_Eq,
 
-  /* 106. <LVar Decl> ::= let local <Id List> ':' <Type> '=' <Expr List> */
+  /* 116. <LVar Decl> ::= let local <Id List> ':' <Type> '=' <Expr List> */
   Rule_LVarDecl_let_local_Colon_Eq,
 
-  /* 107. <LVar Decl> ::= let local <Id List> ':' <Type> */
+  /* 117. <LVar Decl> ::= let local <Id List> ':' <Type> */
   Rule_LVarDecl_let_local_Colon,
 
-  /* 108. <LVar Decl> ::= let local <Id List> '=' <Expr List> */
+  /* 118. <LVar Decl> ::= let local <Id List> '=' <Expr List> */
   Rule_LVarDecl_let_local_Eq,
 
-  /* 109. <LVar Decl> ::= let mut local <Id List> ':' <Type> '=' <Expr List> */
+  /* 119. <LVar Decl> ::= let mut local <Id List> ':' <Type> '=' <Expr List> */
   Rule_LVarDecl_let_mut_local_Colon_Eq,
 
-  /* 110. <LVar Decl> ::= let mut local <Id List> '=' <Expr List> */
+  /* 120. <LVar Decl> ::= let mut local <Id List> '=' <Expr List> */
   Rule_LVarDecl_let_mut_local_Eq,
 
-  /* 111. <LVar Decl> ::= let local mut <Id List> ':' <Type> '=' <Expr List> */
+  /* 121. <LVar Decl> ::= let local mut <Id List> ':' <Type> '=' <Expr List> */
   Rule_LVarDecl_let_local_mut_Colon_Eq,
 
-  /* 112. <LVar Decl> ::= let local mut <Id List> '=' <Expr List> */
+  /* 122. <LVar Decl> ::= let local mut <Id List> '=' <Expr List> */
   Rule_LVarDecl_let_local_mut_Eq,
 
-  /* 113. <Statements> ::= <Stmt> <Statements> */
+  /* 123. <Statements> ::= <Stmt> <Statements> */
   Rule_Statements,
 
-  /* 114. <Statements> ::= <Stmt> */
+  /* 124. <Statements> ::= <Stmt> */
   Rule_Statements2,
 
-  /* 115. <Stmt> ::= <Block> */
+  /* 125. <Stmt> ::= <Block> */
   Rule_Stmt,
 
-  /* 116. <Stmt> ::= <Var Decl Stmt> */
+  /* 126. <Stmt> ::= <Var Decl Stmt> */
   Rule_Stmt2,
 
-  /* 117. <Stmt> ::= <Repeat Stmt> */
+  /* 127. <Stmt> ::= <Repeat Stmt> */
   Rule_Stmt3,
 
-  /* 118. <Stmt> ::= <While Stmt> */
+  /* 128. <Stmt> ::= <While Stmt> */
   Rule_Stmt4,
 
-  /* 119. <Stmt> ::= <For Stmt> */
+  /* 129. <Stmt> ::= <For Stmt> */
   Rule_Stmt5,
 
-  /* 120. <Stmt> ::= <Foreach Stmt> */
+  /* 130. <Stmt> ::= <Foreach Stmt> */
   Rule_Stmt6,
 
-  /* 121. <Stmt> ::= <Expr> */
+  /* 131. <Stmt> ::= <Expr> */
   Rule_Stmt7,
 
-  /* 122. <Stmt> ::= <Return Stmt> */
+  /* 132. <Stmt> ::= <Return Stmt> */
   Rule_Stmt8,
 
-  /* 123. <Stmt> ::= <Break Stmt> */
+  /* 133. <Stmt> ::= <Break Stmt> */
   Rule_Stmt9,
 
-  /* 124. <Stmt> ::= <Continue Stmt> */
+  /* 134. <Stmt> ::= <Continue Stmt> */
   Rule_Stmt10,
 
-  /* 125. <Stmt> ::= <If Stmt> */
+  /* 135. <Stmt> ::= <If Stmt> */
   Rule_Stmt11,
 
-  /* 126. <Stmt> ::= <Match Stmt> */
+  /* 136. <Stmt> ::= <Match Stmt> */
   Rule_Stmt12,
 
-  /* 127. <Block> ::= '{' <Statements> '}' */
+  /* 137. <Block> ::= '{' <Statements> '}' */
   Rule_Block_LBrace_RBrace,
 
-  /* 128. <Block> ::= synchronized '{' <Statements> '}' */
+  /* 138. <Block> ::= synchronized '{' <Statements> '}' */
   Rule_Block_synchronized_LBrace_RBrace,
 
-  /* 129. <Var Decl Stmt> ::= let <Id List> ':' <Type> '=' <Expr List> */
+  /* 139. <Var Decl Stmt> ::= let <Id List> ':' <Type> '=' <Expr List> */
   Rule_VarDeclStmt_let_Colon_Eq,
 
-  /* 130. <Var Decl Stmt> ::= let <Id List> ':' <Type> */
+  /* 140. <Var Decl Stmt> ::= let <Id List> ':' <Type> */
   Rule_VarDeclStmt_let_Colon,
 
-  /* 131. <Var Decl Stmt> ::= let <Id List> '=' <Expr List> */
+  /* 141. <Var Decl Stmt> ::= let <Id List> '=' <Expr List> */
   Rule_VarDeclStmt_let_Eq,
 
-  /* 132. <Var Decl Stmt> ::= let mut <Id List> ':' <Type> '=' <Expr List> */
+  /* 142. <Var Decl Stmt> ::= let mut <Id List> ':' <Type> '=' <Expr List> */
   Rule_VarDeclStmt_let_mut_Colon_Eq,
 
-  /* 133. <Var Decl Stmt> ::= let mut <Id List> '=' <Expr List> */
+  /* 143. <Var Decl Stmt> ::= let mut <Id List> '=' <Expr List> */
   Rule_VarDeclStmt_let_mut_Eq,
 
-  /* 134. <Repeat Stmt> ::= repeat <Block> while <Expr> */
+  /* 144. <Repeat Stmt> ::= repeat <Block> while <Expr> */
   Rule_RepeatStmt_repeat_while,
 
-  /* 135. <While Stmt> ::= while <Expr> <Block> */
+  /* 145. <While Stmt> ::= while <Expr> <Block> */
   Rule_WhileStmt_while,
 
-  /* 136. <For Stmt> ::= for <Expr List> ';' <Expr> ';' <Expr List> <Block> */
+  /* 146. <For Stmt> ::= for <Expr List> ';' <Expr> ';' <Expr List> <Block> */
   Rule_ForStmt_for_Semi_Semi,
 
-  /* 137. <Foreach Stmt> ::= foreach Identifier ':' <Type> in <Expr> <Block> */
+  /* 147. <Foreach Stmt> ::= foreach Identifier ':' <Type> in <Expr> <Block> */
   Rule_ForeachStmt_foreach_Identifier_Colon_in,
 
-  /* 138. <Return Stmt> ::= return <Expr List> */
+  /* 148. <Foreach Stmt> ::= foreach mut Identifier ':' <Type> in <Expr> <Block> */
+  Rule_ForeachStmt_foreach_mut_Identifier_Colon_in,
+
+  /* 149. <Return Stmt> ::= return <Expr List> */
   Rule_ReturnStmt_return,
 
-  /* 139. <Return Stmt> ::= return */
+  /* 150. <Return Stmt> ::= return */
   Rule_ReturnStmt_return2,
 
-  /* 140. <Continue Stmt> ::= continue */
+  /* 151. <Continue Stmt> ::= continue */
   Rule_ContinueStmt_continue,
 
-  /* 141. <Break Stmt> ::= break */
+  /* 152. <Break Stmt> ::= break */
   Rule_BreakStmt_break,
 
-  /* 142. <If Stmt> ::= if <Expr> <Block> <Else If Stmt> */
+  /* 153. <If Stmt> ::= if <Expr> <Block> <Else If Stmt> */
   Rule_IfStmt_if,
 
-  /* 143. <Else If Stmt> ::= else <If Stmt> <Else If Stmt> */
+  /* 154. <Else If Stmt> ::= else <If Stmt> <Else If Stmt> */
   Rule_ElseIfStmt_else,
 
-  /* 144. <Else If Stmt> ::= <Else Stmt> */
+  /* 155. <Else If Stmt> ::= <Else Stmt> */
   Rule_ElseIfStmt,
 
-  /* 145. <Else If Stmt> ::=  */
+  /* 156. <Else If Stmt> ::=  */
   Rule_ElseIfStmt2,
 
-  /* 146. <Else Stmt> ::= else <Block> */
+  /* 157. <Else Stmt> ::= else <Block> */
   Rule_ElseStmt_else,
 
-  /* 147. <Match Stmt> ::= match <Expr List> '{' <Match List> <Else Element> '}' */
+  /* 158. <Match Stmt> ::= match <Expr List> '{' <Match List> <Else Element> '}' */
   Rule_MatchStmt_match_LBrace_RBrace,
 
-  /* 148. <Match Stmt> ::= match <Expr List> '{' <Match List> '}' */
+  /* 159. <Match Stmt> ::= match <Expr List> '{' <Match List> '}' */
   Rule_MatchStmt_match_LBrace_RBrace2,
 
-  /* 149. <Match List> ::= <Match Element> <Match List> */
+  /* 160. <Match List> ::= <Match Element> <Match List> */
   Rule_MatchList,
 
-  /* 150. <Match List> ::= <Match Element> */
+  /* 161. <Match List> ::= <Match Element> */
   Rule_MatchList2,
 
-  /* 151. <Match Element> ::= <Expr List> <Block> */
+  /* 162. <Match Element> ::= <Expr List> <Block> */
   Rule_MatchElement,
 
-  /* 152. <Else Element> ::= else <Block> */
+  /* 163. <Else Element> ::= else <Block> */
   Rule_ElseElement_else,
 
-  /* 153. <Types> ::= <Type> ',' <Types> */
+  /* 164. <Types> ::= <Type> ',' <Types> */
   Rule_Types_Comma,
 
-  /* 154. <Types> ::= <Type> */
+  /* 165. <Types> ::= <Type> */
   Rule_Types,
 
-  /* 155. <Type> ::= <Base> */
+  /* 166. <Type> ::= <Base> */
   Rule_Type,
 
-  /* 156. <Type> ::= <Fn Type> */
+  /* 167. <Type> ::= <Fn Type> */
   Rule_Type2,
 
-  /* 157. <Type> ::= <Pkg Template> */
+  /* 168. <Type> ::= <Pkg> */
   Rule_Type3,
 
-  /* 158. <Type> ::= <Type> '[' ']' */
+  /* 169. <Type> ::= <Pkg Template> */
+  Rule_Type4,
+
+  /* 170. <Type> ::= <Type> '[' ']' */
   Rule_Type_LBracket_RBracket,
 
-  /* 159. <Type> ::= '(' <Types> ')' */
+  /* 171. <Type> ::= '(' <Types> ')' */
   Rule_Type_LParen_RParen,
 
-  /* 160. <Type> ::= '[' <Pkg Template List> ']' */
+  /* 172. <Type> ::= '[' <Pkg Template List> ']' */
   Rule_Type_LBracket_RBracket2,
 
-  /* 161. <Base> ::= Byte */
+  /* 173. <Base> ::= Byte */
   Rule_Base_Byte,
 
-  /* 162. <Base> ::= Char */
+  /* 174. <Base> ::= Char */
   Rule_Base_Char,
 
-  /* 163. <Base> ::= Bool */
+  /* 175. <Base> ::= Bool */
   Rule_Base_Bool,
 
-  /* 164. <Base> ::= 'Int8' */
+  /* 176. <Base> ::= 'Int8' */
   Rule_Base_Int8,
 
-  /* 165. <Base> ::= 'UInt8' */
+  /* 177. <Base> ::= 'UInt8' */
   Rule_Base_UInt8,
 
-  /* 166. <Base> ::= 'Int16' */
+  /* 178. <Base> ::= 'Int16' */
   Rule_Base_Int16,
 
-  /* 167. <Base> ::= 'UInt16' */
+  /* 179. <Base> ::= 'UInt16' */
   Rule_Base_UInt16,
 
-  /* 168. <Base> ::= 'Int32' */
+  /* 180. <Base> ::= 'Int32' */
   Rule_Base_Int32,
 
-  /* 169. <Base> ::= 'UInt32' */
+  /* 181. <Base> ::= 'UInt32' */
   Rule_Base_UInt32,
 
-  /* 170. <Base> ::= 'Int64' */
+  /* 182. <Base> ::= 'Int64' */
   Rule_Base_Int64,
 
-  /* 171. <Base> ::= 'UInt64' */
+  /* 183. <Base> ::= 'UInt64' */
   Rule_Base_UInt64,
 
-  /* 172. <Base> ::= Double */
+  /* 184. <Base> ::= Double */
   Rule_Base_Double,
 
-  /* 173. <Base> ::= Float */
+  /* 185. <Base> ::= Float */
   Rule_Base_Float,
 
-  /* 174. <Fn Type> ::= fn '(' ')' */
+  /* 186. <Fn Type> ::= fn '(' ')' */
   Rule_FnType_fn_LParen_RParen,
 
-  /* 175. <Fn Type> ::= fn '(' ')' '->' <Types> */
+  /* 187. <Fn Type> ::= fn '(' ')' '->' <Types> */
   Rule_FnType_fn_LParen_RParen_MinusGt,
 
-  /* 176. <Fn Type> ::= fn '(' <Types> ')' */
+  /* 188. <Fn Type> ::= fn '(' <Types> ')' */
   Rule_FnType_fn_LParen_RParen2,
 
-  /* 177. <Fn Type> ::= fn '(' <Types> ')' '->' <Types> */
+  /* 189. <Fn Type> ::= fn '(' <Types> ')' '->' <Types> */
   Rule_FnType_fn_LParen_RParen_MinusGt2,
 
-  /* 178. <Pkg Template> ::= <Pkg> */
-  Rule_PkgTemplate,
-
-  /* 179. <Pkg Template> ::= <Pkg> '<' <Types> '>' */
-  Rule_PkgTemplate_Lt_Gt,
-
-  /* 180. <Pkg Template List> ::= <Pkg Template> ',' <Pkg Template List> */
+  /* 190. <Pkg Template List> ::= <Pkg Template> ',' <Pkg Template List> */
   Rule_PkgTemplateList_Comma,
 
-  /* 181. <Pkg Template List> ::= <Pkg Template> */
+  /* 191. <Pkg Template List> ::= <Pkg> ',' <Pkg Template List> */
+  Rule_PkgTemplateList_Comma2,
+
+  /* 192. <Pkg Template List> ::= <Pkg Template> */
   Rule_PkgTemplateList,
 
-  /* 182. <Pkg> ::= Identifier '.' <Pkg> */
+  /* 193. <Pkg Template List> ::= <Pkg> */
+  Rule_PkgTemplateList2,
+
+  /* 194. <Pkg> ::= Identifier '.' <Pkg> */
   Rule_Pkg_Identifier_Dot,
 
-  /* 183. <Pkg> ::= Identifier */
+  /* 195. <Pkg> ::= Identifier */
   Rule_Pkg_Identifier,
 
-  /* 184. <Id List> ::= Identifier ',' <Id List> */
+  /* 196. <Pkg Template> ::= <Pkg> '<' <Types> '>' */
+  Rule_PkgTemplate_Lt_Gt,
+
+  /* 197. <Id List> ::= Identifier ',' <Id List> */
   Rule_IdList_Identifier_Comma,
 
-  /* 185. <Id List> ::= Identifier */
+  /* 198. <Id List> ::= Identifier */
   Rule_IdList_Identifier,
 
-  /* 186. <Params> ::= <Param> ',' <Params> */
+  /* 199. <Params> ::= <Param> ',' <Params> */
   Rule_Params_Comma,
 
-  /* 187. <Params> ::= <Param> */
+  /* 200. <Params> ::= <Param> */
   Rule_Params,
 
-  /* 188. <Param> ::= Identifier ':' <Type> */
+  /* 201. <Param> ::= Identifier ':' <Type> */
   Rule_Param_Identifier_Colon,
 
-  /* 189. <Param> ::= mut Identifier ':' <Type> */
+  /* 202. <Param> ::= mut Identifier ':' <Type> */
   Rule_Param_mut_Identifier_Colon,
 
-  /* 190. <Expr List> ::= <Expr> ',' <Expr List> */
+  /* 203. <Expr List> ::= <Expr> ',' <Expr List> */
   Rule_ExprList_Comma,
 
-  /* 191. <Expr List> ::= <Expr> */
+  /* 204. <Expr List> ::= <Expr> */
   Rule_ExprList,
 
-  /* 192. <Expr> ::= <Var Decl Stmt> in <Expr> */
+  /* 205. <Expr> ::= <Var Decl Stmt> in <Expr> */
   Rule_Expr_in,
 
-  /* 193. <Expr> ::= match <Expr> '{' <Case Exprs> '}' */
+  /* 206. <Expr> ::= match <Expr> '{' <Case Exprs> '}' */
   Rule_Expr_match_LBrace_RBrace,
 
-  /* 194. <Expr> ::= <Op Assign> */
+  /* 207. <Expr> ::= <Op Assign> */
   Rule_Expr,
 
-  /* 195. <Op Assign> ::= <Op Or> '=' <Op Assign> */
+  /* 208. <Op Assign> ::= <Op Or> '=' <Op Assign> */
   Rule_OpAssign_Eq,
 
-  /* 196. <Op Assign> ::= <Op Or> '+=' <Op Assign> */
+  /* 209. <Op Assign> ::= <Op Or> '+=' <Op Assign> */
   Rule_OpAssign_PlusEq,
 
-  /* 197. <Op Assign> ::= <Op Or> '-=' <Op Assign> */
+  /* 210. <Op Assign> ::= <Op Or> '-=' <Op Assign> */
   Rule_OpAssign_MinusEq,
 
-  /* 198. <Op Assign> ::= <Op Or> '*=' <Op Assign> */
+  /* 211. <Op Assign> ::= <Op Or> '*=' <Op Assign> */
   Rule_OpAssign_TimesEq,
 
-  /* 199. <Op Assign> ::= <Op Or> '/=' <Op Assign> */
+  /* 212. <Op Assign> ::= <Op Or> '/=' <Op Assign> */
   Rule_OpAssign_DivEq,
 
-  /* 200. <Op Assign> ::= <Op Or> '%=' <Op Assign> */
+  /* 213. <Op Assign> ::= <Op Or> '%=' <Op Assign> */
   Rule_OpAssign_PercentEq,
 
-  /* 201. <Op Assign> ::= <Op Or> '^=' <Op Assign> */
+  /* 214. <Op Assign> ::= <Op Or> '^=' <Op Assign> */
   Rule_OpAssign_CaretEq,
 
-  /* 202. <Op Assign> ::= <Op Or> '&=' <Op Assign> */
+  /* 215. <Op Assign> ::= <Op Or> '&=' <Op Assign> */
   Rule_OpAssign_AmpEq,
 
-  /* 203. <Op Assign> ::= <Op Or> '|=' <Op Assign> */
+  /* 216. <Op Assign> ::= <Op Or> '|=' <Op Assign> */
   Rule_OpAssign_PipeEq,
 
-  /* 204. <Op Assign> ::= <Op Or> '>>=' <Op Assign> */
+  /* 217. <Op Assign> ::= <Op Or> '>>=' <Op Assign> */
   Rule_OpAssign_GtGtEq,
 
-  /* 205. <Op Assign> ::= <Op Or> '<<=' <Op Assign> */
+  /* 218. <Op Assign> ::= <Op Or> '<<=' <Op Assign> */
   Rule_OpAssign_LtLtEq,
 
-  /* 206. <Op Assign> ::= <Op Or> */
+  /* 219. <Op Assign> ::= <Op Or> */
   Rule_OpAssign,
 
-  /* 207. <Op Or> ::= <Op Or> '||' <Op And> */
+  /* 220. <Op Or> ::= <Op Or> '||' <Op And> */
   Rule_OpOr_PipePipe,
 
-  /* 208. <Op Or> ::= <Op And> */
+  /* 221. <Op Or> ::= <Op And> */
   Rule_OpOr,
 
-  /* 209. <Op And> ::= <Op And> '&&' <Op BinOR> */
+  /* 222. <Op And> ::= <Op And> '&&' <Op BinOR> */
   Rule_OpAnd_AmpAmp,
 
-  /* 210. <Op And> ::= <Op BinOR> */
+  /* 223. <Op And> ::= <Op BinOR> */
   Rule_OpAnd,
 
-  /* 211. <Op BinOR> ::= <Op BinOR> '|' <Op BinXOR> */
+  /* 224. <Op BinOR> ::= <Op BinOR> '|' <Op BinXOR> */
   Rule_OpBinOR_Pipe,
 
-  /* 212. <Op BinOR> ::= <Op BinXOR> */
+  /* 225. <Op BinOR> ::= <Op BinXOR> */
   Rule_OpBinOR,
 
-  /* 213. <Op BinXOR> ::= <Op BinXOR> '^' <Op BinAND> */
+  /* 226. <Op BinXOR> ::= <Op BinXOR> '^' <Op BinAND> */
   Rule_OpBinXOR_Caret,
 
-  /* 214. <Op BinXOR> ::= <Op BinAND> */
+  /* 227. <Op BinXOR> ::= <Op BinAND> */
   Rule_OpBinXOR,
 
-  /* 215. <Op BinAND> ::= <Op BinAND> '&' <Op Equate> */
+  /* 228. <Op BinAND> ::= <Op BinAND> '&' <Op Equate> */
   Rule_OpBinAND_Amp,
 
-  /* 216. <Op BinAND> ::= <Op Equate> */
+  /* 229. <Op BinAND> ::= <Op Equate> */
   Rule_OpBinAND,
 
-  /* 217. <Op Equate> ::= <Op Equate> '==' <Op Compare> */
+  /* 230. <Op Equate> ::= <Op Equate> '==' <Op Compare> */
   Rule_OpEquate_EqEq,
 
-  /* 218. <Op Equate> ::= <Op Equate> '!=' <Op Compare> */
+  /* 231. <Op Equate> ::= <Op Equate> '!=' <Op Compare> */
   Rule_OpEquate_ExclamEq,
 
-  /* 219. <Op Equate> ::= <Op Compare> */
+  /* 232. <Op Equate> ::= <Op Compare> */
   Rule_OpEquate,
 
-  /* 220. <Op Compare> ::= <Op Compare> '<' <Op Shift> */
+  /* 233. <Op Compare> ::= <Op Compare> '<' <Op Shift> */
   Rule_OpCompare_Lt,
 
-  /* 221. <Op Compare> ::= <Op Compare> '>' <Op Shift> */
+  /* 234. <Op Compare> ::= <Op Compare> '>' <Op Shift> */
   Rule_OpCompare_Gt,
 
-  /* 222. <Op Compare> ::= <Op Compare> '<=' <Op Shift> */
+  /* 235. <Op Compare> ::= <Op Compare> '<=' <Op Shift> */
   Rule_OpCompare_LtEq,
 
-  /* 223. <Op Compare> ::= <Op Compare> '>=' <Op Shift> */
+  /* 236. <Op Compare> ::= <Op Compare> '>=' <Op Shift> */
   Rule_OpCompare_GtEq,
 
-  /* 224. <Op Compare> ::= <Op Compare> is <Type> */
+  /* 237. <Op Compare> ::= <Op Compare> is <Type> */
   Rule_OpCompare_is,
 
-  /* 225. <Op Compare> ::= <Op Shift> */
+  /* 238. <Op Compare> ::= <Op Shift> */
   Rule_OpCompare,
 
-  /* 226. <Op Shift> ::= <Op Shift> '<<' <Op Add> */
+  /* 239. <Op Shift> ::= <Op Shift> '<<' <Op Add> */
   Rule_OpShift_LtLt,
 
-  /* 227. <Op Shift> ::= <Op Shift> '>>' <Op Add> */
+  /* 240. <Op Shift> ::= <Op Shift> '>>' <Op Add> */
   Rule_OpShift_GtGt,
 
-  /* 228. <Op Shift> ::= <Op Add> */
+  /* 241. <Op Shift> ::= <Op Add> */
   Rule_OpShift,
 
-  /* 229. <Op Add> ::= <Op Add> '+' <Op Mult> */
+  /* 242. <Op Add> ::= <Op Add> '+' <Op Mult> */
   Rule_OpAdd_Plus,
 
-  /* 230. <Op Add> ::= <Op Add> '-' <Op Mult> */
+  /* 243. <Op Add> ::= <Op Add> '-' <Op Mult> */
   Rule_OpAdd_Minus,
 
-  /* 231. <Op Add> ::= <Op Mult> */
+  /* 244. <Op Add> ::= <Op Mult> */
   Rule_OpAdd,
 
-  /* 232. <Op Mult> ::= <Op Mult> '*' <Op Unary> */
+  /* 245. <Op Mult> ::= <Op Mult> '*' <Op Unary> */
   Rule_OpMult_Times,
 
-  /* 233. <Op Mult> ::= <Op Mult> '/' <Op Unary> */
+  /* 246. <Op Mult> ::= <Op Mult> '/' <Op Unary> */
   Rule_OpMult_Div,
 
-  /* 234. <Op Mult> ::= <Op Mult> '%' <Op Unary> */
+  /* 247. <Op Mult> ::= <Op Mult> '%' <Op Unary> */
   Rule_OpMult_Percent,
 
-  /* 235. <Op Mult> ::= <Op Unary> */
+  /* 248. <Op Mult> ::= <Op Unary> */
   Rule_OpMult,
 
-  /* 236. <Op Unary> ::= '!' <Op Unary> */
+  /* 249. <Op Unary> ::= '!' <Op Unary> */
   Rule_OpUnary_Exclam,
 
-  /* 237. <Op Unary> ::= '~' <Op Unary> */
+  /* 250. <Op Unary> ::= '~' <Op Unary> */
   Rule_OpUnary_Tilde,
 
-  /* 238. <Op Unary> ::= '-' <Op Unary> */
+  /* 251. <Op Unary> ::= '-' <Op Unary> */
   Rule_OpUnary_Minus,
 
-  /* 239. <Op Unary> ::= '++' <Op Unary> */
+  /* 252. <Op Unary> ::= '++' <Op Unary> */
   Rule_OpUnary_PlusPlus,
 
-  /* 240. <Op Unary> ::= '--' <Op Unary> */
+  /* 253. <Op Unary> ::= '--' <Op Unary> */
   Rule_OpUnary_MinusMinus,
 
-  /* 241. <Op Unary> ::= <Op Pointer> '++' */
+  /* 254. <Op Unary> ::= <Op Pointer> '++' */
   Rule_OpUnary_PlusPlus2,
 
-  /* 242. <Op Unary> ::= <Op Pointer> '--' */
+  /* 255. <Op Unary> ::= <Op Pointer> '--' */
   Rule_OpUnary_MinusMinus2,
 
-  /* 243. <Op Unary> ::= <Op Unary> as <Type> */
+  /* 256. <Op Unary> ::= <Op Unary> as <Type> */
   Rule_OpUnary_as,
 
-  /* 244. <Op Unary> ::= <New Expr> */
+  /* 257. <Op Unary> ::= <New Expr> */
   Rule_OpUnary,
 
-  /* 245. <Op Unary> ::= delete <Op Pointer> */
+  /* 258. <Op Unary> ::= delete <Op Pointer> */
   Rule_OpUnary_delete,
 
-  /* 246. <Op Unary> ::= sizeof '(' <Type> ')' */
+  /* 259. <Op Unary> ::= sizeof '(' <Type> ')' */
   Rule_OpUnary_sizeof_LParen_RParen,
 
-  /* 247. <Op Unary> ::= <Op Pointer> */
+  /* 260. <Op Unary> ::= <Op Pointer> */
   Rule_OpUnary2,
 
-  /* 248. <Op Pointer> ::= <Op Pointer> '.' <Value> */
+  /* 261. <Op Pointer> ::= <Op Pointer> '.' <Value> */
   Rule_OpPointer_Dot,
 
-  /* 249. <Op Pointer> ::= <Op Pointer> '[' <Expr List> ']' */
+  /* 262. <Op Pointer> ::= <Op Pointer> '[' <Expr List> ']' */
   Rule_OpPointer_LBracket_RBracket,
 
-  /* 250. <Op Pointer> ::= <Op Pointer> '(' <Expr List> ')' */
+  /* 263. <Op Pointer> ::= <Op Pointer> '(' <Expr List> ')' */
   Rule_OpPointer_LParen_RParen,
 
-  /* 251. <Op Pointer> ::= <Op Pointer> '(' ')' */
+  /* 264. <Op Pointer> ::= <Op Pointer> '(' ')' */
   Rule_OpPointer_LParen_RParen2,
 
-  /* 252. <Op Pointer> ::= <Value> */
+  /* 265. <Op Pointer> ::= <Value> */
   Rule_OpPointer,
 
-  /* 253. <Value> ::= OctLiteral */
+  /* 266. <Value> ::= OctLiteral */
   Rule_Value_OctLiteral,
 
-  /* 254. <Value> ::= HexLiteral */
+  /* 267. <Value> ::= HexLiteral */
   Rule_Value_HexLiteral,
 
-  /* 255. <Value> ::= DecLiteral */
+  /* 268. <Value> ::= DecLiteral */
   Rule_Value_DecLiteral,
 
-  /* 256. <Value> ::= BinLiteral */
+  /* 269. <Value> ::= BinLiteral */
   Rule_Value_BinLiteral,
 
-  /* 257. <Value> ::= StringLiteral */
+  /* 270. <Value> ::= StringLiteral */
   Rule_Value_StringLiteral,
 
-  /* 258. <Value> ::= CharLiteral */
+  /* 271. <Value> ::= CharLiteral */
   Rule_Value_CharLiteral,
 
-  /* 259. <Value> ::= FloatLiteral */
+  /* 272. <Value> ::= FloatLiteral */
   Rule_Value_FloatLiteral,
 
-  /* 260. <Value> ::= null */
+  /* 273. <Value> ::= null */
   Rule_Value_null,
 
-  /* 261. <Value> ::= '_' */
-  Rule_Value__,
-
-  /* 262. <Value> ::= true */
+  /* 274. <Value> ::= true */
   Rule_Value_true,
 
-  /* 263. <Value> ::= false */
+  /* 275. <Value> ::= false */
   Rule_Value_false,
 
-  /* 264. <Value> ::= <Pkg> */
+  /* 276. <Value> ::= <Pkg> */
   Rule_Value,
 
-  /* 265. <Value> ::= <Lambda Expr> */
+  /* 277. <Value> ::= <Lambda Expr> */
   Rule_Value2,
 
-  /* 266. <Value> ::= '(' <Expr List> ')' */
+  /* 278. <Value> ::= '(' <Expr List> ')' */
   Rule_Value_LParen_RParen,
 
-  /* 267. <Value> ::= '[' for Identifier ':' <Type> in <Expr> '=>' <Expr> ']' */
+  /* 279. <Value> ::= '[' for Identifier ':' <Type> in <Expr> '=>' <Expr> ']' */
   Rule_Value_LBracket_for_Identifier_Colon_in_EqGt_RBracket,
 
-  /* 268. <Value> ::= '[' for Identifier in <Expr> '=>' <Expr> ']' */
+  /* 280. <Value> ::= '[' for Identifier in <Expr> '=>' <Expr> ']' */
   Rule_Value_LBracket_for_Identifier_in_EqGt_RBracket,
 
-  /* 269. <Value> ::= '[' for Identifier ':' <Type> in <Expr> if <Expr> '=>' <Expr> ']' */
+  /* 281. <Value> ::= '[' for Identifier ':' <Type> in <Expr> if <Expr> '=>' <Expr> ']' */
   Rule_Value_LBracket_for_Identifier_Colon_in_if_EqGt_RBracket,
 
-  /* 270. <Value> ::= '[' for Identifier in <Expr> if <Expr> '=>' <Expr> ']' */
+  /* 282. <Value> ::= '[' for Identifier in <Expr> if <Expr> '=>' <Expr> ']' */
   Rule_Value_LBracket_for_Identifier_in_if_EqGt_RBracket,
 
-  /* 271. <Value> ::= '[' <Expr List> ']' */
+  /* 283. <Value> ::= '[' <Expr List> ']' */
   Rule_Value_LBracket_RBracket,
 
-  /* 272. <Lambda Expr> ::= lambda '(' <Params> ')' <Block> */
+  /* 284. <Lambda Expr> ::= lambda '(' <Params> ')' <Block> */
   Rule_LambdaExpr_lambda_LParen_RParen,
 
-  /* 273. <Lambda Expr> ::= lambda '(' <Params> ')' '=' <Expr> */
+  /* 285. <Lambda Expr> ::= lambda '(' <Params> ')' '=' <Expr> */
   Rule_LambdaExpr_lambda_LParen_RParen_Eq,
 
-  /* 274. <Lambda Expr> ::= lambda '(' <Params> ')' '->' <Type> <Block> */
+  /* 286. <Lambda Expr> ::= lambda '(' <Params> ')' '->' <Type> <Block> */
   Rule_LambdaExpr_lambda_LParen_RParen_MinusGt,
 
-  /* 275. <Lambda Expr> ::= lambda '(' <Params> ')' '->' <Type> '=' <Expr> */
+  /* 287. <Lambda Expr> ::= lambda '(' <Params> ')' '->' <Type> '=' <Expr> */
   Rule_LambdaExpr_lambda_LParen_RParen_MinusGt_Eq,
 
-  /* 276. <Case Exprs> ::= case <Expr> when <Expr> '=>' <Expr> <Case Exprs> */
+  /* 288. <Case Exprs> ::= case <Expr> when <Expr> '=>' <Expr> <Case Exprs> */
   Rule_CaseExprs_case_when_EqGt,
 
-  /* 277. <Case Exprs> ::= case <Expr> '=>' <Expr> <Case Exprs> */
+  /* 289. <Case Exprs> ::= case <Expr> '=>' <Expr> <Case Exprs> */
   Rule_CaseExprs_case_EqGt,
 
-  /* 278. <Case Exprs> ::= else '=>' <Expr> */
+  /* 290. <Case Exprs> ::= else '=>' <Expr> */
   Rule_CaseExprs_else_EqGt,
 
-  /* 279. <New Expr> ::= new <Pkg Template> '(' ')' */
+  /* 291. <New Expr> ::= new <Pkg Template> '(' ')' */
   Rule_NewExpr_new_LParen_RParen,
 
-  /* 280. <New Expr> ::= new <Pkg Template> '(' <Expr> ')' */
+  /* 292. <New Expr> ::= new <Pkg Template> '(' <Expr List> ')' */
   Rule_NewExpr_new_LParen_RParen2,
 
-  /* 281. <New Expr> ::= new <Type> */
+  /* 293. <New Expr> ::= new <Pkg> '(' ')' */
+  Rule_NewExpr_new_LParen_RParen3,
+
+  /* 294. <New Expr> ::= new <Pkg> '(' <Expr List> ')' */
+  Rule_NewExpr_new_LParen_RParen4,
+
+  /* 295. <New Expr> ::= new <Type> */
   Rule_NewExpr_new,
 
-  /* 282. <New Expr> ::= new <Type> '[' <Expr> ']' */
+  /* 296. <New Expr> ::= new <Type> '[' <Expr> ']' */
   Rule_NewExpr_new_LBracket_RBracket 
   };
 
