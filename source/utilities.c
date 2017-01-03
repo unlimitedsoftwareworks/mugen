@@ -149,3 +149,23 @@ int fileExists(char* name)
     return 0;
 }
 
+/* http://www.nextcomputers.org/NeXTfiles/Software/OPENSTEP/Developer/NScompatlib/basename.c */
+const char* basename(const char *name)
+{
+	const char *base = name;
+
+	while (*name)
+	{
+		if (*name++ == '/')
+		{
+			base = name;
+		}
+	}
+	return (char *)base;
+}
+
+/* 
+ * DID NOT USE: MISSING LICENSE INFORMATION
+ * http://www.nextcomputers.org/NeXTfiles/Software/OPENSTEP/Developer/NScompatlib/strdup.c
+ */
+

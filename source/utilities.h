@@ -9,6 +9,7 @@
 wchar_t *LoadInputFile(char *FileName);
 int fileExists(char* name);
 void ShowErrorMessage(struct TokenStruct *Token, int Result);
+const char* basename(const char *name);
 
 #endif
 
