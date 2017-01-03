@@ -7,7 +7,7 @@
 #include "utilities.h"
 #include "engine.h"
 #include "parser.h"
-
+#include "datatypes.h"
 
 int compile(char *fname)
 {
@@ -32,6 +32,9 @@ int compile(char *fname)
 	else {
 		printf("Input accepted\n");
 	}
+
+	Program *program = dmt_calloc(1, sizeof(Program));
+	
 
 	//printTree(Token,0);
 

@@ -182,2377 +182,2377 @@ void RuleTemplate(struct TokenStruct *Token, struct ContextStruct *parent) {
 
 
 /* <Program> ::= <Import Section> <Declarations> */
-void Rule_Program(struct TokenStruct *Token, struct ContextStruct *Context) {
-  RuleTemplate(Token,Context);
-  };
+void Rule_Program(struct TokenStruct *Token, void* parent) {
+  
+}
 
 
 
 
 /* <Import Section> ::= import '(' <Import Expr List> ')' */
-void Rule_ImportSection_import_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportSection_import_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Section> ::= import '(' ')' */
-void Rule_ImportSection_import_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportSection_import_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Section> ::=  */
-void Rule_ImportSection(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportSection(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Expr List> ::= <Import Path> ',' <Import Expr List> */
-void Rule_ImportExprList_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportExprList_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Expr List> ::= <Import Path> */
-void Rule_ImportExprList(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportExprList(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Path> ::= Identifier '.' <Import Path> */
-void Rule_ImportPath_Identifier_Dot(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportPath_Identifier_Dot(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Path> ::= Identifier */
-void Rule_ImportPath_Identifier(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportPath_Identifier(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Path> ::= Identifier from StringLiteral */
-void Rule_ImportPath_Identifier_from_StringLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportPath_Identifier_from_StringLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Import Path> ::= Identifier from CharLiteral */
-void Rule_ImportPath_Identifier_from_CharLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ImportPath_Identifier_from_CharLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Declarations> ::= <Decl> <Declarations> */
-void Rule_Declarations(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Declarations(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Declarations> ::=  */
-void Rule_Declarations2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Declarations2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Decl> ::= <LType Decl> */
-void Rule_Decl(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Decl(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Decl> ::= <LVar Decl> */
-void Rule_Decl2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Decl2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Decl> ::= <LFunction Decl> */
-void Rule_Decl3(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Decl3(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LType Decl> ::= local <Type Decl> */
-void Rule_LTypeDecl_local(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LTypeDecl_local(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LType Decl> ::= <Type Decl> */
-void Rule_LTypeDecl(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LTypeDecl(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type Decl> ::= <Enum Decl> */
-void Rule_TypeDecl(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_TypeDecl(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type Decl> ::= <Interface Def> */
-void Rule_TypeDecl2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_TypeDecl2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type Decl> ::= <Class Def> */
-void Rule_TypeDecl3(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_TypeDecl3(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type Decl> ::= <Type Def> */
-void Rule_TypeDecl4(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_TypeDecl4(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Enum Decl> ::= enum Identifier '{' <Enum Values> '}' */
-void Rule_EnumDecl_enum_Identifier_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_EnumDecl_enum_Identifier_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Enum Values> ::= <Enum Value> ',' <Enum Values> */
-void Rule_EnumValues_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_EnumValues_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Enum Values> ::= <Enum Value> */
-void Rule_EnumValues(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_EnumValues(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Enum Value> ::= Identifier */
-void Rule_EnumValue_Identifier(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_EnumValue_Identifier(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Def> ::= interface Identifier '{' <Interface Methods> '}' */
-void Rule_InterfaceDef_interface_Identifier_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceDef_interface_Identifier_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Def> ::= interface Identifier '<' <Id List> '>' '{' <Interface Methods> '}' */
-void Rule_InterfaceDef_interface_Identifier_Lt_Gt_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceDef_interface_Identifier_Lt_Gt_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Methods> ::= <Interface Method> <Interface Methods> */
-void Rule_InterfaceMethods(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethods(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Methods> ::= <Interface Method> */
-void Rule_InterfaceMethods2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethods2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_InterfaceMethod_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_function_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= function <Func Name> '(' ')' '->' <Types> */
-void Rule_InterfaceMethod_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= function <Func Name> '(' <Params> ')' */
-void Rule_InterfaceMethod_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_function_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= function <Func Name> '(' ')' */
-void Rule_InterfaceMethod_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_function_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= local function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_InterfaceMethod_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= local function <Func Name> '(' ')' '->' <Types> */
-void Rule_InterfaceMethod_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= local function <Func Name> '(' <Params> ')' */
-void Rule_InterfaceMethod_local_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_local_function_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Interface Method> ::= local function <Func Name> '(' ')' */
-void Rule_InterfaceMethod_local_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_InterfaceMethod_local_function_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Func Name> ::= Identifier */
-void Rule_FuncName_Identifier(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_FuncName_Identifier(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Func Name> ::= <Overrideable Operator> */
-void Rule_FuncName(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_FuncName(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Def> ::= class Identifier '{' <Class Decls> '}' */
-void Rule_ClassDef_class_Identifier_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDef_class_Identifier_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Def> ::= class Identifier implements <Pkg Template List> '{' <Class Decls> '}' */
-void Rule_ClassDef_class_Identifier_implements_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDef_class_Identifier_implements_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Def> ::= immutable class Identifier '{' <Class Decls> '}' */
-void Rule_ClassDef_immutable_class_Identifier_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDef_immutable_class_Identifier_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Def> ::= immutable class Identifier implements <Pkg Template List> '{' <Class Decls> '}' */
-void Rule_ClassDef_immutable_class_Identifier_implements_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDef_immutable_class_Identifier_implements_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Decls> ::= <Class Decl> <Class Decls> */
-void Rule_ClassDecls(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDecls(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Decls> ::= <Class Decl> */
-void Rule_ClassDecls2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDecls2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Decl> ::= <Class Method Decl> */
-void Rule_ClassDecl(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDecl(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Decl> ::= <Class Variable Decl> */
-void Rule_ClassDecl2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassDecl2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_ClassMethod_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_function_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= function <Func Name> '(' ')' '->' <Types> */
-void Rule_ClassMethod_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= function <Func Name> '(' <Params> ')' */
-void Rule_ClassMethod_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_function_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= function <Func Name> '(' ')' */
-void Rule_ClassMethod_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_function_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_ClassMethod_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local function <Func Name> '(' ')' '->' <Types> */
-void Rule_ClassMethod_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local function <Func Name> '(' <Params> ')' */
-void Rule_ClassMethod_local_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_function_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local function <Func Name> '(' ')' */
-void Rule_ClassMethod_local_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_function_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized function <Func Name> '(' ')' '->' <Types> */
-void Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized function <Func Name> '(' <Params> ')' */
-void Rule_ClassMethod_synchronized_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_function_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized function <Func Name> '(' ')' */
-void Rule_ClassMethod_synchronized_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_function_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local synchronized function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local synchronized function <Func Name> '(' ')' '->' <Types> */
-void Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local synchronized function <Func Name> '(' <Params> ')' */
-void Rule_ClassMethod_local_synchronized_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= local synchronized function <Func Name> '(' ')' */
-void Rule_ClassMethod_local_synchronized_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_local_synchronized_function_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized local function <Func Name> '(' <Params> ')' '->' <Types> */
-void Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized local function <Func Name> '(' ')' '->' <Types> */
-void Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized local function <Func Name> '(' <Params> ')' */
-void Rule_ClassMethod_synchronized_local_function_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method> ::= synchronized local function <Func Name> '(' ')' */
-void Rule_ClassMethod_synchronized_local_function_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethod_synchronized_local_function_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method Decl> ::= <Class Method> '=' <Expr> */
-void Rule_ClassMethodDecl_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethodDecl_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Method Decl> ::= <Class Method> <Block> */
-void Rule_ClassMethodDecl(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassMethodDecl(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Class Variable Decl> ::= <LVar Decl> */
-void Rule_ClassVariableDecl(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ClassVariableDecl(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type Def> ::= type Identifier '=' <Type> */
-void Rule_TypeDef_type_Identifier_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_TypeDef_type_Identifier_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '+' */
-void Rule_OverrideableOperator_Plus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Plus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '-' */
-void Rule_OverrideableOperator_Minus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Minus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '*' */
-void Rule_OverrideableOperator_Times(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Times(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '/' */
-void Rule_OverrideableOperator_Div(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Div(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '%' */
-void Rule_OverrideableOperator_Percent(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Percent(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '^' */
-void Rule_OverrideableOperator_Caret(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Caret(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '&' */
-void Rule_OverrideableOperator_Amp(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Amp(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '|' */
-void Rule_OverrideableOperator_Pipe(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Pipe(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '~' */
-void Rule_OverrideableOperator_Tilde(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Tilde(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '!' */
-void Rule_OverrideableOperator_Exclam(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Exclam(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '=' */
-void Rule_OverrideableOperator_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '<' */
-void Rule_OverrideableOperator_Lt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Lt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '>' */
-void Rule_OverrideableOperator_Gt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Gt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '+=' */
-void Rule_OverrideableOperator_PlusEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_PlusEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '-=' */
-void Rule_OverrideableOperator_MinusEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_MinusEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '*=' */
-void Rule_OverrideableOperator_TimesEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_TimesEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '/=' */
-void Rule_OverrideableOperator_DivEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_DivEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '%=' */
-void Rule_OverrideableOperator_PercentEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_PercentEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '^=' */
-void Rule_OverrideableOperator_CaretEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_CaretEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '&=' */
-void Rule_OverrideableOperator_AmpEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_AmpEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '|=' */
-void Rule_OverrideableOperator_PipeEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_PipeEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '<<' */
-void Rule_OverrideableOperator_LtLt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_LtLt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '>>' */
-void Rule_OverrideableOperator_GtGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_GtGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '>>=' */
-void Rule_OverrideableOperator_GtGtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_GtGtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '<<=' */
-void Rule_OverrideableOperator_LtLtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_LtLtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '==' */
-void Rule_OverrideableOperator_EqEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_EqEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '!=' */
-void Rule_OverrideableOperator_ExclamEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_ExclamEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '<=' */
-void Rule_OverrideableOperator_LtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_LtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '>=' */
-void Rule_OverrideableOperator_GtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_GtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '&&' */
-void Rule_OverrideableOperator_AmpAmp(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_AmpAmp(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '||' */
-void Rule_OverrideableOperator_PipePipe(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_PipePipe(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '++' */
-void Rule_OverrideableOperator_PlusPlus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_PlusPlus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '--' */
-void Rule_OverrideableOperator_MinusMinus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_MinusMinus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= ',' */
-void Rule_OverrideableOperator_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '(' ')' */
-void Rule_OverrideableOperator_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= '[' ']' */
-void Rule_OverrideableOperator_LBracket_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_LBracket_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= new */
-void Rule_OverrideableOperator_new(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_new(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Overrideable Operator> ::= delete */
-void Rule_OverrideableOperator_delete(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OverrideableOperator_delete(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LFunction Decl> ::= <Interface Method> '=' <Expr> */
-void Rule_LFunctionDecl_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LFunctionDecl_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LFunction Decl> ::= <Interface Method> <Block> */
-void Rule_LFunctionDecl(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LFunctionDecl(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let <Id List> ':' <Type> '=' <Expr List> */
-void Rule_LVarDecl_let_Colon_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_Colon_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let <Id List> ':' <Type> */
-void Rule_LVarDecl_let_Colon(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_Colon(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let <Id List> '=' <Expr List> */
-void Rule_LVarDecl_let_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let mut <Id List> ':' <Type> '=' <Expr List> */
-void Rule_LVarDecl_let_mut_Colon_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_mut_Colon_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let mut <Id List> '=' <Expr List> */
-void Rule_LVarDecl_let_mut_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_mut_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let local <Id List> ':' <Type> '=' <Expr List> */
-void Rule_LVarDecl_let_local_Colon_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_local_Colon_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let local <Id List> ':' <Type> */
-void Rule_LVarDecl_let_local_Colon(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_local_Colon(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let local <Id List> '=' <Expr List> */
-void Rule_LVarDecl_let_local_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_local_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let mut local <Id List> ':' <Type> '=' <Expr List> */
-void Rule_LVarDecl_let_mut_local_Colon_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_mut_local_Colon_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let mut local <Id List> '=' <Expr List> */
-void Rule_LVarDecl_let_mut_local_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_mut_local_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let local mut <Id List> ':' <Type> '=' <Expr List> */
-void Rule_LVarDecl_let_local_mut_Colon_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_local_mut_Colon_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <LVar Decl> ::= let local mut <Id List> '=' <Expr List> */
-void Rule_LVarDecl_let_local_mut_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LVarDecl_let_local_mut_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Statements> ::= <Stmt> <Statements> */
-void Rule_Statements(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Statements(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Statements> ::= <Stmt> */
-void Rule_Statements2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Statements2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Block> */
-void Rule_Stmt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Var Decl Stmt> */
-void Rule_Stmt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Repeat Stmt> */
-void Rule_Stmt3(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt3(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <While Stmt> */
-void Rule_Stmt4(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt4(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <For Stmt> */
-void Rule_Stmt5(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt5(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Foreach Stmt> */
-void Rule_Stmt6(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt6(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Expr> */
-void Rule_Stmt7(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt7(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Return Stmt> */
-void Rule_Stmt8(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt8(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Break Stmt> */
-void Rule_Stmt9(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt9(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Continue Stmt> */
-void Rule_Stmt10(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt10(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <If Stmt> */
-void Rule_Stmt11(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt11(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Stmt> ::= <Match Stmt> */
-void Rule_Stmt12(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Stmt12(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Block> ::= '{' <Statements> '}' */
-void Rule_Block_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Block_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Block> ::= synchronized '{' <Statements> '}' */
-void Rule_Block_synchronized_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Block_synchronized_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Var Decl Stmt> ::= let <Id List> ':' <Type> '=' <Expr List> */
-void Rule_VarDeclStmt_let_Colon_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_VarDeclStmt_let_Colon_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Var Decl Stmt> ::= let <Id List> ':' <Type> */
-void Rule_VarDeclStmt_let_Colon(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_VarDeclStmt_let_Colon(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Var Decl Stmt> ::= let <Id List> '=' <Expr List> */
-void Rule_VarDeclStmt_let_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_VarDeclStmt_let_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Var Decl Stmt> ::= let mut <Id List> ':' <Type> '=' <Expr List> */
-void Rule_VarDeclStmt_let_mut_Colon_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_VarDeclStmt_let_mut_Colon_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Var Decl Stmt> ::= let mut <Id List> '=' <Expr List> */
-void Rule_VarDeclStmt_let_mut_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_VarDeclStmt_let_mut_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Repeat Stmt> ::= repeat <Block> while <Expr> */
-void Rule_RepeatStmt_repeat_while(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_RepeatStmt_repeat_while(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <While Stmt> ::= while <Expr> <Block> */
-void Rule_WhileStmt_while(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_WhileStmt_while(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <For Stmt> ::= for <Expr List> ';' <Expr> ';' <Expr List> <Block> */
-void Rule_ForStmt_for_Semi_Semi(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ForStmt_for_Semi_Semi(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Foreach Stmt> ::= foreach Identifier ':' <Type> in <Expr> <Block> */
-void Rule_ForeachStmt_foreach_Identifier_Colon_in(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ForeachStmt_foreach_Identifier_Colon_in(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Foreach Stmt> ::= foreach mut Identifier ':' <Type> in <Expr> <Block> */
-void Rule_ForeachStmt_foreach_mut_Identifier_Colon_in(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ForeachStmt_foreach_mut_Identifier_Colon_in(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Return Stmt> ::= return <Expr List> */
-void Rule_ReturnStmt_return(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ReturnStmt_return(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Return Stmt> ::= return */
-void Rule_ReturnStmt_return2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ReturnStmt_return2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Continue Stmt> ::= continue */
-void Rule_ContinueStmt_continue(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ContinueStmt_continue(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Break Stmt> ::= break */
-void Rule_BreakStmt_break(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_BreakStmt_break(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <If Stmt> ::= if <Expr> <Block> <Else If Stmt> */
-void Rule_IfStmt_if(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_IfStmt_if(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Else If Stmt> ::= else <If Stmt> <Else If Stmt> */
-void Rule_ElseIfStmt_else(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ElseIfStmt_else(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Else If Stmt> ::= <Else Stmt> */
-void Rule_ElseIfStmt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ElseIfStmt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Else If Stmt> ::=  */
-void Rule_ElseIfStmt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ElseIfStmt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Else Stmt> ::= else <Block> */
-void Rule_ElseStmt_else(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ElseStmt_else(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Match Stmt> ::= match <Expr List> '{' <Match List> <Else Element> '}' */
-void Rule_MatchStmt_match_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_MatchStmt_match_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Match Stmt> ::= match <Expr List> '{' <Match List> '}' */
-void Rule_MatchStmt_match_LBrace_RBrace2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_MatchStmt_match_LBrace_RBrace2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Match List> ::= <Match Element> <Match List> */
-void Rule_MatchList(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_MatchList(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Match List> ::= <Match Element> */
-void Rule_MatchList2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_MatchList2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Match Element> ::= <Expr List> <Block> */
-void Rule_MatchElement(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_MatchElement(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Else Element> ::= else <Block> */
-void Rule_ElseElement_else(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ElseElement_else(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Types> ::= <Type> ',' <Types> */
-void Rule_Types_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Types_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Types> ::= <Type> */
-void Rule_Types(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Types(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type> ::= <Base> */
-void Rule_Type(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Type(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type> ::= <Fn Type> */
-void Rule_Type2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Type2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type> ::= <Pkg> */
-void Rule_Type3(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Type3(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type> ::= <Pkg Template> */
-void Rule_Type4(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Type4(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type> ::= <Type> '[' ']' */
-void Rule_Type_LBracket_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Type_LBracket_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type> ::= '(' <Types> ')' */
-void Rule_Type_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Type_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Type> ::= '[' <Pkg Template List> ']' */
-void Rule_Type_LBracket_RBracket2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Type_LBracket_RBracket2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= Byte */
-void Rule_Base_Byte(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Byte(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= Char */
-void Rule_Base_Char(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Char(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= Bool */
-void Rule_Base_Bool(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Bool(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'Int8' */
-void Rule_Base_Int8(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Int8(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'UInt8' */
-void Rule_Base_UInt8(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_UInt8(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'Int16' */
-void Rule_Base_Int16(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Int16(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'UInt16' */
-void Rule_Base_UInt16(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_UInt16(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'Int32' */
-void Rule_Base_Int32(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Int32(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'UInt32' */
-void Rule_Base_UInt32(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_UInt32(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'Int64' */
-void Rule_Base_Int64(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Int64(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= 'UInt64' */
-void Rule_Base_UInt64(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_UInt64(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= Double */
-void Rule_Base_Double(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Double(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Base> ::= Float */
-void Rule_Base_Float(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Base_Float(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Fn Type> ::= fn '(' ')' */
-void Rule_FnType_fn_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_FnType_fn_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Fn Type> ::= fn '(' ')' '->' <Types> */
-void Rule_FnType_fn_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_FnType_fn_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Fn Type> ::= fn '(' <Types> ')' */
-void Rule_FnType_fn_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_FnType_fn_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Fn Type> ::= fn '(' <Types> ')' '->' <Types> */
-void Rule_FnType_fn_LParen_RParen_MinusGt2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_FnType_fn_LParen_RParen_MinusGt2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Pkg Template List> ::= <Pkg Template> ',' <Pkg Template List> */
-void Rule_PkgTemplateList_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_PkgTemplateList_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Pkg Template List> ::= <Pkg> ',' <Pkg Template List> */
-void Rule_PkgTemplateList_Comma2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_PkgTemplateList_Comma2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Pkg Template List> ::= <Pkg Template> */
-void Rule_PkgTemplateList(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_PkgTemplateList(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Pkg Template List> ::= <Pkg> */
-void Rule_PkgTemplateList2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_PkgTemplateList2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Pkg> ::= Identifier '.' <Pkg> */
-void Rule_Pkg_Identifier_Dot(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Pkg_Identifier_Dot(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Pkg> ::= Identifier */
-void Rule_Pkg_Identifier(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Pkg_Identifier(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Pkg Template> ::= <Pkg> '<' <Types> '>' */
-void Rule_PkgTemplate_Lt_Gt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_PkgTemplate_Lt_Gt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Id List> ::= Identifier ',' <Id List> */
-void Rule_IdList_Identifier_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_IdList_Identifier_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Id List> ::= Identifier */
-void Rule_IdList_Identifier(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_IdList_Identifier(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Params> ::= <Param> ',' <Params> */
-void Rule_Params_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Params_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Params> ::= <Param> */
-void Rule_Params(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Params(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Param> ::= Identifier ':' <Type> */
-void Rule_Param_Identifier_Colon(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Param_Identifier_Colon(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Param> ::= mut Identifier ':' <Type> */
-void Rule_Param_mut_Identifier_Colon(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Param_mut_Identifier_Colon(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Expr List> ::= <Expr> ',' <Expr List> */
-void Rule_ExprList_Comma(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ExprList_Comma(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Expr List> ::= <Expr> */
-void Rule_ExprList(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_ExprList(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Expr> ::= <Var Decl Stmt> in <Expr> */
-void Rule_Expr_in(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Expr_in(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Expr> ::= match <Expr> '{' <Case Exprs> '}' */
-void Rule_Expr_match_LBrace_RBrace(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Expr_match_LBrace_RBrace(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Expr> ::= <Op Assign> */
-void Rule_Expr(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Expr(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '=' <Op Assign> */
-void Rule_OpAssign_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '+=' <Op Assign> */
-void Rule_OpAssign_PlusEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_PlusEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '-=' <Op Assign> */
-void Rule_OpAssign_MinusEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_MinusEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '*=' <Op Assign> */
-void Rule_OpAssign_TimesEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_TimesEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '/=' <Op Assign> */
-void Rule_OpAssign_DivEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_DivEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '%=' <Op Assign> */
-void Rule_OpAssign_PercentEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_PercentEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '^=' <Op Assign> */
-void Rule_OpAssign_CaretEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_CaretEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '&=' <Op Assign> */
-void Rule_OpAssign_AmpEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_AmpEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '|=' <Op Assign> */
-void Rule_OpAssign_PipeEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_PipeEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '>>=' <Op Assign> */
-void Rule_OpAssign_GtGtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_GtGtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> '<<=' <Op Assign> */
-void Rule_OpAssign_LtLtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign_LtLtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Assign> ::= <Op Or> */
-void Rule_OpAssign(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAssign(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Or> ::= <Op Or> '||' <Op And> */
-void Rule_OpOr_PipePipe(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpOr_PipePipe(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Or> ::= <Op And> */
-void Rule_OpOr(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpOr(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op And> ::= <Op And> '&&' <Op BinOR> */
-void Rule_OpAnd_AmpAmp(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAnd_AmpAmp(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op And> ::= <Op BinOR> */
-void Rule_OpAnd(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAnd(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op BinOR> ::= <Op BinOR> '|' <Op BinXOR> */
-void Rule_OpBinOR_Pipe(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpBinOR_Pipe(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op BinOR> ::= <Op BinXOR> */
-void Rule_OpBinOR(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpBinOR(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op BinXOR> ::= <Op BinXOR> '^' <Op BinAND> */
-void Rule_OpBinXOR_Caret(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpBinXOR_Caret(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op BinXOR> ::= <Op BinAND> */
-void Rule_OpBinXOR(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpBinXOR(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op BinAND> ::= <Op BinAND> '&' <Op Equate> */
-void Rule_OpBinAND_Amp(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpBinAND_Amp(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op BinAND> ::= <Op Equate> */
-void Rule_OpBinAND(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpBinAND(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Equate> ::= <Op Equate> '==' <Op Compare> */
-void Rule_OpEquate_EqEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpEquate_EqEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Equate> ::= <Op Equate> '!=' <Op Compare> */
-void Rule_OpEquate_ExclamEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpEquate_ExclamEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Equate> ::= <Op Compare> */
-void Rule_OpEquate(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpEquate(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Compare> ::= <Op Compare> '<' <Op Shift> */
-void Rule_OpCompare_Lt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpCompare_Lt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Compare> ::= <Op Compare> '>' <Op Shift> */
-void Rule_OpCompare_Gt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpCompare_Gt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Compare> ::= <Op Compare> '<=' <Op Shift> */
-void Rule_OpCompare_LtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpCompare_LtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Compare> ::= <Op Compare> '>=' <Op Shift> */
-void Rule_OpCompare_GtEq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpCompare_GtEq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Compare> ::= <Op Compare> is <Type> */
-void Rule_OpCompare_is(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpCompare_is(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Compare> ::= <Op Shift> */
-void Rule_OpCompare(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpCompare(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Shift> ::= <Op Shift> '<<' <Op Add> */
-void Rule_OpShift_LtLt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpShift_LtLt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Shift> ::= <Op Shift> '>>' <Op Add> */
-void Rule_OpShift_GtGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpShift_GtGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Shift> ::= <Op Add> */
-void Rule_OpShift(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpShift(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Add> ::= <Op Add> '+' <Op Mult> */
-void Rule_OpAdd_Plus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAdd_Plus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Add> ::= <Op Add> '-' <Op Mult> */
-void Rule_OpAdd_Minus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAdd_Minus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Add> ::= <Op Mult> */
-void Rule_OpAdd(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpAdd(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Mult> ::= <Op Mult> '*' <Op Unary> */
-void Rule_OpMult_Times(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpMult_Times(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Mult> ::= <Op Mult> '/' <Op Unary> */
-void Rule_OpMult_Div(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpMult_Div(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Mult> ::= <Op Mult> '%' <Op Unary> */
-void Rule_OpMult_Percent(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpMult_Percent(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Mult> ::= <Op Unary> */
-void Rule_OpMult(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpMult(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= '!' <Op Unary> */
-void Rule_OpUnary_Exclam(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_Exclam(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= '~' <Op Unary> */
-void Rule_OpUnary_Tilde(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_Tilde(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= '-' <Op Unary> */
-void Rule_OpUnary_Minus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_Minus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= '++' <Op Unary> */
-void Rule_OpUnary_PlusPlus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_PlusPlus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= '--' <Op Unary> */
-void Rule_OpUnary_MinusMinus(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_MinusMinus(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= <Op Pointer> '++' */
-void Rule_OpUnary_PlusPlus2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_PlusPlus2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= <Op Pointer> '--' */
-void Rule_OpUnary_MinusMinus2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_MinusMinus2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= <Op Unary> as <Type> */
-void Rule_OpUnary_as(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_as(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= <New Expr> */
-void Rule_OpUnary(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= delete <Op Pointer> */
-void Rule_OpUnary_delete(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_delete(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= sizeof '(' <Type> ')' */
-void Rule_OpUnary_sizeof_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary_sizeof_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Unary> ::= <Op Pointer> */
-void Rule_OpUnary2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpUnary2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Pointer> ::= <Op Pointer> '.' <Value> */
-void Rule_OpPointer_Dot(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpPointer_Dot(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Pointer> ::= <Op Pointer> '[' <Expr List> ']' */
-void Rule_OpPointer_LBracket_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpPointer_LBracket_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Pointer> ::= <Op Pointer> '(' <Expr List> ')' */
-void Rule_OpPointer_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpPointer_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Pointer> ::= <Op Pointer> '(' ')' */
-void Rule_OpPointer_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpPointer_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Op Pointer> ::= <Value> */
-void Rule_OpPointer(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_OpPointer(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= OctLiteral */
-void Rule_Value_OctLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_OctLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= HexLiteral */
-void Rule_Value_HexLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_HexLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= DecLiteral */
-void Rule_Value_DecLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_DecLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= BinLiteral */
-void Rule_Value_BinLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_BinLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= StringLiteral */
-void Rule_Value_StringLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_StringLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= CharLiteral */
-void Rule_Value_CharLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_CharLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= FloatLiteral */
-void Rule_Value_FloatLiteral(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_FloatLiteral(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= null */
-void Rule_Value_null(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_null(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= true */
-void Rule_Value_true(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_true(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= false */
-void Rule_Value_false(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_false(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= <Pkg> */
-void Rule_Value(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= <Lambda Expr> */
-void Rule_Value2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= '(' <Expr List> ')' */
-void Rule_Value_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= '[' for Identifier ':' <Type> in <Expr> '=>' <Expr> ']' */
-void Rule_Value_LBracket_for_Identifier_Colon_in_EqGt_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_LBracket_for_Identifier_Colon_in_EqGt_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= '[' for Identifier in <Expr> '=>' <Expr> ']' */
-void Rule_Value_LBracket_for_Identifier_in_EqGt_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_LBracket_for_Identifier_in_EqGt_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= '[' for Identifier ':' <Type> in <Expr> if <Expr> '=>' <Expr> ']' */
-void Rule_Value_LBracket_for_Identifier_Colon_in_if_EqGt_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_LBracket_for_Identifier_Colon_in_if_EqGt_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= '[' for Identifier in <Expr> if <Expr> '=>' <Expr> ']' */
-void Rule_Value_LBracket_for_Identifier_in_if_EqGt_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_LBracket_for_Identifier_in_if_EqGt_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Value> ::= '[' <Expr List> ']' */
-void Rule_Value_LBracket_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_Value_LBracket_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Lambda Expr> ::= lambda '(' <Params> ')' <Block> */
-void Rule_LambdaExpr_lambda_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LambdaExpr_lambda_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Lambda Expr> ::= lambda '(' <Params> ')' '=' <Expr> */
-void Rule_LambdaExpr_lambda_LParen_RParen_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LambdaExpr_lambda_LParen_RParen_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Lambda Expr> ::= lambda '(' <Params> ')' '->' <Type> <Block> */
-void Rule_LambdaExpr_lambda_LParen_RParen_MinusGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LambdaExpr_lambda_LParen_RParen_MinusGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Lambda Expr> ::= lambda '(' <Params> ')' '->' <Type> '=' <Expr> */
-void Rule_LambdaExpr_lambda_LParen_RParen_MinusGt_Eq(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_LambdaExpr_lambda_LParen_RParen_MinusGt_Eq(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Case Exprs> ::= case <Expr> when <Expr> '=>' <Expr> <Case Exprs> */
-void Rule_CaseExprs_case_when_EqGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_CaseExprs_case_when_EqGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Case Exprs> ::= case <Expr> '=>' <Expr> <Case Exprs> */
-void Rule_CaseExprs_case_EqGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_CaseExprs_case_EqGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <Case Exprs> ::= else '=>' <Expr> */
-void Rule_CaseExprs_else_EqGt(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_CaseExprs_else_EqGt(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <New Expr> ::= new <Pkg Template> '(' ')' */
-void Rule_NewExpr_new_LParen_RParen(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_NewExpr_new_LParen_RParen(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <New Expr> ::= new <Pkg Template> '(' <Expr List> ')' */
-void Rule_NewExpr_new_LParen_RParen2(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_NewExpr_new_LParen_RParen2(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <New Expr> ::= new <Pkg> '(' ')' */
-void Rule_NewExpr_new_LParen_RParen3(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_NewExpr_new_LParen_RParen3(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <New Expr> ::= new <Pkg> '(' <Expr List> ')' */
-void Rule_NewExpr_new_LParen_RParen4(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_NewExpr_new_LParen_RParen4(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <New Expr> ::= new <Type> */
-void Rule_NewExpr_new(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_NewExpr_new(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
 
 /* <New Expr> ::= new <Type> '[' <Expr> ']' */
-void Rule_NewExpr_new_LBracket_RBracket(struct TokenStruct *Token, struct ContextStruct *Context) {
+void Rule_NewExpr_new_LBracket_RBracket(struct TokenStruct *Token, void* parent) {
   RuleTemplate(Token,Context);
-  };
+}
 
 
 
@@ -2562,7 +2562,7 @@ void Rule_NewExpr_new_LBracket_RBracket(struct TokenStruct *Token, struct Contex
 
 
 
-void (*RuleJumpTable[])(struct TokenStruct *Token, struct ContextStruct *Context) = {
+void (*RuleJumpTable[])(struct TokenStruct *Token, void* parent) = {
 
   /* 0. <Program> ::= <Import Section> <Declarations> */
   Rule_Program,
@@ -3454,7 +3454,7 @@ void (*RuleJumpTable[])(struct TokenStruct *Token, struct ContextStruct *Context
 
   /* 296. <New Expr> ::= new <Type> '[' <Expr> ']' */
   Rule_NewExpr_new_LBracket_RBracket 
-  };
+}
 
 
   /***** Main *****************************************************************/
