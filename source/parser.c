@@ -28,7 +28,7 @@ extern char* libDir;
 
 /* Forward definition of the RuleJumpTable. It will be filled with a link
 to a subroutine for every rule later on. */
-void(*RuleJumpTable[])(struct TokenStruct *Token, struct ContextStruct *parent);
+void(*RuleJumpTable[])(struct TokenStruct *Token, void *parent);
 
 
 
