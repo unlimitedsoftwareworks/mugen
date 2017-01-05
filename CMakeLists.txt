@@ -57,6 +57,7 @@ set(MUGEN_SRCS
     ${PROJECT_SOURCE_DIR}/source/engine.c
     ${PROJECT_SOURCE_DIR}/source/parser.c
     ${PROJECT_SOURCE_DIR}/source/utilities.c
+    ${PROJECT_SOURCE_DIR}/source/datatypes.c
 )
 
 add_executable(mugen  
