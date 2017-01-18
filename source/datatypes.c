@@ -1,4 +1,5 @@
 #include "datatypes.h"
+#include "memory.h"
 
 Program* createProgram() {
 	Program *program = dmt_calloc(1, sizeof(Program));
