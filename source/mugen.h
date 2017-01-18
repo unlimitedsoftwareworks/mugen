@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+typedef void* utf8String;
+
 /*
  * Version naming: X.Y.z
  * 

@@ -1,11 +1,5 @@
 /*
-Kessels engine for GOLD.
-
-
-
-See the "readme.txt" file.
-
-
+Kessels engine for GOLD PARSER.
 
 Jeroen C. Kessels
 Internet Engineer
