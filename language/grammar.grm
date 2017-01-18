@@ -241,7 +241,7 @@ Comment Line  = '//'
 <Foreach Stmt> ::= 'foreach' Identifier ':' <Type> 'in' <Expr> <Block>
                  | 'foreach' 'mut' Identifier ':' <Type> 'in' <Expr> <Block>
 
-<Return Stmt> ::= 'return' <Expr List>
+<Return Stmt> ::= 'return' <Expr>
                 | 'return'
 
 <Continue Stmt> ::= 'continue'
@@ -256,13 +256,13 @@ Comment Line  = '//'
 
 <Else Stmt> ::= 'else' <Block>
              
-<Match Stmt> ::= 'match' <Expr List> '{' <Match List> <Else Element> '}'
-               | 'match' <Expr List> '{' <Match List>                '}'
+<Match Stmt> ::= 'match' <Expr> '{' <Match List> <Else Element> '}'
+               | 'match' <Expr> '{' <Match List>                '}'
               
 <Match List> ::= <Match Element> <Match List>
                | <Match Element>                 
 
-<Match Element> ::= <Expr List> <Block>
+<Match Element> ::= <Expr> <Block>
 
 <Else Element> ::= 'else' <Block>
                 

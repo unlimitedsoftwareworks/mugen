@@ -26,7 +26,7 @@
 
 /* used in structure headers */
 #define TYPE(t) t##DataType
-
+//#define PARENT_EXPR struct Expr* parent;
 /*
  * ******************************************
  *        DataTypes Representations
@@ -83,34 +83,45 @@ typedef struct DataType {
     };
 }DataType;
 
+typedef struct Expr {
+	unsigned int line;
+	unsigned int pos;
+}Expr;
+
 typedef struct TYPE(Basic) {
+	struct Expr* parent;
     enum EnumBasicDataType typeField;
 }TYPE(Basic);
 
 typedef struct TYPE(Array) {
+	struct Expr* parent;
     struct DataType* arrayOf;
 }TYPE(Array);
 
 typedef struct TYPE(Tuple) {
+	struct Expr* parent;
     vec_t(struct DataType*) elements;
 }TYPE(Tuple);
 
-typedef struct TYPE(Reference)
-{
+typedef struct TYPE(Reference) {
+	struct Expr* parent;
     struct DataType* referenceTo;
 }TYPE(Reference);
 
 typedef struct TYPE(Fn) {
+	struct Expr* parent;
     vec_t(struct DataType*) params;
     vec_t(struct DataType*) returnTypes;
 }TYPE(Fn);
 
 typedef struct TYPE(Behavior) {
+	struct Expr* parent;
     /* can be only interfaces and generic interface */
     vec_t(struct DataType*) behaviours;
 }TYPE(Behavior);
 
 typedef struct TYPE(Interface) {
+	struct Expr* parent;
     wchar_t* name;
     
     vec_t(struct FunctionMethodHeader*) methodHeaders;
@@ -118,6 +129,7 @@ typedef struct TYPE(Interface) {
 }TYPE(Interface);
 
 typedef struct TYPE(Class) {
+	struct Expr* parent;
     wchar_t* name;
     int isImmutable;
     
@@ -133,6 +145,7 @@ typedef struct TYPE(Enum) {
 }TYPE(Enum);
 
 typedef struct TYPE(GenericInterface) {
+	struct Expr* parent;
     wchar_t* name;
     
     vec_t(struct TYPE(Dummy)) generics;
@@ -142,6 +155,7 @@ typedef struct TYPE(GenericInterface) {
 
 
 typedef struct TYPE(GenericClass) {
+	struct Expr* parent;
     wchar_t* name;
     
     vec_t(struct TYPE(Dummy)) generics;
@@ -152,6 +166,7 @@ typedef struct TYPE(GenericClass) {
 }TYPE(GenericClass);
 
 typedef struct TYPE(Dummy) {
+	struct Expr* parent;
     wchar_t* name;
 }TYPE(Dummy);
 
@@ -167,17 +182,20 @@ typedef enum EnumFunctionBodyType{
 }EnumFunctionBodyType;
 
 typedef struct FunctionMethodHeader {
+	struct Expr* parent;
     wchar_t name;
     struct TYPE(Fn) fnType;
 }FunctionMethodHeader;
 
 typedef struct OperatorMethodHeader {
+	struct Expr* parent;
     /* operator ID as in defines.h */
     unsigned int opId;
     struct TYPE(Fn) fnType;
 }OperatorMethodHeader;
 
 typedef struct FunctionMethod {
+	struct Expr* parent;
     struct FunctionMethodHeader* header;
     EnumFunctionBodyType typeField;
     union{
@@ -188,6 +206,7 @@ typedef struct FunctionMethod {
 }FunctionMethod;
 
 typedef struct OperatorMethod {
+	struct Expr* parent;
     struct FunctionMethodHeader* header;
     EnumFunctionBodyType typeField;
     union{
@@ -201,6 +220,7 @@ typedef struct OperatorMethod {
  * Used for method attributes and global variables *
  */
 typedef struct Attribute {
+	struct Expr* parent;
     wchar_t name;
     struct DataType* type;
     int isLocal;
@@ -214,6 +234,7 @@ typedef struct Attribute {
  */
 
 typedef struct Program{
+	struct Expr* parent;
     wchar_t* name;
     
     vec_t(struct ImportPackage*) imports;
@@ -227,6 +248,7 @@ typedef struct Program{
  * Single Import Expression
  */
 typedef struct ImportPackage{
+	struct Expr* parent;
     vec_t(wchar_t*) pkg;
 }ImportPackage;
 
@@ -234,6 +256,7 @@ typedef struct ImportPackage{
  * Global functions
  */
 typedef struct Function{
+	struct Expr* parent;
     struct FunctionMethodHeader* header;
     EnumFunctionBodyType typeField;
     union{
@@ -243,6 +266,7 @@ typedef struct Function{
 }Function;
 
 typedef struct ExternMethod{
+	struct Expr* parent;
     struct FunctionMethodHeader* header;
     int isPure;
 }ExternMethod;
@@ -252,6 +276,7 @@ typedef struct ExternMethod{
  * where it does not have local visibility
  */
 typedef struct Variable{
+	struct Expr* parent;
     wchar_t* name;
     struct DataType* type;
     int isMutable;
@@ -275,22 +300,26 @@ typedef enum EnumStatements{
 
 
 typedef struct Block {
+	struct Expr* parent;
     vec_t(struct Statement*) statements;
     vec_t(struct Variable*) variables;
     int isSynchronized;
 }Block;
 
 typedef struct Repeat{
+	struct Expr* parent;
     struct Block* block;
     struct Expr* condition;
 }Repeat;
 
 typedef struct While{
+	struct Expr* parent;
     struct Block* block;
     struct Expr* condition;
 }While;
 
 typedef struct For{
+	struct Expr* parent;
     vec_t(struct Expr*) initExprList;
     struct Expr* condition;
     vec_t(struct Expr*) incExprList;
@@ -298,16 +327,19 @@ typedef struct For{
 }For;
 
 typedef struct Foreach{
+	struct Expr* parent;
     struct Variable* looper;
     struct Expr* container;
     struct Block* block;
 }Foreach;
 
 typedef struct Return{
+	struct Expr* parent;
     vec_t(struct Expr*) returnedExprs;
 }Return;
 
 typedef struct If{
+	struct Expr* parent;
     struct Expr* condition;
     struct Block* block;
     vec_t(struct If*) elseifs;
@@ -315,16 +347,19 @@ typedef struct If{
 }If;
 
 typedef struct Else {
+	struct Expr* parent;
     struct Block* block;
 }Else;
 
 typedef struct Match{
+	struct Expr* parent;
     vec_t(struct Expr*) tomatch;
     vec_t(struct MatchElement*) elements;
     struct Block* else_;
 }Match;
 
 typedef struct MatchElement {
+	struct Expr* parent;
     vec_t(struct Expr*) matches;
     struct Block* block;
 }MatchElement;
@@ -356,35 +391,42 @@ typedef enum EnumValues{
 }EnumValues;
 
 typedef struct VarDeclExpr{
+	struct Expr* parent;
     vec_t(struct Variable*) variables;
 };
 
 typedef struct MatchExpr{
+	struct Expr* parent;
     vec_t(struct MatchExprElement*) elements;
     struct Expr* else_;
 }MatchExpr;
 
 typedef struct MatchExprElement{
+	struct Expr* parent;
     vec_t(struct Expr*) matches;
     struct Expr* expr;
 }MatchExprElement;
 
 typedef struct BinaryOperator{
+	struct Expr* parent;
     unsigned int operator;
     struct Expr* left;
     struct Expr* right;
 }BinaryOperator;
 
 typedef struct UnaryOperator{
+	struct Expr* parent;
     unsigned int operator;
     struct Expr* unary;
 }UnaryOperator;
 
 typedef struct Value{
+	struct Expr* parent;
     wchar_t* value;
 }Value;
 
 typedef struct ListCompExpr{
+	struct Expr* parent;
     struct Variable* variable;
     struct Expr* in;
     struct Expr* condition;
@@ -392,6 +434,7 @@ typedef struct ListCompExpr{
 }ListCompExpr;
 
 typedef struct LabmdaExpr{
+	struct Expr* parent;
     struct FunctionMethodHeader* header;
     EnumFunctionBodyType typeField;
     union{
@@ -407,6 +450,7 @@ typedef enum EnumNew{
 }EnumNew;
 
 typedef struct NewExpr{
+	struct Expr* parent;
     EnumNew typeField;
     union{
         struct NewPkgTemplate* newPkgTemplate;
@@ -416,6 +460,7 @@ typedef struct NewExpr{
 }NewExpr;
 
 typedef struct NewPkgTemplate{
+	struct Expr* parent;
     vec_t(wchar_t *) pkg;
 }NewPkgTemplate;
 
