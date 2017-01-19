@@ -1,6 +1,6 @@
 Mugen
 ===
-![](https://i.imgur.com/uieeZOh.png)
+![](res/mugen_logo.png)
 ## Notice
 > :soon: WIP
 
