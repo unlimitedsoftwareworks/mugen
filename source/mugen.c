@@ -14,11 +14,11 @@ int compile(char *fname)
 	wchar_t *InputBuf;
 	struct TokenStruct *Token;
 	int Result;
-
+	
 	/* Load the inputfile into memory. */
 	InputBuf = LoadInputFile(fname);
 	if (InputBuf == NULL) exit(1);
-
+	
 	int debugg = 0;
 	int err = 0;
 	/* Run the Parser. */
@@ -32,19 +32,11 @@ int compile(char *fname)
 	else {
 		printf("Input accepted\n");
 	}
-
-	Program *program = dmt_calloc(1, sizeof(Program));
-	vec_init(&program->imports);
-	vec_init(&program->externMethods);
-	vec_init(&program->variables);
-	vec_init(&program->datatypes);
-	vec_init(&program->functions);
 	
-
-	//printTree(Token,0);
-
-	//semanticAnalyse(parentExpr);
-
+	Program *program = createProgram(0, 0, fname);
+	
+	RuleTemplate(Token, (Node*)program);
+	
 	/* Cleanup. */
 	DeleteTokens(Token);
 	dmt_free(InputBuf);

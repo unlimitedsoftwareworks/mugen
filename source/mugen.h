@@ -20,10 +20,7 @@ typedef void* utf8String;
 #define MUGEN_VERSION "0.1.a"
 
 #define MUGEN_HELP "\
-   _   _   _   _   _  \n\
-  / \\ / \\ / \\ / \\ / \\ \n\
- ( M | U | G | E | N ) v. %s\n\
-  \\_/ \\_/ \\_/ \\_/ \\_/ \n\n\
+  M U G E N  (v. %s)\n\n\
 Written by Soulaymen Chouri [doit@praisethemoon.org]\n\n\
 > Usage: mugen -c input.mu (compiles an input source file)\n\n"
 

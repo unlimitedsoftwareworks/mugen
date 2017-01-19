@@ -18,6 +18,9 @@ struct ContextStruct {
 
 
 
+/* Forward definition of the RuleJumpTable. It will be filled with a link
+ *to a subroutine for every rule later on. */
+void(*RuleJumpTable[])(struct TokenStruct *Token, Node *parent);
 
 void ReadableString(wchar_t *Input, wchar_t *Output, long Width);
 

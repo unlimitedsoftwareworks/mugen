@@ -21,24 +21,24 @@ wchar_t *LoadInputFile(char *FileName) {
 	struct stat statbuf;
 	size_t BytesRead;
 	unsigned long i;
-
+	
 	/* Sanity check. */
 	if ((FileName == NULL) || (*FileName == '\0')) return(NULL);
-
+	
 	/* Open the file. */
 	Fin = fopen(FileName, "rb");
 	if (Fin == NULL) {
 		fprintf(stdout, "Could not open input file: %s\n", FileName);
 		return(NULL);
 	}
-
+	
 	/* Get the size of the file. */
 	if (fstat(fileno(Fin), &statbuf) != 0) {
 		fprintf(stdout, "Could not stat() the input file: %s\n", FileName);
 		fclose(Fin);
 		return(NULL);
 	}
-
+	
 	/* Allocate memory for the input. */
 	Buf1 = (char *)dmt_malloc(statbuf.st_size + 1);
 	Buf2 = (wchar_t *)dmt_malloc(sizeof(wchar_t) * (statbuf.st_size + 1));
@@ -49,14 +49,14 @@ wchar_t *LoadInputFile(char *FileName) {
 		if (Buf2 != NULL) dmt_free(Buf2);
 		return(NULL);
 	}
-
+	
 	/* Load the file into memory. */
 	BytesRead = fread(Buf1, 1, statbuf.st_size, Fin);
 	Buf1[BytesRead] = '\0';
-
+	
 	/* Close the file. */
 	fclose(Fin);
-
+	
 	/* Exit if there was an error while reading the file. */
 	if (BytesRead != statbuf.st_size) {
 		fprintf(stdout, "Error while reading input file: %s\n", FileName);
@@ -64,11 +64,11 @@ wchar_t *LoadInputFile(char *FileName) {
 		dmt_free(Buf2);
 		return(NULL);
 	}
-
+	
 	/* Convert from ASCII to Unicode. */
 	for (i = 0; i <= BytesRead; i++) Buf2[i] = Buf1[i];
 	dmt_free(Buf1);
-
+	
 	return(Buf2);
 }
 
@@ -79,27 +79,27 @@ void ShowErrorMessage(struct TokenStruct *Token, int Result) {
 	int Symbol;
 	int i;
 	wchar_t s1[BUFSIZ];
-
+	
 	switch (Result) {
-	case PARSELEXICALERROR:
-		fprintf(stdout, "Lexical error");
-		break;
-	case PARSECOMMENTERROR:
-		fprintf(stdout, "Comment error");
-		break;
-	case PARSETOKENERROR:
-		fprintf(stdout, "Tokenizer error");
-		break;
-	case PARSESYNTAXERROR:
-		fprintf(stdout, "Syntax error");
-		break;
-	case PARSEMEMORYERROR:
-		fprintf(stdout, "Out of memory");
-		break;
+		case PARSELEXICALERROR:
+			fprintf(stdout, "Lexical error");
+			break;
+		case PARSECOMMENTERROR:
+			fprintf(stdout, "Comment error");
+			break;
+		case PARSETOKENERROR:
+			fprintf(stdout, "Tokenizer error");
+			break;
+		case PARSESYNTAXERROR:
+			fprintf(stdout, "Syntax error");
+			break;
+		case PARSEMEMORYERROR:
+			fprintf(stdout, "Out of memory");
+			break;
 	}
 	if (Token != NULL) fprintf(stdout, " at line %ld column %ld", Token->Line, Token->Column);
 	fprintf(stdout, ".\n");
-
+	
 	if (Result == PARSELEXICALERROR) {
 		if (Token->Data != NULL) {
 			ReadableString(Token->Data, s1, BUFSIZ);
@@ -153,7 +153,7 @@ int fileExists(char* name)
 const char* basename(const char *name)
 {
 	const char *base = name;
-
+	
 	while (*name)
 	{
 		if (*name++ == '/')
@@ -165,7 +165,7 @@ const char* basename(const char *name)
 }
 
 /* 
-* DID NOT USE: MISSING LICENSE INFORMATION
-* http://www.nextcomputers.org/NeXTfiles/Software/OPENSTEP/Developer/NScompatlib/strdup.c
-*/
+ * DID NOT USE: MISSING LICENSE INFORMATION
+ * http://www.nextcomputers.org/NeXTfiles/Software/OPENSTEP/Developer/NScompatlib/strdup.c
+ */
 

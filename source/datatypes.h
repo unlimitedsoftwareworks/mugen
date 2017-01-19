@@ -26,7 +26,7 @@
 
 /* used in structure headers */
 #define TYPE(t) t##DataType
-//#define PARENT_EXPR struct Node* parent;
+//#define PARENT_EXPR Node parent;
 /*
 * ******************************************
 *        DataTypes Representations
@@ -95,39 +95,39 @@ typedef struct Node {
 }Node;
 
 typedef struct TYPE(Basic) {
-	struct Node* parent;
+	Node parent;
 	enum EnumBasicDataType typeField;
 }TYPE(Basic);
 
 typedef struct TYPE(Array) {
-	struct Node* parent;
+	Node parent;
 	struct DataType* arrayOf;
 }TYPE(Array);
 
 typedef struct TYPE(Tuple) {
-	struct Node* parent;
+	Node parent;
 	vec_t(struct DataType*) elements;
 }TYPE(Tuple);
 
 typedef struct TYPE(Reference) {
-	struct Node* parent;
+	Node parent;
 	struct DataType* referenceTo;
 }TYPE(Reference);
 
 typedef struct TYPE(Fn) {
-	struct Node* parent;
+	Node parent;
 	vec_t(struct DataType*) params;
 	vec_t(struct DataType*) returnTypes;
 }TYPE(Fn);
 
 typedef struct TYPE(Behavior) {
-	struct Node* parent;
+	Node parent;
 	/* can be only interfaces and generic interface */
 	vec_t(struct DataType*) behaviours;
 }TYPE(Behavior);
 
 typedef struct TYPE(Interface) {
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	
 	vec_t(struct FunctionMethodHeader*) methodHeaders;
@@ -135,7 +135,7 @@ typedef struct TYPE(Interface) {
 }TYPE(Interface);
 
 typedef struct TYPE(Class) {
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	int isImmutable;
 	
@@ -151,7 +151,7 @@ typedef struct TYPE(Enum) {
 }TYPE(Enum);
 
 typedef struct TYPE(GenericInterface) {
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	
 	vec_t(struct TYPE(Dummy)) generics;
@@ -161,7 +161,7 @@ typedef struct TYPE(GenericInterface) {
 
 
 typedef struct TYPE(GenericClass) {
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	
 	vec_t(struct TYPE(Dummy)) generics;
@@ -172,7 +172,7 @@ typedef struct TYPE(GenericClass) {
 }TYPE(GenericClass);
 
 typedef struct TYPE(Dummy) {
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 }TYPE(Dummy);
 
@@ -188,20 +188,20 @@ typedef enum EnumFunctionBodyType{
 }EnumFunctionBodyType;
 
 typedef struct FunctionMethodHeader {
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	struct TYPE(Fn) fnType;
 }FunctionMethodHeader;
 
 typedef struct OperatorMethodHeader {
-	struct Node* parent;
+	Node parent;
 	/* operator ID as in defines.h */
 	unsigned int opId;
 	struct TYPE(Fn) fnType;
 }OperatorMethodHeader;
 
 typedef struct FunctionMethod {
-	struct Node* parent;
+	Node parent;
 	struct FunctionMethodHeader* header;
 	EnumFunctionBodyType typeField;
 	union{
@@ -212,7 +212,7 @@ typedef struct FunctionMethod {
 }FunctionMethod;
 
 typedef struct OperatorMethod {
-	struct Node* parent;
+	Node parent;
 	struct FunctionMethodHeader* header;
 	EnumFunctionBodyType typeField;
 	union{
@@ -226,7 +226,7 @@ typedef struct OperatorMethod {
 * Used for method attributes and global variables *
 */
 typedef struct Attribute {
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	struct DataType* type;
 	int isLocal;
@@ -240,7 +240,7 @@ typedef struct Attribute {
 */
 
 typedef struct Program{
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	
 	vec_t(struct ImportPackage*) imports;
@@ -254,7 +254,7 @@ typedef struct Program{
 * Single Import Nodeession
 */
 typedef struct ImportPackage{
-	struct Node* parent;
+	Node parent;
 	vec_t(utf8String) pkg;
 }ImportPackage;
 
@@ -262,7 +262,7 @@ typedef struct ImportPackage{
 * Global functions
 */
 typedef struct Function{
-	struct Node* parent;
+	Node parent;
 	struct FunctionMethodHeader* header;
 	EnumFunctionBodyType typeField;
 	union{
@@ -272,7 +272,7 @@ typedef struct Function{
 }Function;
 
 typedef struct ExternMethod{
-	struct Node* parent;
+	Node parent;
 	struct FunctionMethodHeader* header;
 	int isPure;
 }ExternMethod;
@@ -282,7 +282,7 @@ typedef struct ExternMethod{
 * where it does not have local visibility
 */
 typedef struct Variable{
-	struct Node* parent;
+	Node parent;
 	utf8String name;
 	struct DataType* type;
 	int isMutable;
@@ -306,26 +306,26 @@ typedef enum EnumStatements{
 
 
 typedef struct Block {
-	struct Node* parent;
+	Node parent;
 	vec_t(struct Statement*) statements;
 	vec_t(struct Variable*) variables;
 	int isSynchronized;
 }Block;
 
 typedef struct Repeat{
-	struct Node* parent;
+	Node parent;
 	struct Block* block;
 	struct Node* condition;
 }Repeat;
 
 typedef struct While{
-	struct Node* parent;
+	Node parent;
 	struct Block* block;
 	struct Node* condition;
 }While;
 
 typedef struct For{
-	struct Node* parent;
+	Node parent;
 	vec_t(struct Node*) initNodeList;
 	struct Node* condition;
 	vec_t(struct Node*) incNodeList;
@@ -333,19 +333,19 @@ typedef struct For{
 }For;
 
 typedef struct Foreach{
-	struct Node* parent;
+	Node parent;
 	struct Variable* looper;
 	struct Node* container;
 	struct Block* block;
 }Foreach;
 
 typedef struct Return{
-	struct Node* parent;
+	Node parent;
 	vec_t(struct Node*) returnedNodes;
 }Return;
 
 typedef struct If{
-	struct Node* parent;
+	Node parent;
 	struct Node* condition;
 	struct Block* block;
 	vec_t(struct If*) elseifs;
@@ -353,19 +353,19 @@ typedef struct If{
 }If;
 
 typedef struct Else {
-	struct Node* parent;
+	Node parent;
 	struct Block* block;
 }Else;
 
 typedef struct Match{
-	struct Node* parent;
+	Node parent;
 	vec_t(struct Node*) tomatch;
 	vec_t(struct MatchElement*) elements;
 	struct Block* else_;
 }Match;
 
 typedef struct MatchElement {
-	struct Node* parent;
+	Node parent;
 	vec_t(struct Node*) matches;
 	struct Block* block;
 }MatchElement;
@@ -397,42 +397,42 @@ typedef enum EnumValues{
 }EnumValues;
 
 typedef struct VarDeclNode{
-	struct Node* parent;
+	Node parent;
 	vec_t(struct Variable*) variables;
-};
+}VarDeclNode;
 
 typedef struct MatchNode{
-	struct Node* parent;
+	Node parent;
 	vec_t(struct MatchNodeElement*) elements;
 	struct Node* else_;
 }MatchNode;
 
 typedef struct MatchNodeElement{
-	struct Node* parent;
+	Node parent;
 	vec_t(struct Node*) matches;
 	struct Node* expr;
 }MatchNodeElement;
 
 typedef struct BinaryOperator{
-	struct Node* parent;
+	Node parent;
 	unsigned int operator;
 	struct Node* left;
 	struct Node* right;
 }BinaryOperator;
 
 typedef struct UnaryOperator{
-	struct Node* parent;
+	Node parent;
 	unsigned int operator;
 	struct Node* unary;
 }UnaryOperator;
 
 typedef struct Value{
-	struct Node* parent;
+	Node parent;
 	utf8String value;
 }Value;
 
 typedef struct ListCompNode{
-	struct Node* parent;
+	Node parent;
 	struct Variable* variable;
 	struct Node* in;
 	struct Node* condition;
@@ -440,7 +440,7 @@ typedef struct ListCompNode{
 }ListCompNode;
 
 typedef struct LabmdaNode{
-	struct Node* parent;
+	Node parent;
 	struct FunctionMethodHeader* header;
 	EnumFunctionBodyType typeField;
 	union{
@@ -456,7 +456,7 @@ typedef enum EnumNew{
 }EnumNew;
 
 typedef struct NewNode{
-	struct Node* parent;
+	Node parent;
 	EnumNew typeField;
 	union{
 		struct NewPkgTemplate* newPkgTemplate;
@@ -466,8 +466,12 @@ typedef struct NewNode{
 }NewNode;
 
 typedef struct NewPkgTemplate{
-	struct Node* parent;
+	Node parent;
 	vec_t(utf8String) pkg;
 }NewPkgTemplate;
+
+
+Program* createProgram(unsigned int line, unsigned int pos, utf8String source);
+
 
 #endif

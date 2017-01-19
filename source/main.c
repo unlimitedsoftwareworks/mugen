@@ -6,8 +6,8 @@
 #include "mugen.h"
 
 /* 
-* This should be included once
-*/
+ * This should be included once
+ */
 #include "utf8.h"
 
 int main(int argc, char *argv[]) {
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
 		parseCmdLine();
 	}
 	
-	int err = compile("tests/sample01.mu");
+	int err = compile("../tests/sample01.mu");
 	
 	printf("\n[NOTICE] Ending with memory of [%zu]Bytes\n", dmt_usage());
 	printf("\n[NOTICE] Memory DUMP:\n");

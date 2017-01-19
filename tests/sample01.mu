@@ -26,7 +26,7 @@ class HelloWorld implements Runnable, StringObject {
         Console.println(message)
     }
     
-    function toString() -> String = "HelloWorld[msg: "+msg+"]"
+    function toString() -> String = String.format("HelloWorld[msg: %s]", msg)
 }
 
 function main(args: String[]) -> UInt32 {
