@@ -84,6 +84,11 @@ typedef struct DataType {
 }DataType;
 
 typedef struct Node {
+    wchar_t *ReturnValue;             /* In this template all rules return a string. */
+	int Indent;                       /* For printing debug messages. */
+	int Debug;                        /* 0=off, 1=on */
+	struct TokenStruct *token;
+    
 	unsigned int line;
 	unsigned int pos;
 	utf8String source;
@@ -466,28 +471,3 @@ typedef struct NewPkgTemplate{
 }NewPkgTemplate;
 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
