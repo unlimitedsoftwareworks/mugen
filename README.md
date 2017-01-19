@@ -1,6 +1,6 @@
 Mugen
 ===
-![](res/mugen_logo.png)
+![](res/mugen.png)
 ## Notice
 > :soon: WIP
 
