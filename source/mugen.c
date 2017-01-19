@@ -54,7 +54,7 @@ int compile(char *fname)
 
 void displayHelp()
 {
-    printf(MUGEN_HELP, MUGEN_VERSION);
+	printf(MUGEN_HELP, MUGEN_VERSION);
 }
 
 void parseCmdLine(int argc, char* argv[])

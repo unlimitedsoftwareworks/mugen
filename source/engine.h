@@ -48,77 +48,77 @@ Version:     1.8
 
 /* Grammar table and sub-tables. */
 struct SymbolStruct {              /* Grammar.SymbolArray[] */
-  short Kind;                         /* 0...7, See SYMBOL defines. */
-  wchar_t *Name;                      /* String with name of symbol. */
-  };
+short Kind;                         /* 0...7, See SYMBOL defines. */
+wchar_t *Name;                      /* String with name of symbol. */
+};
 struct DfaEdgeStruct {             /* Grammar.DfaArray[].Edges[] */
-  int TargetState;                    /* Index into Grammar.DfaArray[]. */
-  int CharCount;                      /* Number of characters in the charset. */
-  wchar_t *CharacterSet;              /* String with characters. */
-  };
+int TargetState;                    /* Index into Grammar.DfaArray[]. */
+int CharCount;                      /* Number of characters in the charset. */
+wchar_t *CharacterSet;              /* String with characters. */
+};
 struct DfaStateStruct {            /* Grammar.DfaArray[] */
-  int AcceptSymbol;                   /* -1 (Terminal), or index into Grammar.SymbolArray[]. */
-  int EdgeCount;                      /* Number of items in Edges[] array. */
-  struct DfaEdgeStruct *Edges;        /* Array of DfaEdgeStruct. */
-  };
+int AcceptSymbol;                   /* -1 (Terminal), or index into Grammar.SymbolArray[]. */
+int EdgeCount;                      /* Number of items in Edges[] array. */
+struct DfaEdgeStruct *Edges;        /* Array of DfaEdgeStruct. */
+};
 struct RuleStruct {                /* Grammar.RuleArray[] */
-  int Head;                           /* Index into Grammar.SymbolArray[]. */
-  int SymbolsCount;                   /* Number of items in Symbols[] array. */
-  int *Symbols;                       /* Array of indexes into Grammar.SymbolArray[]. */
-  wchar_t *Description;               /* String with BNF of the rule. */
-  };
+int Head;                           /* Index into Grammar.SymbolArray[]. */
+int SymbolsCount;                   /* Number of items in Symbols[] array. */
+int *Symbols;                       /* Array of indexes into Grammar.SymbolArray[]. */
+wchar_t *Description;               /* String with BNF of the rule. */
+};
 struct ActionStruct {              /* Grammar.LalrArray[].Actions[] */
-  int Entry;                          /* Index into Grammar.SymbolArray[]. */
-  short Action;                       /* 1...4, see ACTION defines. */
-  int Target;                         /* If Action=SHIFT then index into Grammar.LalrArray[]. */
-                                      /* If Action=REDUCE then index into Grammar.RuleArray[]. */
-                                      /* If Action=GOTO then index into Grammar.LalrArray[]. */
-  };
+int Entry;                          /* Index into Grammar.SymbolArray[]. */
+short Action;                       /* 1...4, see ACTION defines. */
+int Target;                         /* If Action=SHIFT then index into Grammar.LalrArray[]. */
+									/* If Action=REDUCE then index into Grammar.RuleArray[]. */
+									/* If Action=GOTO then index into Grammar.LalrArray[]. */
+};
 struct LalrStateStruct {           /* Grammar.LalrArray[] */
-  int ActionCount;                    /* Number of items in Actions[] array. */
-  struct ActionStruct *Actions;       /* Array of ActionStruct. */
-  };
+int ActionCount;                    /* Number of items in Actions[] array. */
+struct ActionStruct *Actions;       /* Array of ActionStruct. */
+};
 struct GrammarStruct {             /* Grammar */
-  char CaseSensitive;                 /* 'True' or 'False'. */
-  int InitialSymbol;                  /* Index into Grammar.SymbolArray[]. */
-  int InitialDfaState;                /* Index into Grammar.DfaArray[]. */
-  int InitialLalrState;               /* Index into Grammar.LalrArray[]. */
-  int SymbolCount;                    /* Number of items in Grammar.SymbolArray[]. */
-  struct SymbolStruct *SymbolArray;
-  int RuleCount;                      /* Number of items in Grammar.RuleArray[]. */
-  struct RuleStruct *RuleArray;
-  int DfaStateCount;                  /* Number of items in Grammar.DfaArray[]. */
-  struct DfaStateStruct *DfaArray;
-  int LalrStateCount;                 /* Number of items in Grammar.LalrArray[]. */
-  struct LalrStateStruct *LalrArray;
-  } Grammar;
+char CaseSensitive;                 /* 'True' or 'False'. */
+int InitialSymbol;                  /* Index into Grammar.SymbolArray[]. */
+int InitialDfaState;                /* Index into Grammar.DfaArray[]. */
+int InitialLalrState;               /* Index into Grammar.LalrArray[]. */
+int SymbolCount;                    /* Number of items in Grammar.SymbolArray[]. */
+struct SymbolStruct *SymbolArray;
+int RuleCount;                      /* Number of items in Grammar.RuleArray[]. */
+struct RuleStruct *RuleArray;
+int DfaStateCount;                  /* Number of items in Grammar.DfaArray[]. */
+struct DfaStateStruct *DfaArray;
+int LalrStateCount;                 /* Number of items in Grammar.LalrArray[]. */
+struct LalrStateStruct *LalrArray;
+} Grammar;
 
 
 /* Output from the parser. */
 struct TokenStruct {
-  int ReductionRule;                  /* Index into Grammar.RuleArray[]. */
-  struct TokenStruct **Tokens;        /* Array of reduction Tokens. */
-  int Symbol;                         /* Index into Grammar.SymbolArray[]. */
-  wchar_t *Data;                      /* String with data from the input. */
-  long Line;                          /* Line number in the input. */
-  long Column;                        /* Column in the input. */
-  };
+int ReductionRule;                  /* Index into Grammar.RuleArray[]. */
+struct TokenStruct **Tokens;        /* Array of reduction Tokens. */
+int Symbol;                         /* Index into Grammar.SymbolArray[]. */
+wchar_t *Data;                      /* String with data from the input. */
+long Line;                          /* Line number in the input. */
+long Column;                        /* Column in the input. */
+};
 
 
 /* Exported functions. */
 int Parse(
-  wchar_t *InputBuf,                  /* Pointer to the input data. */
-  long InputSize,                     /* Number of characters in the input. */
-  int TrimReductions,                 /* 0 = don't trim, 1 = trim reductions. */
-  int Debug,                          /* 0 = no debug, 1 = print debug info. */
-  struct TokenStruct **Token);        /* Output, the first Token. */
+wchar_t *InputBuf,                  /* Pointer to the input data. */
+long InputSize,                     /* Number of characters in the input. */
+int TrimReductions,                 /* 0 = don't trim, 1 = trim reductions. */
+int Debug,                          /* 0 = no debug, 1 = print debug info. */
+struct TokenStruct **Token);        /* Output, the first Token. */
 void DeleteTokens(struct TokenStruct *Token);
 wchar_t *RetrieveToken(
-  wchar_t *InputBuf,                  /* The input data. */
-  long InputSize,                     /* Size of the input data. */
-  long *InputHere,                    /* Index into input data. */
-  long *Line,                         /* Current line number. */
-  long *Column,                       /* Current column number. */
-  int *Symbol);
+wchar_t *InputBuf,                  /* The input data. */
+long InputSize,                     /* Size of the input data. */
+long *InputHere,                    /* Index into input data. */
+long *Line,                         /* Current line number. */
+long *Column,                       /* Current column number. */
+int *Symbol);
 
 #endif
