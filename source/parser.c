@@ -15,6 +15,7 @@
 #include "datatypes.h"
 #include "utilities.h"
 #include "defines.h"
+#include "mugen.h"
 
 #define TRIMREDUCTIONS 0            /* 0=off, 1=on */
 #define DEBUG          1            /* 0=off, 1=on */
@@ -176,7 +177,8 @@ void RuleTemplate(struct TokenStruct *Token, Node *parent) {
 
 /* <Program> ::= <Import Section> <Declarations> */
 void Rule_Program(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
+	parseExpr(1, parent);
 };
 
 
@@ -184,7 +186,7 @@ void Rule_Program(struct TokenStruct *Token, Node *parent) {
 
 /* <Import Section> ::= import '(' <Import Expr List> ')' */
 void Rule_ImportSection_import_LParen_RParen(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(2, parent);
 };
 
 
@@ -192,7 +194,7 @@ void Rule_ImportSection_import_LParen_RParen(struct TokenStruct *Token, Node *pa
 
 /* <Import Section> ::= import '(' ')' */
 void Rule_ImportSection_import_LParen_RParen2(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	
 };
 
 
@@ -200,7 +202,7 @@ void Rule_ImportSection_import_LParen_RParen2(struct TokenStruct *Token, Node *p
 
 /* <Import Section> ::=  */
 void Rule_ImportSection(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	
 };
 
 
@@ -208,7 +210,16 @@ void Rule_ImportSection(struct TokenStruct *Token, Node *parent) {
 
 /* <Import Expr List> ::= <Import Path> ',' <Import Expr List> */
 void Rule_ImportExprList_Comma(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	ASSERT(parent->nodeType == PS_PROGRAM, "Expected a PROGRAM parent");
+	
+	ImportPackage* import = createImportPackage(parent, Token->Line, Token->Column);
+	parseExpr(0, (Node*)import);
+	vec_push(&((Program*)parent)->imports, import);
+	
+	/* debug */
+	//dumpImportPackage(import);
+	
+	parseExpr(2, parent);
 };
 
 
@@ -216,7 +227,14 @@ void Rule_ImportExprList_Comma(struct TokenStruct *Token, Node *parent) {
 
 /* <Import Expr List> ::= <Import Path> */
 void Rule_ImportExprList(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	ASSERT(parent->nodeType == PS_PROGRAM, "Expected a PROGRAM parent");
+	
+	ImportPackage* import = createImportPackage(parent, Token->Line, Token->Column);
+	parseExpr(0, (Node*)import);
+	vec_push(&((Program*)parent)->imports, import);
+	
+	/* debug */
+	//dumpImportPackage(import);
 };
 
 
@@ -224,7 +242,12 @@ void Rule_ImportExprList(struct TokenStruct *Token, Node *parent) {
 
 /* <Import Path> ::= Identifier '.' <Import Path> */
 void Rule_ImportPath_Identifier_Dot(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	ASSERT(parent->nodeType == PS_IMPORTPATH, "Expected an IMPORT_PACKAGE parent");
+	
+	ImportPackage* import = (ImportPackage*)parent;
+	vec_push(&import->pkg, Token->Tokens[0]->Data);
+	
+	parseExpr(2, parent);
 };
 
 
@@ -232,12 +255,17 @@ void Rule_ImportPath_Identifier_Dot(struct TokenStruct *Token, Node *parent) {
 
 /* <Import Path> ::= Identifier */
 void Rule_ImportPath_Identifier(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	ASSERT(parent->nodeType == PS_IMPORTPATH, "Expected an IMPORT_PACKAGE parent");
+	
+	ImportPackage* import = (ImportPackage*)parent;
+	vec_push(&import->pkg, Token->Tokens[0]->Data);
 };
 
 
 
-
+/*
+ * TODO: implement this.
+ */
 /* <Import Path> ::= Identifier from StringLiteral */
 void Rule_ImportPath_Identifier_from_StringLiteral(struct TokenStruct *Token, Node *parent) {
 	RuleTemplate(Token,parent);
@@ -246,6 +274,9 @@ void Rule_ImportPath_Identifier_from_StringLiteral(struct TokenStruct *Token, No
 
 
 
+/*
+ * TODO: implement this.
+ */
 /* <Import Path> ::= Identifier from CharLiteral */
 void Rule_ImportPath_Identifier_from_CharLiteral(struct TokenStruct *Token, Node *parent) {
 	RuleTemplate(Token,parent);
