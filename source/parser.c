@@ -287,7 +287,8 @@ void Rule_ImportPath_Identifier_from_CharLiteral(struct TokenStruct *Token, Node
 
 /* <Declarations> ::= <Decl> <Declarations> */
 void Rule_Declarations(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
+    parseExpr(1, parent);
 };
 
 
@@ -295,7 +296,7 @@ void Rule_Declarations(struct TokenStruct *Token, Node *parent) {
 
 /* <Declarations> ::=  */
 void Rule_Declarations2(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	
 };
 
 
@@ -303,7 +304,7 @@ void Rule_Declarations2(struct TokenStruct *Token, Node *parent) {
 
 /* <Decl> ::= <LType Decl> */
 void Rule_Decl(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
@@ -311,7 +312,7 @@ void Rule_Decl(struct TokenStruct *Token, Node *parent) {
 
 /* <Decl> ::= <LVar Decl> */
 void Rule_Decl2(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
@@ -319,7 +320,7 @@ void Rule_Decl2(struct TokenStruct *Token, Node *parent) {
 
 /* <Decl> ::= <LFunction Decl> */
 void Rule_Decl3(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
