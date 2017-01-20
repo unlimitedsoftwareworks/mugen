@@ -212,7 +212,7 @@ void Rule_ImportSection(struct TokenStruct *Token, Node *parent) {
 void Rule_ImportExprList_Comma(struct TokenStruct *Token, Node *parent) {
 	ASSERT(parent->nodeType == PS_PROGRAM, "Expected a PROGRAM parent");
 	
-	ImportPackage* import = createImportPackage(parent, Token->Line, Token->Column);
+	ImportPackage* import = createImportPackage(parent, Token);
 	parseExpr(0, (Node*)import);
 	vec_push(&((Program*)parent)->imports, import);
 	
@@ -229,7 +229,7 @@ void Rule_ImportExprList_Comma(struct TokenStruct *Token, Node *parent) {
 void Rule_ImportExprList(struct TokenStruct *Token, Node *parent) {
 	ASSERT(parent->nodeType == PS_PROGRAM, "Expected a PROGRAM parent");
 	
-	ImportPackage* import = createImportPackage(parent, Token->Line, Token->Column);
+	ImportPackage* import = createImportPackage(parent, Token);
 	parseExpr(0, (Node*)import);
 	vec_push(&((Program*)parent)->imports, import);
 	
@@ -329,6 +329,7 @@ void Rule_Decl3(struct TokenStruct *Token, Node *parent) {
 /* <LType Decl> ::= local <Type Decl> */
 void Rule_LTypeDecl_local(struct TokenStruct *Token, Node *parent) {
 	RuleTemplate(Token,parent);
+    
 };
 
 

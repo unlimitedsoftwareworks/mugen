@@ -3,16 +3,16 @@
 #include <stddef.h>
 
 #include "mugen.h"
+#include "engine.h"
 #include "datatypes.h"
 #include "memory.h"
 #include "defines.h"
 
-Program* createProgram(unsigned int line, unsigned int pos, utf8String source) {
+Program* createProgram(struct TokenStruct *token) {
 	Program *program = dmt_calloc(1, sizeof(Program));
 	
 	program->node.ReturnValue = NULL;
-	program->node.line = line;
-	program->node.pos = pos;
+	program->node.token = token;
 	program->node.Debug = 0;
 	program->node.nodeType = PS_PROGRAM;
 	program->node.parent = NULL;
@@ -26,10 +26,11 @@ Program* createProgram(unsigned int line, unsigned int pos, utf8String source) {
 	return program;
 }
 
-ImportPackage* createImportPackage(Node* parent, unsigned int line, unsigned int pos) {
+ImportPackage* createImportPackage(Node* parent, struct TokenStruct *token) {
 	ImportPackage *import = dmt_calloc(1, sizeof(ImportPackage));
 	import->node.parent = parent;
 	import->node.nodeType = PS_IMPORTPATH;
+    import->node.token = token;
 	
 	vec_init(&import->pkg);
 	
@@ -46,3 +47,6 @@ void dumpImportPackage(ImportPackage* import) {
 			printf("\n");
 	}
 }
+
+/* Datatypes */
+//DataType* createDataType(Node* parent, 

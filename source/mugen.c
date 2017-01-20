@@ -51,7 +51,7 @@ int compile(char *fname)
 		printf("Input accepted\n");
 	}
 	
-	Program *program = createProgram(0, 0, fname);
+	Program *program = createProgram(Token);
 	
 	RuleTemplate(Token, (Node*)program);
 	

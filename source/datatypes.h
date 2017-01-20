@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include "vec.h"
 #include "mugen.h"
-#include "engine.h"
 
 /*
 * Helper macros,
@@ -90,10 +89,6 @@ typedef struct Node {
 	int Debug;                        /* 0=off, 1=on */
 	struct TokenStruct *token;
 	struct Node *parent;
-	
-	unsigned int line;
-	unsigned int pos;
-	utf8String source;
 }Node;
 
 typedef struct TYPE(Basic) {
@@ -473,10 +468,13 @@ typedef struct NewPkgTemplate{
 }NewPkgTemplate;
 
 /* Program */
-Program* createProgram(unsigned int line, unsigned int pos, utf8String source);
+Program* createProgram(struct TokenStruct *token);
 
 /* Import Packages */
-ImportPackage* createImportPackage(Node* parent, unsigned int line, unsigned int pos);
+ImportPackage* createImportPackage(Node* parent, struct TokenStruct *token);
 void dumpImportPackage(ImportPackage* import);
+
+/* DataTypes */
+//DataType
 
 #endif
