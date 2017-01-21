@@ -328,8 +328,9 @@ void Rule_Decl3(struct TokenStruct *Token, Node *parent) {
 
 /* <LType Decl> ::= local <Type Decl> */
 void Rule_LTypeDecl_local(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
-    
+	DataType* datatype = createDataType(parent, Token);
+	datatype->isLocal = 1;
+	parseExpr(1, (Node*)datatype);
 };
 
 
@@ -337,7 +338,8 @@ void Rule_LTypeDecl_local(struct TokenStruct *Token, Node *parent) {
 
 /* <LType Decl> ::= <Type Decl> */
 void Rule_LTypeDecl(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	DataType* datatype = createDataType(parent, Token);
+	parseExpr(0, (Node*)datatype);
 };
 
 
@@ -345,7 +347,7 @@ void Rule_LTypeDecl(struct TokenStruct *Token, Node *parent) {
 
 /* <Type Decl> ::= <Enum Decl> */
 void Rule_TypeDecl(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
@@ -353,7 +355,7 @@ void Rule_TypeDecl(struct TokenStruct *Token, Node *parent) {
 
 /* <Type Decl> ::= <Interface Def> */
 void Rule_TypeDecl2(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
@@ -361,7 +363,7 @@ void Rule_TypeDecl2(struct TokenStruct *Token, Node *parent) {
 
 /* <Type Decl> ::= <Class Def> */
 void Rule_TypeDecl3(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
@@ -369,7 +371,7 @@ void Rule_TypeDecl3(struct TokenStruct *Token, Node *parent) {
 
 /* <Type Decl> ::= <Type Def> */
 void Rule_TypeDecl4(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
@@ -377,7 +379,18 @@ void Rule_TypeDecl4(struct TokenStruct *Token, Node *parent) {
 
 /* <Enum Decl> ::= enum Identifier '{' <Enum Values> '}' */
 void Rule_EnumDecl_enum_Identifier_LBrace_RBrace(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	ASSERT(parent->nodeType == PS_TYPE, "");
+	DataType* type = ((DataType*)parent);
+	type->typeField = ENUM_Enum;
+	
+	EnumDataType* enumType = createEnumDataType();
+	type->fieldEnum = enumType;
+	type->fieldEnum->name = wcsdup(Token->Tokens[1]->Data);
+	
+	type->fieldEnum = enumType;
+	parseExpr(3, parent);
+	
+	dumpEnum(enumType);
 };
 
 
@@ -385,7 +398,8 @@ void Rule_EnumDecl_enum_Identifier_LBrace_RBrace(struct TokenStruct *Token, Node
 
 /* <Enum Values> ::= <Enum Value> ',' <Enum Values> */
 void Rule_EnumValues_Comma(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
+	parseExpr(2, parent);
 };
 
 
@@ -393,7 +407,7 @@ void Rule_EnumValues_Comma(struct TokenStruct *Token, Node *parent) {
 
 /* <Enum Values> ::= <Enum Value> */
 void Rule_EnumValues(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	parseExpr(0, parent);
 };
 
 
@@ -401,7 +415,14 @@ void Rule_EnumValues(struct TokenStruct *Token, Node *parent) {
 
 /* <Enum Value> ::= Identifier */
 void Rule_EnumValue_Identifier(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	ASSERT(parent->nodeType == PS_TYPE, "");
+	
+	DataType* type = (DataType*)parent;
+	ASSERT(type->typeField == ENUM_Enum, "");
+	
+	vec_push(&type->fieldEnum->enums, Token->Tokens[0]->Data);
+	
+	printf("%ls\n", Token->Tokens[0]->Data);
 };
 
 
@@ -417,7 +438,18 @@ void Rule_InterfaceDef_interface_Identifier_LBrace_RBrace(struct TokenStruct *To
 
 /* <Interface Def> ::= interface Identifier '<' <Id List> '>' '{' <Interface Methods> '}' */
 void Rule_InterfaceDef_interface_Identifier_Lt_Gt_LBrace_RBrace(struct TokenStruct *Token, Node *parent) {
-	RuleTemplate(Token,parent);
+	ASSERT(parent->nodeType == PS_TYPE, "");
+	DataType* type = ((DataType*)parent);
+	type->typeField = ENUM_Enum;
+	
+	EnumDataType* enumType = createEnumDataType();
+	type->fieldEnum = enumType;
+	type->fieldEnum->name = wcsdup(Token->Tokens[1]->Data);
+	
+	type->fieldEnum = enumType;
+	parseExpr(3, parent);
+	
+	dumpEnum(enumType);
 };
 
 

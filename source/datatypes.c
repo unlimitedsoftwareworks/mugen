@@ -49,4 +49,30 @@ void dumpImportPackage(ImportPackage* import) {
 }
 
 /* Datatypes */
-//DataType* createDataType(Node* parent, 
+DataType* createDataType(Node* parent, struct TokenStruct* token) {
+	DataType* datatype = dmt_calloc(1, sizeof(DataType));
+	
+	datatype->node.parent = parent;
+	datatype->node.ReturnValue = NULL;
+	datatype->node.token = token;
+	datatype->node.nodeType = PS_TYPE;
+		
+	datatype->isLocal = 0;
+	
+	return datatype;
+}
+
+EnumDataType* createEnumDataType() {
+	EnumDataType *enumDataType = dmt_calloc(1, sizeof(enumDataType));
+	vec_init(&enumDataType->enums);
+	return enumDataType;
+}
+
+void dumpEnum(EnumDataType* enum_type){
+	printf("enum: %ls\n", enum_type->name);
+	utf8String data;
+	unsigned int i = 0;
+	vec_foreach(&enum_type->enums, data, i) {
+		printf("\t%d\t%ls\n", i, data);
+	}
+}

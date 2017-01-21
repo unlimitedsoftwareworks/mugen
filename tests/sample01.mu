@@ -7,6 +7,14 @@ import (
     mugen.lang.String
 )
 
+enum ThreadState {
+	INITIALIZING,
+	RUNNING,
+	PAUSING,
+	STOPPED,
+	DEAD
+}
+
 interface Runnable {
     function run()
 }

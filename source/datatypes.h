@@ -63,8 +63,18 @@ typedef enum EnumBasicDataType {
 	ENUM(Boolean),
 }EnumBaseType;
 
+typedef struct Node {
+	wchar_t *ReturnValue;             /* In this template all rules return a string. */
+	unsigned int nodeType;
+	int Indent;                       /* For printing debug messages. */
+	int Debug;                        /* 0=off, 1=on */
+	struct TokenStruct *token;
+	struct Node *parent;
+}Node;
 
 typedef struct DataType {
+	Node node;
+	int isLocal;
 	enum EnumTypes typeField;
 	union{
 		FIELD(Basic);
@@ -81,15 +91,6 @@ typedef struct DataType {
 		FIELD(Dummy);
 	};
 }DataType;
-
-typedef struct Node {
-	wchar_t *ReturnValue;             /* In this template all rules return a string. */
-	unsigned int nodeType;
-	int Indent;                       /* For printing debug messages. */
-	int Debug;                        /* 0=off, 1=on */
-	struct TokenStruct *token;
-	struct Node *parent;
-}Node;
 
 typedef struct TYPE(Basic) {
 	Node node;
@@ -475,6 +476,8 @@ ImportPackage* createImportPackage(Node* parent, struct TokenStruct *token);
 void dumpImportPackage(ImportPackage* import);
 
 /* DataTypes */
-//DataType
+DataType* createDataType(Node* parent, struct TokenStruct* token);
+EnumDataType* createEnumDataType();
+void dumpEnum(EnumDataType* enum_type);
 
 #endif

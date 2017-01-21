@@ -24,6 +24,8 @@ int main(int argc, char *argv[]) {
 	
 	printf("\n[NOTICE] Ending with memory of [%zu]Bytes\n", dmt_usage());
 	printf("\n[NOTICE] Memory DUMP:\n");
-	dmt_dump(stdout);
+	
+	/* dump memory usage*/
+	//dmt_dump(stdout);
 	return err;
 }
