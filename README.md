@@ -7,18 +7,8 @@ Mugen
 ## Status
 
 
-[![BADGINATOR](https://badginator.herokuapp.com/unlimitedsoftwareworks/mugen.svg)](https://github.com/unlimitedsoftwareworks/mugen)
-
-
-[![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?style=flat)](https://mugen.praisethemoon.org)
-[![Twitter Follow](https://img.shields.io/twitter/follow/alonnesora.svg?style=social&label=Follow&style=flat)](https://twitter.com/alonnesora)
-
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat)](LICENSE)
-[![GitHub commits](https://github-basic-badges.herokuapp.com/commits/unlimitedsoftwareworks/mugen.svg)]()
-
-[![Code Climate](https://img.shields.io/codeclimate/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen)
-[![Code Climate](https://img.shields.io/codeclimate/coverage/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen/coverage)
-[![Code Climate](https://img.shields.io/codeclimate/issues/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen)
+[![BADGINATOR](https://badginator.herokuapp.com/unlimitedsoftwareworks/mugen.svg)](https://github.com/unlimitedsoftwareworks/mugen)  [![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?style=flat)](https://mugen.praisethemoon.org) [![Twitter Follow](https://img.shields.io/twitter/follow/alonnesora.svg?style=social&label=Follow&style=flat)](https://twitter.com/alonnesora) [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat)](LICENSE)
+[![GitHub commits](https://github-basic-badges.herokuapp.com/commits/unlimitedsoftwareworks/mugen.svg)]() [![Code Climate](https://img.shields.io/codeclimate/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen) [![Code Climate](https://img.shields.io/codeclimate/coverage/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen/coverage) [![Code Climate](https://img.shields.io/codeclimate/issues/github/unlimitedsoftwareworks/mugen.svg?style=flat)](https://codeclimate.com/github/unlimitedsoftwareworks/mugen)
 
 |Compiler|Windows|Linux|OSX|FreeBSD|Haiku|Minix3|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
