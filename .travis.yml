@@ -1,17 +1,15 @@
-language: c
+dist: trusty
+sudo: required
 
-os:
-  - linux
-  - osx
-
-compiler:
-  - clang
-  - gcc
-
-script: 
-  - mkdir build
-  - cd build
-  - cmake .. 
-  - make
-  - cd ..
-  - build/mugen
+addons:
+  sonarcloud:
+    organization: "usw"
+    token:
+      secure: "eeeac22cb907ba01a287be941862b2792fe0e369"
+script:
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+  - sonar-scanner
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+      
